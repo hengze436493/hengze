@@ -2126,9 +2126,7 @@
         /* 播放状态 */
         .bfzt {
             font-size: 14px;
-            color: #222222;
-            text-align: center;
-            /* 使文字居中 */
+            text-align: center; /* 使文字居中 */
         }
         /* 播放列表 */
         .bflb {
@@ -2683,7 +2681,7 @@
             <br>
             <span style="color: blue;">公告：</span>
             <br>
-            磁贴固定漏洞太多了，太折磨了，技术回滚了（保留搜索框吧）。
+            磁贴固定漏洞太多了，太折磨了，技术回滚了（<s>这是通病，不能怪我</s>）。
             <br><br>
             由于版本更新过于频繁，更新详情信息已移除！
             <br><br><br>
@@ -2705,7 +2703,7 @@
             "<span style="color: blue;">设置背景</span>"对图片大小的
             限制，一般为<4MiB（平均值，这取决于设备，和浏览器）；为什么不使
             𝙸ndexedDB，而使用localStorage呢？这个嘛，代码有报错，技术回滚了
-            （说白了，就是不会）
+            （<s>说白了，就是不会</s>）
             <br>
             ( •̀ ω •́ )✧。
             <br><br><br>
@@ -2728,7 +2726,7 @@
         <button id="szbjwzButton">设置背景</button>
         <button id="ztqhButton"></button>
         <button id="ztqhwzButton">主题切换</button>
-        <button id="bbButton">版本：250602</button>
+        <button id="bbButton">版本：250603</button>
     </div>
 
     <div id="wjj1-popup">
@@ -2750,7 +2748,7 @@
     <script>
     document.addEventListener('DOMContentLoaded', function () {
 
-        // 主题切换（弹窗内，所有子级的颜色）
+// 主题切换
         const ztqhButton = document.getElementById('ztqhButton');
         const colorElements = document.querySelectorAll('.color-target');
         // 检查 localStorage 中的偏好设置
@@ -2759,17 +2757,15 @@
         function initTheme() {
             if (isZtqhMode) {
                 document.body.classList.add('ztqh-mode');
-                ztqhButton.textContent = '白'; // 白色主题时显示"白"
-            } else {
-                ztqhButton.textContent = '黑'; // 黑色主题时显示"黑"
-            }
+                ztqhButton.textContent = '🌕️'; /* 白色主题时显示"白" */
+            } else { ztqhButton.textContent = '🌑'; /* 白色主题时显示"白" */ }
         }
         // 按钮点击事件
         ztqhButton.addEventListener('click', function() {
             // 切换暗色模式类
             document.body.classList.toggle('ztqh-mode');
             // 更新按钮文字
-            ztqhButton.textContent = document.body.classList.contains('ztqh-mode') ? '白' : '黑';
+            ztqhButton.textContent = document.body.classList.contains('ztqh-mode') ? '🌕️' : '🌑';
             // 保存当前偏好到 localStorage
             const newZtqhModeState = document.body.classList.contains('ztqh-mode');
             localStorage.setItem('ztqhMode', newZtqhModeState);
@@ -2874,6 +2870,9 @@
 
             // 后台按钮点击事件
             houtaiButton.addEventListener('click', () => { showNotification('后台弹窗'); });
+
+            // 主题切换按钮点击事件
+            ztqhButton.addEventListener('click', () => { showNotification('主题切换'); });
 
             // 文件夹1按钮点击事件
             wjj1Button.addEventListener('click', () => { showNotification('文件夹1弹窗'); });
