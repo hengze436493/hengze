@@ -2565,6 +2565,9 @@
         #xzqhtx-popup,
         #dmyz-popup,
         #dydgst-popup,
+        #ls-popup,
+        #plxxxbj-popup,
+        #qdgc-popup,
         #houtai-popup,
         #wjj1-popup,
         #wjj1wzButton,
@@ -2578,6 +2581,9 @@
         .ztqh-mode #xzqhtx-popup,
         .ztqh-mode #dmyz-popup,
         .ztqh-mode #dydgst-popup,
+        .ztqh-mode #ls-popup,
+        .ztqh-mode #plcxxbj-popup,
+        .ztqh-mode #qdgc-popup,
         .ztqh-mode #houtai-popup,
         .ztqh-mode #wjj1-popup,
         .ztqh-mode #wjj1wzButton,
@@ -3118,7 +3124,7 @@
             // 忽略输入框内的按键
             if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
             // 所有弹窗的ID列表
-            const allPopupIds = ['super-popup', 'ck-popup', 'gcst-popup', 'xzqhtx-popup', 'dmyz-popup', 'dydgst-popup', 'houtai-popup', 'wjj1-popup'];
+            const allPopupIds = ['super-popup', 'ck-popup', 'gcst-popup', 'xzqhtx-popup', 'dmyz-popup', 'dydgst-popup', 'ls-popup', 'plcxxbj-popup', 'qdgc-popup', 'houtai-popup', 'wjj1-popup'];
             const popupOverlay = document.getElementById('popup-overlay');
             let targetPopupId;
             // 根据按键匹配目标弹窗
@@ -3157,6 +3163,9 @@
             const xzqhtxButton = document.getElementById('xzqhtxButton');
             const dmyzButton = document.getElementById('dmyzButton');
             const dydgstButton = document.getElementById('dydgstButton');
+            const lsButton = document.getElementById('lsButton');
+            const plcxxbjButton = document.getElementById('plcxxbjButton');
+            const qdgcButton = document.getElementById('qdgcButton');
             const houtaiButton = document.getElementById('houtaiButton');
             const wjj1Button = document.getElementById('wjj1Button');
             const tsqp = document.getElementById('tsqp');
@@ -3205,6 +3214,15 @@
             // 低压电工试题按钮点击事件
             dydgstButton.addEventListener('click', () => { showNotification('低压电工试题弹窗'); });
 
+            // 历史按钮点击事件
+            lsButton.addEventListener('click', () => { showNotification('历史弹窗'); });
+
+            // plc学习笔记按钮点击事件
+            plcxxbjButton.addEventListener('click', () => { showNotification('plc学习笔记弹窗'); });
+
+            // 气电工程按钮点击事件
+            qdgcButton.addEventListener('click', () => { showNotification('气电工程弹窗'); });
+
             // 后台按钮点击事件
             houtaiButton.addEventListener('click', () => { showNotification('后台弹窗'); });
 
@@ -3214,7 +3232,7 @@
             // 文件夹1按钮点击事件
             wjj1Button.addEventListener('click', () => { showNotification('文件夹1弹窗'); });
 
-            // 新增：封装通知显示逻辑
+            // 封装通知显示逻辑
             function showNotification(message) {
                 tsqp.textContent = message;
                 tsqp.style.opacity = 1;
