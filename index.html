@@ -2733,6 +2733,94 @@
             font-size: 10px;
         }
 
+        /* 永生按钮样式 */
+        #ysButton {
+            position: absolute;
+            top: 150px;
+            left: 220px;
+            border: 1px solid #CCCCCC;
+            font-size: 30px;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            text-align: center; /* 使文字居中 */
+        }
+        /* 永生文字按钮样式 */
+        #yswzButton {
+            position: fixed;
+            top: 200px;
+            left: 220px;
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+        }
+
+        /* 孤独摇滚按钮样式 */
+        #gdygButton {
+            position: absolute;
+            top: 250px;
+            left: 30px;
+            border: 1px solid #CCCCCC;
+            font-size: 30px;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+        /* 孤独摇滚文字按钮样式 */
+        #gdygwzButton {
+            position: absolute;
+            top: 300px;
+            left: 30px;
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+        }
+
+        /* 别当欧尼酱了按钮样式 */
+        #bdonjlButton {
+            position: absolute;
+            top: 250px;
+            left: 125px;
+            border: 1px solid #CCCCCC;
+            font-size: 30px;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            text-align: center; /* 使文字居中 */
+        }
+        /* 别当欧尼酱了文字按钮样式 */
+        #bdonjlwzButton {
+            position: fixed;
+            top: 300px;
+            left: 125px;
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+        }
+
+        /* 刺客伍六七按钮样式 */
+        #ckwlqButton {
+            position: absolute;
+            top: 250px;
+            left: 220px;
+            border: 1px solid #CCCCCC;
+            font-size: 30px;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            text-align: center; /* 使文字居中 */
+        }
+        /* 刺客伍六七文字按钮样式 */
+        #ckwlqwzButton {
+            position: fixed;
+            top: 300px;
+            left: 220px;
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+        }
+
         /* 文件夹1底部文字按钮样式 */
         #wjj1dbwzButton {
             position: absolute;
@@ -3055,7 +3143,7 @@
         <!-- 播放控件容器 -->
         <div class="bfkjrq">
             <input type="file" id="wjsr" accept="audio/*" multiple>
-            <div class="bfzt" id="fileInfo">未在播放</div>
+            <div class="bfzt" id="fileInfo">( ´ ▽ ` )ﾉ</div>
             <audio id="audioPlayer" controls></audio>
             <ul class="bflb" id="bflb"></ul>
         </div>
@@ -3069,7 +3157,7 @@
         <button id="szbjwzButton">设置背景</button>
         <button id="ztqhButton"></button>
         <button id="ztqhwzButton">主题切换</button>
-        <button id="bbButton">版本：250605</button>
+        <button id="bbButton">版本：250606</button>
     </div>
 
     <div id="wjj1-popup">
@@ -3077,12 +3165,20 @@
         <button id="warwzButton">war thunder</button>
         <button id="fatenightButton">🎞️</button>
         <button id="fatenightwzButton">fate night 1-11</button>
-        <button id="hjhzblrButton">🎞️</button>
-        <button id="hjhzblrwzButton">画江湖之不良人7-0</button>
         <button id="zsdfllButton">🎞️</button>
         <button id="zsdfllwzButton">葬送的芙莉莲1-0</button>
         <button id="zyhsButton">🎞️</button>
         <button id="zyhswzButton">正义红师1-0</button>
+        <button id="hjhzblrButton">🎞️</button>
+        <button id="hjhzblrwzButton">画江湖之不良人7-0</button>
+        <button id="ysButton">🎞️</button>
+        <button id="yswzButton">永生1-0</button>
+        <button id="gdygButton">🎞️</button>
+        <button id="gdygwzButton">孤独摇滚1-0</button>
+        <button id="bdonjlButton">🎞️</button>
+        <button id="bdonjlwzButton">别当欧尼酱了1-0</button>
+        <button id="ckwlqButton">🎞️</button>
+        <button id="ckwlqwzButton">刺客伍六七5-0</button>
         <button id="wjj1dbwzButton">不知道写什么，先这样吧！</button>
     </div>
 
@@ -3243,12 +3339,10 @@
             }
 
             document.getElementById('wjgbButton').addEventListener('click', function () {
-                window.open('https://fagedongxi.com/', '_blank');
-            });
+                window.open('https://fagedongxi.com/', '_blank'); });
 
             document.getElementById('chatButton').addEventListener('click', function () {
-                window.open('https://doubao.com/chat/59976916344578', '_blank');
-            });
+                window.open('https://doubao.com/chat/59976916344578', '_blank'); });
 
 // 弹窗
             document.getElementById('popup-overlay').addEventListener('click', function () {
@@ -3269,356 +3363,269 @@
 // super弹窗
             document.getElementById('superButton').addEventListener('click', function () {
                 document.getElementById('super-popup').style.display = 'block';
-                document.getElementById('popup-overlay').style.display = 'block';
-            });
+                document.getElementById('popup-overlay').style.display = 'block'; });
 
             // super弹窗_固定
 
             document.getElementById('super-popup').addEventListener('click', function (event) {
-                event.stopPropagation();
-            });
+                event.stopPropagation(); });
 
             document.getElementById('novncButton').addEventListener('click', function () {
-                window.open('http://192.168.1.2:36082/vnc.html?host=192.168.1.2&port=36082', '_blank');
-            });
+                window.open('http://192.168.1.2:36082/vnc.html?host=192.168.1.2&port=36082', '_blank'); });
 
             document.getElementById('bzyButton').addEventListener('click', function () {
-                window.open('https://g3n8pwgr6l0v2.cave.functorz.com/', '_blank');
-            });
+                window.open('https://g3n8pwgr6l0v2.cave.functorz.com/', '_blank'); });
 
             document.getElementById('blblButton').addEventListener('click', function () {
-                window.open('https://www.bilibili.com/?page=Favorites', '_blank');
-            });
+                window.open('https://www.bilibili.com/?page=Favorites', '_blank'); });
 
             document.getElementById('yywButton').addEventListener('click', function () {
-                window.open('https://www.gequbao.com/', '_blank');
-            });
+                window.open('https://www.gequbao.com/', '_blank'); });
 
             document.getElementById('pddButton').addEventListener('click', function () {
-                window.open('https://mobile.yangkeduo.com/', '_blank');
-            });
+                window.open('https://mobile.yangkeduo.com/', '_blank'); });
 
             document.getElementById('yxButton').addEventListener('click', function () {
-                window.open('https://www.petalmail.com/#/', '_blank');
-            });
+                window.open('https://www.petalmail.com/#/', '_blank'); });
 
             document.getElementById('wyyxButton').addEventListener('click', function () {
-                window.open('https://www.baidu.com/link?url=oLtC7nADQ2K9T3d_Hl0nOXmKo1e2JWUJFEsoPLt6ikO&wd=&eqid=d2d14eed0064acb700000005658972e3', '_blank');
-            });
+                window.open('https://www.baidu.com/link?url=oLtC7nADQ2K9T3d_Hl0nOXmKo1e2JWUJFEsoPLt6ikO&wd=&eqid=d2d14eed0064acb700000005658972e3', '_blank'); });
 
             document.getElementById('dyButton').addEventListener('click', function () {
-                window.open('https://douyin.com/user/self?is_from_mobile_home=1&showTab=favorite_collection', '_blank');
-            });
+                window.open('https://douyin.com/user/self?is_from_mobile_home=1&showTab=favorite_collection', '_blank'); });
 
             document.getElementById('dtcsButton').addEventListener('click', function () {
-                window.open('https://www.jetpunk.com/user-quizzes/2021089/provinces-in-chinaclick-map', '_blank');
-            });
+                window.open('https://www.jetpunk.com/user-quizzes/2021089/provinces-in-chinaclick-map', '_blank'); });
 
-            // super弹窗_菜单
+// super弹窗_菜单
 
             document.getElementById('yesypButton').addEventListener('click', function () {
-                window.open('https://www.123pan.com/', '_blank');
-            });
+                window.open('https://www.123pan.com/', '_blank'); });
 
             document.getElementById('bdutButton').addEventListener('click', function () {
-                window.open('https://graph.baidu.com/pcpage/index?tpl_from=pc', '_blank');
-            });
+                window.open('https://graph.baidu.com/pcpage/index?tpl_from=pc', '_blank'); });
 
             document.getElementById('bmqButton').addEventListener('click', function () {
-                window.open('https://encoder.shangzhenyang.com/', '_blank');
-            });
+                window.open('https://encoder.shangzhenyang.com/', '_blank'); });
 
             document.getElementById('bhbdmButton').addEventListener('click', function () {
-                window.open('https://yangh9.github.io/baidu/', '_blank');
-            });
+                window.open('https://yangh9.github.io/baidu/', '_blank'); });
 
             document.getElementById('bvButton').addEventListener('click', function () {
-                window.open('https://www.wallpaperengine.space', '_blank');
-            });
+                window.open('https://www.wallpaperengine.space', '_blank'); });
 
             document.getElementById('bv2Button').addEventListener('click', function () {
-                window.open('https://4kwallpapers.com/', '_blank');
-            });
+                window.open('https://4kwallpapers.com/', '_blank'); });
 
             document.getElementById('bvdtButton').addEventListener('click', function () {
-                window.open('https://www.adwest.cn/', '_blank');
-            });
+                window.open('https://www.adwest.cn/', '_blank'); });
 
             document.getElementById('csdnButton').addEventListener('click', function () {
-                window.open('https://mp.csdn.net/mp_blog/manage/article?spm=1001.2014.3001.5448', '_blank');
-            });
+                window.open('https://mp.csdn.net/mp_blog/manage/article?spm=1001.2014.3001.5448', '_blank'); });
 
             document.getElementById('cctvButton').addEventListener('click', function () {
-                window.open('https://tv.cctv.com/live/cctv1/', '_blank');
-            });
+                window.open('https://tv.cctv.com/live/cctv1/', '_blank'); });
 
             document.getElementById('deepseekButton').addEventListener('click', function () {
-                window.open('https://chat.deepseek.com', '_blank');
-            });
+                window.open('https://chat.deepseek.com', '_blank'); });
 
             document.getElementById('dyjxButton').addEventListener('click', function () {
-                window.open('https://wannengrun.net/s/?k=', '_blank');
-            });
+                window.open('https://wannengrun.net/s/?k=', '_blank'); });
 
             document.getElementById('deepinltButton').addEventListener('click', function () {
-                window.open('https://bbs.deepin.org', '_blank');
-            });
+                window.open('https://bbs.deepin.org', '_blank'); });
 
             document.getElementById('dzlxButton').addEventListener('click', function () {
-                window.open('https://www.ldou.com/app/#/appUser/typing/1', '_blank');
-            });
+                window.open('https://www.ldou.com/app/#/appUser/typing/1', '_blank'); });
 
             document.getElementById('bqdqButton').addEventListener('click', function () {
-                window.open('https://www.emojiall.com/zh-hans/', '_blank');
-            });
+                window.open('https://www.emojiall.com/zh-hans/', '_blank'); });
 
             document.getElementById('fwvuqButton').addEventListener('click', function () {
-                window.open('https://haveyouwantto.github.io/WindsongLyre-Sim/', '_blank');
-            });
+                window.open('https://haveyouwantto.github.io/WindsongLyre-Sim/', '_blank'); });
 
             document.getElementById('gifuiButton').addEventListener('click', function () {
-                window.open('https://cloudconvert.com/mp4-to-gif', '_blank');
-            });
+                window.open('https://cloudconvert.com/mp4-to-gif', '_blank'); });
 
             document.getElementById('gjgdjyvhjyptButton').addEventListener('click', function () {
-                window.open('https://www.chinaooc.com.cn/', '_blank');
-            });
+                window.open('https://www.chinaooc.com.cn/', '_blank'); });
 
             document.getElementById('githubButton').addEventListener('click', function () {
-                window.open('https://github.com/', '_blank');
-            });
+                window.open('https://github.com/', '_blank'); });
 
             document.getElementById('githubdlxzButton').addEventListener('click', function () {
-                window.open('https://github.ur1.fun/', '_blank');
-            });
+                window.open('https://github.ur1.fun/', '_blank'); });
 
             document.getElementById('guvhButton').addEventListener('click', function () {
-                window.open('https://www.aconvert.com/cn/', '_blank');
-            });
+                window.open('https://www.aconvert.com/cn/', '_blank'); });
 
             document.getElementById('guvh2Button').addEventListener('click', function () {
-                window.open('https://www.alltoall.net/', '_blank');
-            });
+                window.open('https://www.alltoall.net/', '_blank'); });
 
             document.getElementById('guvh3Button').addEventListener('click', function () {
-                window.open('https://online.rightpdf.com/cn/home', '_blank');
-            });
+                window.open('https://online.rightpdf.com/cn/home', '_blank'); });
 
             document.getElementById('hwyButton').addEventListener('click', function () {
-                window.open('https://cloud.huawei.com/#/home', '_blank');
-            });
+                window.open('https://cloud.huawei.com/#/home', '_blank'); });
 
             document.getElementById('jqlswscButton').addEventListener('click', function () {
-                window.open('https://interknot.shenmedouyou.top', '_blank');
-            });
+                window.open('https://interknot.shenmedouyou.top', '_blank'); });
 
             document.getElementById('klysButton').addEventListener('click', function () {
-                window.open('https://klyingshi.net/', '_blank');
-            });
+                window.open('https://klyingshi.net/', '_blank'); });
 
             document.getElementById('ktButton').addEventListener('click', function () {
-                window.open('https://zh.bgsub.com/webapp/', '_blank');
-            });
+                window.open('https://zh.bgsub.com/webapp/', '_blank'); });
 
             document.getElementById('ltlyglButton').addEventListener('click', function () {
-                window.open('http://192.168.1.1/loginUser.html', '_blank');
-            });
+                window.open('http://192.168.1.1/loginUser.html', '_blank'); });
 
             document.getElementById('myuButton').addEventListener('click', function () {
-                window.open('https://www.miyoushe.com/sr/', '_blank');
-            });
+                window.open('https://www.miyoushe.com/sr/', '_blank'); });
 
             document.getElementById('mywrjuhkqzhglptButton').addEventListener('click', function () {
-                window.open('https://uom.caac.gov.cn/#/main', '_blank');
-            });
+                window.open('https://uom.caac.gov.cn/#/main', '_blank'); });
 
             document.getElementById('mtButton').addEventListener('click', function () {
-                window.open('https://metaso.cn', '_blank');
-            });
+                window.open('https://metaso.cn', '_blank'); });
 
             document.getElementById('pyjsqButton').addEventListener('click', function () {
-                window.open('https://www.jyshare.com/compile/9/', '_blank');
-            });
+                window.open('https://www.jyshare.com/compile/9/', '_blank'); });
 
             document.getElementById('qsqButton').addEventListener('click', function () {
-                window.open('https://www.qiguangit.com/colorPicker/', '_blank');
-            });
+                window.open('https://www.qiguangit.com/colorPicker/', '_blank'); });
 
             document.getElementById('shdfButton').addEventListener('click', function () {
-                window.open('https://bzpt.shdf.gov.cn/report/frontend/?from=wx#/external/1', '_blank');
-            });
+                window.open('https://bzpt.shdf.gov.cn/report/frontend/?from=wx#/external/1', '_blank'); });
 
             document.getElementById('srdhjbButton').addEventListener('click', function () {
-                window.open('https://wechat.12321.cn', '_blank');
-            });
+                window.open('https://wechat.12321.cn', '_blank'); });
 
             document.getElementById('spqbjButton').addEventListener('click', function () {
-                window.open('https://www.unscreen.com', '_blank');
-            });
+                window.open('https://www.unscreen.com', '_blank'); });
 
             document.getElementById('uxztdyButton').addEventListener('click', function () {
-                window.open('https://www.beautifulcarrot.com/', '_blank');
-            });
+                window.open('https://www.beautifulcarrot.com/', '_blank'); });
 
             document.getElementById('spjxButton').addEventListener('click', function () {
-                window.open('https://www.xiazaitool.com', '_blank');
-            });
+                window.open('https://www.xiazaitool.com', '_blank'); });
 
             document.getElementById('spjx2Button').addEventListener('click', function () {
-                window.open('https://v2ob.com', '_blank');
-            });
+                window.open('https://v2ob.com', '_blank'); });
 
             document.getElementById('sblxButton').addEventListener('click', function () {
-                window.open('https://cps-test.click/cn/aim-training-game', '_blank');
-            });
+                window.open('https://cps-test.click/cn/aim-training-game', '_blank'); });
 
             document.getElementById('tpfdButton').addEventListener('click', function () {
-                window.open('https://bigjpg.com/zh', '_blank');
-            });
+                window.open('https://bigjpg.com/zh', '_blank'); });
 
             document.getElementById('tpyjButton').addEventListener('click', function () {
-                window.open('https://uutool.cn/img-radius/', '_blank');
-            });
+                window.open('https://uutool.cn/img-radius/', '_blank'); });
 
             document.getElementById('tpxpButton').addEventListener('click', function () {
-                window.open('https://magicstudio.com/zh/magiceraser/', '_blank');
-            });
+                window.open('https://magicstudio.com/zh/magiceraser/', '_blank'); });
 
             document.getElementById('tpqsqButton').addEventListener('click', function () {
-                window.open('https://www.jyshare.com/front-end/6214/#f2f2f2', '_blank');
-            });
+                window.open('https://www.jyshare.com/front-end/6214/#f2f2f2', '_blank'); });
 
             document.getElementById('tpysButton').addEventListener('click', function () {
-                window.open('https://docsmall.com/image-compress', '_blank');
-            });
+                window.open('https://docsmall.com/image-compress', '_blank'); });
 
             document.getElementById('tpxfButton').addEventListener('click', function () {
-                window.open('https://jpghd.com/zh', '_blank');
-            });
+                window.open('https://jpghd.com/zh', '_blank'); });
 
             document.getElementById('tpxf2Button').addEventListener('click', function () {
-                window.open('https://aihuazuo.com/laozhaopian/', '_blank');
-            });
+                window.open('https://aihuazuo.com/laozhaopian/', '_blank'); });
 
             document.getElementById('tbvzButton').addEventListener('click', function () {
-                window.open('https://chartcube.alipay.com/', '_blank');
-            });
+                window.open('https://chartcube.alipay.com/', '_blank'); });
 
             document.getElementById('tpButton').addEventListener('click', function () {
-                window.open('https://webcast.airdroid.com', '_blank');
-            });
+                window.open('https://webcast.airdroid.com', '_blank'); });
 
             document.getElementById('tzzyczzcxButton').addEventListener('click', function () {
-                window.open('https://cx.mem.gov.cn/wxcx/pages/certificateQuery/inquirySpecialCertificate?personTypeCode=03', '_blank');
-            });
+                window.open('https://cx.mem.gov.cn/wxcx/pages/certificateQuery/inquirySpecialCertificate?personTypeCode=03', '_blank'); });
 
             document.getElementById('urlbmjmButton').addEventListener('click', function () {
-                window.open('https://www.codeeeee.com/encode/url.html', '_blank');
-            });
+                window.open('https://www.codeeeee.com/encode/url.html', '_blank'); });
 
             document.getElementById('wzsbButton').addEventListener('click', function () {
-                window.open('https://catocr.com/#/', '_blank');
-            });
+                window.open('https://catocr.com/#/', '_blank'); });
 
             document.getElementById('win11Button').addEventListener('click', function () {
-                window.open('https://win11.blueedge.me/', '_blank');
-            });
+                window.open('https://win11.blueedge.me/', '_blank'); });
 
             document.getElementById('win12Button').addEventListener('click', function () {
-                window.open('https://tjy-gitnub.github.io/win12/desktop.html', '_blank');
-            });
+                window.open('https://tjy-gitnub.github.io/win12/desktop.html', '_blank'); });
 
             document.getElementById('winujjmButton').addEventListener('click', function () {
-                window.open('https://sit.widget4.com/', '_blank');
-            });
+                window.open('https://sit.widget4.com/', '_blank'); });
 
             document.getElementById('wldabtscButton').addEventListener('click', function () {
-                window.open('https://logo.bluearchive.cc', '_blank');
-            });
+                window.open('https://logo.bluearchive.cc', '_blank'); });
 
             document.getElementById('wlcsButton').addEventListener('click', function () {
-                window.open('https://www.speedtest.cn/', '_blank');
-            });
+                window.open('https://www.speedtest.cn/', '_blank'); });
 
             document.getElementById('wxgvptButton').addEventListener('click', function () {
-                window.open('https://mp.weixin.qq.com/', '_blank');
-            });
+                window.open('https://mp.weixin.qq.com/', '_blank'); });
 
             document.getElementById('wvtbtqButton').addEventListener('click', function () {
-                window.open('https://www.faviconextractor.com/zh', '_blank');
-            });
+                window.open('https://www.faviconextractor.com/zh', '_blank'); });
 
             document.getElementById('wzvyyButton').addEventListener('click', function () {
-                window.open('https://aiwjzn.com/tools/tts', '_blank');
-            });
+                window.open('https://aiwjzn.com/tools/tts', '_blank'); });
 
             document.getElementById('whncButton').addEventListener('click', function () {
-                window.open('https://enazo.cn/', '_blank');
-            });
+                window.open('https://enazo.cn/', '_blank'); });
 
             document.getElementById('wvryButton').addEventListener('click', function () {
-                window.open('https://m.gamematrix.qq.com/v2/game?tk=C4Qw5gvAJgxgnABzgRwBYDsBWYBmAOAVnQCc8AyAIwEsoI8AWAYQCEAxNuZvAUQEZ68ANgBMZAM40IAGWYBFYsABSCACIAvKgmIBVABqNtQA&pcc=1&adtag=101301&gc-refer=detail&adtag_mall=&from_new_gamecenter=2', '_blank');
-            });
+                window.open('https://m.gamematrix.qq.com/v2/game?tk=C4Qw5gvAJgxgnABzgRwBYDsBWYBmAOAVnQCc8AyAIwEsoI8AWAYQCEAxNuZvAUQEZ68ANgBMZAM40IAGWYBFYsABSCACIAvKgmIBVABqNtQA&pcc=1&adtag=101301&gc-refer=detail&adtag_mall=&from_new_gamecenter=2', '_blank'); });
 
             document.getElementById('xtzxButton').addEventListener('click', function () {
-                window.open('https://next.xuetangx.com/my-courses/current', '_blank');
-            });
+                window.open('https://next.xuetangx.com/my-courses/current', '_blank'); });
 
             document.getElementById('xyButton').addEventListener('click', function () {
-                window.open('https://xiaoyi.huawei.com/chat/?utm_source=ai-bot.cn', '_blank');
-            });
+                window.open('https://xiaoyi.huawei.com/chat/?utm_source=ai-bot.cn', '_blank'); });
 
             document.getElementById('xiyButton').addEventListener('click', function () {
-                window.open('https://starxn.com/clientarea', '_blank');
-            });
+                window.open('https://starxn.com/clientarea', '_blank'); });
 
             document.getElementById('xqButton').addEventListener('click', function () {
-                window.open('https://chess.z3web.cn/', '_blank');
-            });
+                window.open('https://chess.z3web.cn/', '_blank'); });
 
             document.getElementById('xtdxscButton').addEventListener('click', function () {
-                window.open('https://sr.shenmedouyou.top', '_blank');
-            });
+                window.open('https://sr.shenmedouyou.top', '_blank'); });
 
             document.getElementById('xtgzscButton').addEventListener('click', function () {
-                window.open('https://light.shenmedouyou.top', '_blank');
-            });
+                window.open('https://light.shenmedouyou.top', '_blank'); });
 
             document.getElementById('ypjjButton').addEventListener('click', function () {
-                window.open('http://tool.mkblog.cn/audiomass/', '_blank');
-            });
+                window.open('http://tool.mkblog.cn/audiomass/', '_blank'); });
 
             document.getElementById('yyw2Button').addEventListener('click', function () {
-                window.open('https://www.myfreemp3.com.cn', '_blank');
-            });
+                window.open('https://www.myfreemp3.com.cn', '_blank'); });
 
             document.getElementById('yxtButton').addEventListener('click', function () {
-                window.open('https://y.4399.com/detail/34', '_blank');
-            });
+                window.open('https://y.4399.com/detail/34', '_blank'); });
 
             document.getElementById('ydxqButton').addEventListener('click', function () {
-                window.open('https://mhyurl.cn/cb2dwDA6', '_blank');
-            });
+                window.open('https://mhyurl.cn/cb2dwDA6', '_blank'); });
 
             document.getElementById('vgydButton').addEventListener('click', function () {
-                window.open('https://wap.js.10086.cn/login.thtml?redirectURL=//wap.js.10086.cn/vw/index/home', '_blank');
-            });
+                window.open('https://wap.js.10086.cn/login.thtml?redirectURL=//wap.js.10086.cn/vw/index/home', '_blank'); });
 
             document.getElementById('vgltButton').addEventListener('click', function () {
-                window.open('https://www.10010.com/wt_service_web/index.html#/', '_blank');
-            });
+                window.open('https://www.10010.com/wt_service_web/index.html#/', '_blank'); });
 
             document.getElementById('vwymvmButton').addEventListener('click', function () {
-                window.open('https://tools.qzxdp.cn/punycode', '_blank');
-            });
+                window.open('https://tools.qzxdp.cn/punycode', '_blank'); });
 
             document.getElementById('zxxyxButton').addEventListener('click', function () {
-                window.open('https://poki.com/zh/g/kour-io', '_blank');
-            });
+                window.open('https://poki.com/zh/g/kour-io', '_blank'); });
 
             document.getElementById('zxmlsButton').addEventListener('click', function () {
-                window.open('https://www.xn--ghqy5t5uf651b82d.com/#/', '_blank');
-            });
+                window.open('https://www.xn--ghqy5t5uf651b82d.com/#/', '_blank'); });
 
             window.addEventListener('load', function () {
                 var backgroundImage = localStorage.getItem('backgroundImage');
@@ -10790,12 +10797,10 @@ Gr≥5%的铬钼mù钢、铁素体钢、马氏体钢-FeⅢ
             }
 
             document.getElementById('wlButton').addEventListener('click', function () {
-                window.open('https://iplark.com/', '_blank');
-            });
+                window.open('https://iplark.com/', '_blank'); });
 
             document.getElementById('lyButton').addEventListener('click', function () {
-                window.open('https://xn--xoyo45b.mysxl.cn', '_blank');
-            });
+                window.open('https://xn--xoyo45b.mysxl.cn', '_blank'); });
 
 // 设置背景样式
             function szbjStyle() {
@@ -10910,24 +10915,31 @@ Gr≥5%的铬钼mù钢、铁素体钢、马氏体钢-FeⅢ
             });
 
             document.getElementById('warButton').addEventListener('click', function () {
-                window.open('steam://rungameid/236390', '_blank');
-            });
+                window.open('steam://rungameid/236390', '_blank'); });
 
             document.getElementById('fatenightButton').addEventListener('click', function () {
-                window.open('https://www.bilibili.com/bangumi/play/ep239617?from_spmid=666.25.episode.0', '_blank');
-            });
+                window.open('https://www.bilibili.com/bangumi/play/ep239617?from_spmid=666.25.episode.0', '_blank'); });
 
             document.getElementById('zsdfllButton').addEventListener('click', function () {
-                window.open('https://lkvod.me/vodplay/2139-5-1.html', '_blank');
-            });
+                window.open('https://lkvod.me/vodplay/2139-5-1.html', '_blank'); });
 
             document.getElementById('zyhsButton').addEventListener('click', function () {
-                window.open('https://lkvod.me/vodplay/29586-1-1.html', '_blank');
-            });
+                window.open('https://lkvod.me/vodplay/29586-1-1.html', '_blank'); });
 
             document.getElementById('hjhzblrButton').addEventListener('click', function () {
-                window.open('https://lkvod.me/vodplay/142931-2-1.html', '_blank');
-            });
+                window.open('https://lkvod.me/vodplay/142931-2-1.html', '_blank'); });
+
+            document.getElementById('ysButton').addEventListener('click', function () {
+                window.open('https://lkvod.me/vodplay/1058-1-1.html', '_blank'); });
+
+            document.getElementById('gdygButton').addEventListener('click', function () {
+                window.open('https://lkvod.me/vodplay/8299-1-1.html', '_blank'); });
+
+            document.getElementById('bdonjlButton').addEventListener('click', function () {
+                window.open('https://www.hdmoli.pro/play/1721-0-0.html', '_blank'); });
+
+            document.getElementById('ckwlqButton').addEventListener('click', function () {
+                window.open('https://lkvod.me/vodplay/850-1-1.html', '_blank'); });
 
     </script>
 </body>
