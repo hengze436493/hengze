@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>半个网站</title>
-    <meta name="baidu-site-verification" content="codeva-DEcdKcr8Hk" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,7 +21,7 @@
 
         /* 状态栏按钮样式 */
         #ztlButon {
-            position: fixed;
+            position: absolute;
             top: 20px;
             left: 10px;
             width: 50px;
@@ -36,17 +35,18 @@
 
         /* 🏵️按钮样式 */
         #superButton {
-            position: fixed;
+            position: absolute;
             left: 10px;
             top: 20px;
             width: 50px;
             height: 50px;
             font-size: 30px;
+            border-radius:10px 10px 0px 0px;  /* 给左上右上添加圆角 */
         }
 
         /* 🪟按钮样式 */
         #ckButton {
-            position: fixed;
+            position: absolute;
             left: 10px;
             top: 75px;
             width: 50px;
@@ -56,7 +56,7 @@
 
         /* 后台按钮样式 */
         #houtaiButton {
-            position: fixed;
+            position: absolute;
             left: 10px;
             top: 435px;
             width: 50px;
@@ -66,7 +66,7 @@
 
         /* 屏幕保持按钮样式 */
         #pmbcButton {
-            position: fixed;
+            position: absolute;
             left: 10px;
             top: 485px;
             width: 50px;
@@ -91,7 +91,7 @@
 
         /* 文件广播按钮样式 */
         #wjgbButton {
-            position: fixed;
+            position: absolute;
             left: 10px;
             top: 540px;
             width: 50px;
@@ -101,7 +101,7 @@
 
         /* chat按钮样式 */
         #chatButton {
-            position: fixed;
+            position: absolute;
             left: 11px;
             top: 595px;
             width: 50px;
@@ -1206,8 +1206,8 @@
         /* 小艺按钮样式 */
         #xyButton { top: 5750px; }
 
-        /* 星辰云按钮样式 */
-        #xiyButton { top: 5800px; }
+        /* 星铁光锥生成按钮样式 */
+        #xtgzscButton { top: 5800px; }
 
         /* 象棋按钮样式 */
         #xqButton { top: 5850px; }
@@ -1215,11 +1215,11 @@
         /* 星铁短信生成按钮样式 */
         #xtdxscButton { top: 5900px; }
 
-        /* 星铁光锥生成按钮样式 */
-        #xtgzscButton { top: 5950px; }
-
         /* 分类按钮Y样式 */
-        #yButton { top: 6050px; }
+        #yButton { top: 6000px; }
+
+        /* 域名注册按钮样式 */
+        #ymzcButton { top: 6050px; }
 
         /* 音频剪辑按钮样式 */
         #ypjjButton { top: 6100px; }
@@ -2092,14 +2092,27 @@
         .ztqh-mode #search-input,
         .ztqh-mode #search-engine-select { color: #FFFFFF; }
 
+        /* 下载源码按钮样式 */
+        #xzymButton { top: 540px; left: 85px; }
+        /* 下载源码文字按钮样式 */
+        #xzymwzButton {
+            position: absolute;
+            top: 590px;
+            left: 85px;
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+        }
+
         /* 版本按钮样式 */
         #bbButton {
             position: absolute;
-            top: 620px;
-            left: 4px;
-            width: 270px;
-            height: 20px;
-            font-size: 1px;
+            top: 608px;
+            left: 10px;
+            width: 280px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 10px;
         }
 
         /* 文件夹弹窗样式 */
@@ -2364,6 +2377,7 @@
             <select id="search-engine-select">
                 <option value="https://cn.bing.com/search?q=">Bing</option>
                 <option value="https://metaso.cn/?q=">密塔</option>
+                <option value="https://iplark.com/search?q=">𝙸P查询</option>
                 <option value="https://github.com/search?q=">Github</option>
                 <option value="https://appgallery.huawei.com/search/">华为应用市场</option>
                 <option value="https://yangh9.github.io/baidu/?s=">不会百度吗</option>
@@ -2487,11 +2501,11 @@
         <button id="xButton" class="button-fl">X</button>
         <button id="xtzxButton" class="button-cd">学堂在线</button>
         <button id="xyButton" class="button-cd">小艺</button>
-        <button id="xiyButton" class="button-cd">星辰云</button>
         <button id="xqButton" class="button-cd">象棋</button>
         <button id="xtdxscButton" class="button-cd">星铁短信生成</button>
         <button id="xtgzscButton" class="button-cd">星铁光锥生成</button>
         <button id="yButton" class="button-fl">Y</button>
+        <button id="ymzcButton" class="button-cd">域名注册_SFC</button>
         <button id="ypjjButton" class="button-cd">音频剪辑</button>
         <button id="yyw2Button" class="button-cd">音乐网2</button>
         <button id="yxtButton" class="button-cd">云星铁_4399</button>
@@ -2815,33 +2829,55 @@ Lv       Ts     Og
             <br><br>
             由于版本更新过于频繁，更新详情信息已移除！
             <br><br>
-            磁贴固定漏洞太多了，太折磨了，技术回滚了<s>（这是通病，不能怪我）</s>。
+            磁贴固定漏洞太多了，太折磨了，技术回滚了<s>（这是通病，
+            不能怪我）</s>。
             <br><br><br>
             1.
             <br>
-            WASD为弹窗状态用键。
+            <span style="color: blue;">弹窗状态用键</span>，是"WAS
+            D"( ‵▽′)ψ。
             <br><br>
             2.
             <br>
             "<span style="color: blue;">屏幕保持</span>"无法使用，这
-            是因为浏览器对非"超文本传输安全协议，即https"网站的敏感权限限制。
-            如：摄像头啦、麦克风啦……什么的，虽然不知道屏幕保持（也有可能是
-            浏览器不支持Wake Lock AP𝙸，现在的浏览器好像不太可能）能有什么安
-            全隐患……解决办法就是，把源代码下载下来，本地使用（自己定期更新
-            下哦）(●'◡'●)。
+            是因为浏览器对非"超文本传输安全协议，即https"网站的敏感权
+            限限制。
+            <br>
+            &emsp;&emsp;如：摄像头啦、麦克风啦……什么的，虽然不知
+            道屏幕保持（也有可能是 浏览器不支持Wake Lock AP𝙸，现在
+            的浏览器好像不太可能）能有什么安全隐患……
+            <br>
+            &emsp;&emsp;解决办法就是，下载源代码，本地使用（ 自己
+            定期更新下哦）(●'◡'●)。
             <br><br>
             3.
             <br>
             "<span style="color: blue;">设置背景</span>"对图片大小的
             限制，一般为<4MiB（这取决于设备，和浏览器）；为什么不用
-            𝙸ndexedDB，而用localStorage？这个啊，代码报错，技术回滚了
-            <s>说白了，就是不会</s>( •̀ ω •́ )✧。
+            𝙸ndexedDB，而用localStorage？这个啊，代码报错，技术回滚
+            了<s>说白了，就是不会</s>( •̀ ω •́ )✧。
             <br><br>
             4.
             <br>
-            宝藏页里的图片，用的是"src+延迟载入"，防止在没有打开宝藏页的
-            时候，加载图片，造成不必要的流量消耗。
-            <br><br><br>
+            <span style="color: blue;">宝藏页</span>里的图片，用的是
+            "src+延迟载入"，防止在没有打开宝藏页的时候，加载图片，造
+            成不必要的流量消耗。
+            <br><br>
+            5.
+            <br>
+            新增"<span style="color: blue;">下载源码</span>"的功能，
+            可直接在后台弹窗里，下载这个网站的所有源代码（构建方法用
+            的是css+html+javaScript的纯前端的方式写的，没有后端，所
+            以请放心食用）（> y <），
+            <br>
+            &emsp;&emsp;下载到的文件默认名是"index.html"，用浏览器
+            打开就能直接运行。
+            <br>
+            &emsp;&emsp;对了，这个功能只能在"超文本传输协议/超文本
+            传输安全协议"中运行，无法在文件交互协议中运行哦(●'◡'●)。
+            <br>
+            <br>
+            <br>
         </button>
 
         <!-- 播放控件容器 -->
@@ -2855,13 +2891,15 @@ Lv       Ts     Og
         <button id="wlwzButton">网络信息</button>
         <button id="lyButton" class="button-fx">💬</button>
         <button id="lywzButton">留言</button>
+        <button id="xzymButton" class="button-fx">📥️</button>
+        <button id="xzymwzButton">下载源码</button>
         <button id="xzypButton" class="button-fx">🗂️</button>
         <button id="xzypwzButton">选择音频</button>
         <button id="szbjButton" class="button-fx">⚙️</button>
         <button id="szbjwzButton">设置背景</button>
         <button id="ztqhButton" class="button-fx"></button>
         <button id="ztqhwzButton">主题切换</button>
-        <button id="bbButton">版本：250622</button>
+        <button id="bbButton">版本：250702</button>
     </div>
 
     <div id="wjj-popup">
@@ -2884,7 +2922,7 @@ Lv       Ts     Og
         <button id="ckwlqButton" class="button-fx">🎞️</button>
         <button id="ckwlqwzButton">刺客伍六七5-0</button>
         <button id="cadlzButton" class="button-fx">🎞️</button>
-        <button id="cadlzwzButton">长安的荔枝 1-36</button>
+        <button id="cadlzwzButton">长安的荔枝 1-0</button>
         <button id="wjjdbwzButton">不知道写什么，先这样吧( ´ ▽ ` )ﾉ！</button>
     </div>
 
@@ -2920,7 +2958,6 @@ Lv       Ts     Og
         // 初始化主题
         initTheme();
 
-
 // 弹窗监听键盘事件
         document.addEventListener('keydown', function (event) {
             // 忽略输入框内的按键
@@ -2946,14 +2983,11 @@ Lv       Ts     Og
             allPopupIds.forEach(id => {
                 if (id !== targetPopupId) {
                     const popup = document.getElementById(id);
-                    if (popup) popup.style.display = 'none';
-                }
-            });
+                    if (popup) popup.style.display = 'none'; } });
             // 2. 切换目标弹窗状态
             targetPopup.style.display = isTargetVisible ? 'none' : 'block';
             popupOverlay.style.display = isTargetVisible ? 'none' : 'block';
-            event.preventDefault();
-        });
+            event.preventDefault(); });
 
 // 状态栏
 // 提示气泡
@@ -3307,9 +3341,6 @@ Lv       Ts     Og
             document.getElementById('xyButton').addEventListener('click', function () {
                 window.open('https://xiaoyi.huawei.com/chat/?utm_source=ai-bot.cn', '_blank'); });
 
-            document.getElementById('xiyButton').addEventListener('click', function () {
-                window.open('https://starxn.com/clientarea', '_blank'); });
-
             document.getElementById('xqButton').addEventListener('click', function () {
                 window.open('https://chess.z3web.cn/', '_blank'); });
 
@@ -3318,6 +3349,9 @@ Lv       Ts     Og
 
             document.getElementById('xtgzscButton').addEventListener('click', function () {
                 window.open('https://light.shenmedouyou.top', '_blank'); });
+
+            document.getElementById('ymzcButton').addEventListener('click', function () {
+                window.open('https://registry.osfc.org.cn/home', '_blank'); });
 
             document.getElementById('ypjjButton').addEventListener('click', function () {
                 window.open('http://tool.mkblog.cn/audiomass/', '_blank'); });
@@ -3360,15 +3394,21 @@ Lv       Ts     Og
             const searchEngineSelect = document.getElementById('search-engine-select');
 
             function performSearch() {
-                const searchTerm = searchInput.value;
-                if (searchTerm) {
+                const searchTerm = searchInput.value.trim();
+                if (!searchTerm) return;
+                // 判断输入是否为网址（以http或https开头）
+                const isUrl = /^https?:\/\/.+/.test(searchTerm);
+                if (isUrl) {
+                    // 直接跳转输入的网址
+                    window.open(searchTerm, '_blank');
+                } else {
+                    // 使用选中的搜索引擎搜索内容
                     const selectedEngine = searchEngineSelect.value;
                     const searchUrl = `${selectedEngine}${encodeURIComponent(searchTerm)}`;
                     window.open(searchUrl, '_blank');
                 }
             }
             searchButton.addEventListener('click', performSearch);
-
             // 输入框按下 Enter 键事件
             searchInput.addEventListener('keydown', function (event) {
                 if (event.key === 'Enter') {
@@ -10731,6 +10771,18 @@ Gr≥5%的铬钼mù钢、铁素体钢、马氏体钢-FeⅢ
                         document.body.style.backgroundImage = 'none'; // 清除图片背景
                         videoBackground.style.display = 'block';} } }); // 显示视频背景
 
+// 下载源码
+            document.getElementById("xzymButton").addEventListener("click", function() {
+                // 创建一个隐藏的a标签用于下载
+                const link = document.createElement('a');
+                link.href = '/index.html'; // 根目录下的index.html
+                link.download = 'index.html'; // 设置下载文件名
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+
 // 文件夹弹窗
             document.getElementById('wjjButton').addEventListener('click', function () {
                 document.getElementById('wjj-popup').style.display = 'block';
@@ -10765,9 +10817,10 @@ Gr≥5%的铬钼mù钢、铁素体钢、马氏体钢-FeⅢ
                 window.open('https://lkvod.me/vodplay/850-1-1.html', '_blank'); });
 
             document.getElementById('cadlzButton').addEventListener('click', function () {
-                window.open('https://lkvod.me/vodplay/148740-1-36.html', '_blank'); });
+                window.open('https://lkvod.me/vodplay/148740-1-1.html', '_blank'); });
 
     });  // DOMContentLoaded的闭合语句。
+
     </script>
 </body>
 </html>
