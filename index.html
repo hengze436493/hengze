@@ -17,6 +17,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            color: #222222; /* 默认文字颜色 */
+        }
+
+        /* 提示气泡样式 */
+        .tsqp {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 1px solid #CCCCCC;
+            backdrop-filter: blur(20px);
+            padding: 10px 10px;
+            border-radius: 10px;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
 
         /* 状态栏按钮样式 */
@@ -35,78 +51,53 @@
 
         /* 🏵️按钮样式 */
         #superButton {
-            position: absolute;
-            left: 10px;
             top: 20px;
-            width: 50px;
-            height: 50px;
-            font-size: 30px;
-            border-radius:10px 10px 0px 0px;  /* 给左上右上添加圆角 */
+            left: 10px;
+            border: none;
+            border-radius: 10px 10px 0px 0px;  /* 给左上右上添加圆角 */
         }
 
         /* 🪟按钮样式 */
         #ckButton {
-            position: absolute;
-            left: 10px;
             top: 75px;
-            width: 50px;
-            height: 50px;
-            font-size: 30px;
+            left: 10px;
+            border: none;
+            border-radius: 0px;
         }
 
         /* 后台按钮样式 */
         #houtaiButton {
-            position: absolute;
-            left: 10px;
             top: 435px;
-            width: 50px;
-            height: 50px;
-            font-size: 30px;
+            left: 10px;
+            border: none;
+            border-radius: 0px;
         }
 
         /* 屏幕保持按钮样式 */
         #pmbcButton {
-            position: absolute;
-            left: 10px;
             top: 485px;
-            width: 50px;
-            height: 50px;
+            left: 10px;
             font-size: 25px;
-        }
-
-        /* 提示气泡样式 */
-        .tsqp {
-            position: fixed;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 1px solid #CCCCCC;
-            backdrop-filter: blur(20px);
-            padding: 10px 10px;
-            border-radius: 10px;
-            z-index: 9999;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            border: none;
+            border-radius: 0px;
         }
 
         /* 文件广播按钮样式 */
         #wjgbButton {
-            position: absolute;
-            left: 10px;
             top: 540px;
-            width: 50px;
-            height: 50px;
+            left: 10px;
             font-size: 25px;
+            border: none;
+            border-radius: 0px;
         }
 
         /* chat按钮样式 */
         #chatButton {
-            position: absolute;
-            left: 11px;
             top: 595px;
-            width: 50px;
-            height: 50px;
+            left: 11px;
             font-size: 25px;
+            border: none;
+            border-radius: 0px;
         }
 
         /* 文件夹按钮样式 */
@@ -214,122 +205,34 @@
         }
 
         /* 极简插件样式 */
-        #jjcjImg {
-            position: absolute;
-            top: 450px;
-            left: 300px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            border: 1px solid #CCCCCC;
-        }
+        #jjcjImg { top: 450px; left: 300px; }
         /* 极简插件文字样式 */
-        #jjcjwzButton {
-            position: absolute;
-            top: 500px;
-            left: 300px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #jjcjwzButton { top: 500px; left: 300px; }
 
         /* ADD-ONS样式 */
-        #add-onsImg {
-            position: absolute;
-            top: 450px;
-            left: 400px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #CCCCCC;
-            border-radius: 10px;
-        }
+        #add-onsImg { top: 450px; left: 400px; }
         /* ADD-ONS文字样式 */
-        #add-onswzButton {
-            position: absolute;
-            top: 500px;
-            left: 400px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #add-onswzButton { top: 500px; left: 400px; }
 
         /* 画夹样式 */
-        #hjImg {
-            position: absolute;
-            top: 450px;
-            left: 500px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #CCCCCC;
-            border-radius: 10px;
-        }
+        #hjImg { top: 450px; left: 500px; }
         /* 画夹文字样式 */
-        #hjwzButton {
-            position: absolute;
-            top: 500px;
-            left: 500px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #hjwzButton { top: 500px; left: 500px; }
 
         /* AIX样式 */
-        #aixImg {
-            position: absolute;
-            top: 450px;
-            left: 600px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
+        #aixImg { top: 450px; left: 600px; }
         /* AIX文字样式 */
-        #aixwzButton {
-            position: absolute;
-            top: 500px;
-            left: 600px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #aixwzButton { top: 500px; left: 600px; }
 
         /* 沉浸式翻译样式 */
-        #cjsfyImg {
-            position: absolute;
-            top: 450px;
-            left: 700px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
+        #cjsfyImg { top: 450px; left: 700px; }
         /* 沉浸式翻译文字样式 */
-        #cjsfywzButton {
-            position: absolute;
-            top: 500px;
-            left: 700px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #cjsfywzButton { top: 500px; left: 700px; }
 
         /* BewlyBewly样式 */
-        #BewlyBewlyImg {
-            position: absolute;
-            top: 450px;
-            left: 800px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #CCCCCC;
-            border-radius: 10px;
-        }
+        #BewlyBewlyImg { top: 450px; left: 800px; }
         /* BewlyBewly文字样式 */
-        #BewlyBewlywzButton {
-            position: absolute;
-            top: 500px;
-            left: 800px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #BewlyBewlywzButton { top: 500px; left: 800px; }
 
         /* ISO按钮样式 */
         #isoButton {
@@ -341,123 +244,35 @@
             font-size: 15px;
         }
 
-        /* FirePE样式 */
-        #firepeImg {
-            position: absolute;
-            top: 600px;
-            left: 300px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
+        /* FirePE图片样式 */
+        #firepeImg { top: 600px; left: 300px; }
         /* FirePE文字样式 */
-        #firepewzButton {
-            position: absolute;
-            top: 650px;
-            left: 300px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #firepewzButton { top: 650px; left: 300px; }
 
         /* Ubuntu样式 */
-        #ubuntuImg {
-            position: absolute;
-            top: 600px;
-            left: 400px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #CCCCCC;
-            border-radius: 10px;
-        }
+        #ubuntuImg { top: 600px; left: 400px; }
         /* Ubuntu文字样式 */
-        #ubuntuwzButton {
-            position: absolute;
-            top: 650px;
-            left: 400px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #ubuntuwzButton { top: 650px; left: 400px; }
 
         /* Ventoy样式 */
-        #ventoyImg {
-            position: absolute;
-            top: 600px;
-            left: 500px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #CCCCCC;
-            border-radius: 10px;
-        }
+        #ventoyImg { top: 600px; left: 500px; }
         /* Ventoy文字样式 */
-        #ventoywzButton {
-            position: absolute;
-            top: 650px;
-            left: 500px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #ventoywzButton { top: 650px; left: 500px; }
 
         /* deepin样式 */
-        #deepinImg {
-            position: absolute;
-            top: 600px;
-            left: 600px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
+        #deepinImg { top: 600px; left: 600px; }
         /* deepin文字样式 */
-        #deepinwzButton {
-            position: absolute;
-            top: 650px;
-            left: 600px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #deepinwzButton { top: 650px; left: 600px; }
 
         /* wubuntu样式 */
-        #wubuntuImg {
-            position: absolute;
-            top: 600px;
-            left: 700px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #CCCCCC;
-            border-radius: 10px;
-        }
+        #wubuntuImg { top: 600px; left: 700px; }
         /* wubuntu文字样式 */
-        #wubuntuwzButton {
-            position: absolute;
-            top: 650px;
-            left: 700px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #wubuntuwzButton { top: 650px; left: 700px; }
 
         /* Windows10样式 */
-        #windows10Img {
-            position: absolute;
-            top: 600px;
-            left: 800px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #CCCCCC;
-            border-radius: 10px;
-        }
+        #windows10Img { top: 600px; left: 800px; }
         /* Windows10文字样式 */
-        #windows10wzButton {
-            position: absolute;
-            top: 650px;
-            left: 800px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #windows10wzButton { top: 650px; left: 800px; }
 
         /* Bot按钮样式 */
         #botButton {
@@ -470,300 +285,89 @@
         }
 
         /* YuukBot样式 */
-        #yuukbotImg {
-            position: absolute;
-            top: 750px;
-            left: 300px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #CCCCCC;
-            border-radius: 10px;
-        }
+        #yuukbotImg { top: 750px; left: 300px; }
         /* YuukBot文字样式 */
-        #yuukbotwzButton {
-            position: absolute;
-            top: 800px;
-            left: 300px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #yuukbotwzButton { top: 800px; left: 300px; }
 
         /* 麟卓卓懿样式 */
-        #lzzyImg {
-            position: absolute;
-            top: 850px;
-            left: 300px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
+        #lzzyImg { top: 850px; left: 300px; }
         /* 麟卓卓懿文字样式 */
-        #lzzywzButton {
-            position: absolute;
-            top: 900px;
-            left: 300px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #lzzywzButton { top: 900px; left: 300px; }
 
         /* PyCharm样式 */
-        #pycharmImg {
-            position: absolute;
-            top: 850px;
-            left: 400px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            border: 1px solid #CCCCCC;
-        }
+        #pycharmImg { top: 850px; left: 400px; }
         /* PyCharm文字样式 */
-        #pycharmwzButton {
-            position: absolute;
-            top: 900px;
-            left: 400px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #pycharmwzButton { top: 900px; left: 400px; }
 
         /* Steam样式 */
-        #steamImg {
-            position: absolute;
-            top: 850px;
-            left: 500px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            border: 1px solid #CCCCCC;
-        }
+        #steamImg { top: 850px; left: 500px; }
         /* Steam文字样式 */
-        #steamwzButton {
-            position: absolute;
-            top: 900px;
-            left: 500px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #steamwzButton { top: 900px; left: 500px; }
 
         /* FreeCAD样式 */
-        #freecadImg {
-            position: absolute;
-            top: 850px;
-            left: 600px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            border: 1px solid #CCCCCC;
-        }
+        #freecadImg { top: 850px; left: 600px; }
         /* FreeCAD文字样式 */
-        #freecadwzButton {
-            position: absolute;
-            top: 900px;
-            left: 600px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #freecadwzButton { top: 900px; left: 600px; }
 
         /* QQ样式 */
-        #qqImg {
-            position: absolute;
-            top: 850px;
-            left: 700px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
-        /* QQ样式 */
-        #qqwzButton {
-            position: absolute;
-            top: 900px;
-            left: 700px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #qqImg { top: 850px; left: 700px; }
+        /* QQ文字样式 */
+        #qqwzButton { top: 900px; left: 700px; }
 
         /* VScode样式 */
-        #vscodeImg {
-            position: absolute;
-            top: 850px;
-            left: 800px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            border: 1px solid #CCCCCC;
-        }
+        #vscodeImg { top: 850px; left: 800px; }
         /* VScode文字样式 */
-        #vscodewzButton {
-            position: absolute;
-            top: 900px;
-            left: 800px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #vscodewzButton { top: 900px; left: 800px; }
 
         /* 微信样式 */
-        #wxImg {
-            position: absolute;
-            top: 850px;
-            left: 900px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            border: 1px solid #CCCCCC;
-        }
+        #wxImg { top: 850px; left: 900px; }
         /* 微信文字样式 */
-        #wxwzButton {
-            position: absolute;
-            top: 900px;
-            left: 900px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #wxwzButton { top: 900px; left: 900px; }
         /* 微信文字2样式 */
-        #wxwz2Button {
-            position: absolute;
-            top: 920px;
-            left: 900px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #wxwz2Button { top: 920px; left: 900px; }
         /* 微信文字3样式 */
-        #wxwz3Button {
-            position: absolute;
-            top: 940px;
-            left: 900px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #wxwz3Button { top: 940px; left: 900px; }
 
         /* WPS样式 */
-        #wpsImg {
-            position: absolute;
-            top: 850px;
-            left: 1000px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
-        #wpswzButton {
-            position: absolute;
-            top: 900px;
-            left: 1000px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
-        #wpswz2Button {
-            position: absolute;
-            top: 920px;
-            left: 1000px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #wpsImg { top: 850px; left: 1000px; }
+        /* WPS文字样式 */
+        #wpswzButton { top: 900px; left: 1000px; }
+        /* WPS文字2样式 */
+        #wpswz2Button { top: 920px; left: 1000px; }
         /* WPS文字3样式 */
-        #wpswz3Button {
-            position: absolute;
-            top: 940px;
-            left: 1000px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #wpswz3Button { top: 940px; left: 1000px; }
 
         /* AidLux样式 */
-        #aidluxImg {
-            position: absolute;
-            top: 850px;
-            left: 1100px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
+        #aidluxImg { top: 850px; left: 1100px; }
         /* AidLux文字样式 */
-        #aidluxwzButton {
-            position: absolute;
-            top: 900px;
-            left: 1100px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #aidluxwzButton { top: 900px; left: 1100px; }
 
         /* 应用市场样式 */
-        #yyscImg {
-            position: absolute;
-            top: 950px;
-            left: 300px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
+        #yyscImg { top: 950px; left: 300px; }
         /* 应用市场文字样式 */
-        #yyscwzButton {
-            position: absolute;
-            top: 1000px;
-            left: 300px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #yyscwzButton { top: 1000px; left: 300px; }
         /* 应用市场文字2样式 */
-        #yyscwz2Button {
-            position: absolute;
-            top: 1020px;
-            left: 300px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #yyscwz2Button { top: 1020px; left: 300px; }
 
         /* 小小电脑样式 */
-        #xxdnImg {
-            position: absolute;
-            top: 950px;
-            left: 400px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
+        #xxdnImg { top: 950px; left: 400px; }
         /* 小小电脑文字样式 */
-        #xxdnwzButton {
-            position: absolute;
-            top: 1000px;
-            left: 400px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #xxdnwzButton { top: 1000px; left: 400px; }
 
         /* 奇妙应用样式 */
-        #qmyyImg {
-            position: absolute;
-            top: 950px;
-            left: 500px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
-        /* 小小电脑文字样式 */
-        #qmyywzButton {
-            position: absolute;
-            top: 1000px;
-            left: 500px;
-            width: 50px;
-            height: 20px;
-            font-size: 10px;
-        }
+        #qmyyImg { top: 950px; left: 500px; }
+        /* 奇妙应用文字样式 */
+        #qmyywzButton { top: 1000px; left: 500px; }
+
+        /* 蛋仔派对样式 */
+        #dzpdImg { top: 950px; left: 600px; }
+        /* 蛋仔派对文字样式 */
+        #dzpdwzButton { top: 1000px; left: 600px; }
+
+        /* 曙光英雄样式 */
+        #sgyxImg { top: 950px; left: 700px; }
+        /* 曙光英雄文字样式 */
+        #sgyxwzButton { top: 1000px; left: 700px; }
 
         /* 宝藏页底部文字样式 */
         #bzydbwzButton {
@@ -849,8 +453,7 @@
             border: none;
             text-align: center; }
         /* 下拉菜单选项样式 */
-        #search-engine-select option {
-            color: #222222; /* 选项文字颜色 */ }
+        #search-engine-select option { color: #222222; }  /* 选项文字颜色 */
         /* 搜索输入框样式 */
         #search-input {
             width: 440px;
@@ -858,8 +461,8 @@
             border: none;
             background-color: transparent; /* 设置背景为透明 */
             padding: 5px; }
-        /* 设置占位符文字颜色为白色 */
-        #search-input::placeholder { color: #222222; }
+        /* 搜索占位符文字颜色 */
+        #search-input::placeholder {}
         /* 执行按钮样式 */
         #search-button { width: 40px; height: 40px; border: none; }
 
@@ -1763,7 +1366,6 @@
             top: 20px;
             width: 300px;
             height: 650px;
-            color: #222222;
             border-radius: 10px;
             border: 1px solid #CCCCCC;
             backdrop-filter: blur(20px);
@@ -1790,6 +1392,9 @@
             background-color: transparent;
             will-change: auto;
             overflow-y: auto;
+            cursor: text;  /* 将鼠标状态改为𝙸字形 */
+            user-select: text;  /* 设置可选中文本属性 */
+            -webkit-user-select: text;  /* 设置可选中文本属性，兼容 Safari/iOS */
         }
 
         /* 播放控件容器 */
@@ -1846,6 +1451,8 @@
 
         /* 设置背景按钮样式 */
         #szbjButton { top: 460px; left: 235px; }
+        /* 设置背景文字按钮样式 */
+        #szbjwzButton { top: 510px; left: 235px; }
         /* 视频背景样式 */
         #szbj-video {
             position: absolute;
@@ -1856,51 +1463,19 @@
             object-fit: cover;
             z-index: -1;
         }
-        /* 设置背景文字按钮样式 */
-        #szbjwzButton { top: 510px; left: 235px; }
 
         /* 主题切换按钮样式 */
         #ztqhButton { top: 540px; left: 10px; }
         /* 主题切换文字按钮样式 */
         #ztqhwzButton { top: 590px; left: 10px; }
         /* 主题切换（弹窗内，所有子级的颜色） */
-        .tsqp,
-        #suoer-popup,
-        #bzy-popup,
-        #ck-popup,
-        #gcst-popup,
-        #xzqhtx-popup,
-        #dmyz-popup,
-        #dydgst-popup,
-        #ls-popup,
-        #plxxxbj-popup,
-        #qdgc-popup,
-        #yszqb-popup,
-        #houtai-popup,
-        #wjj-popup,
-        #wjjwzButton,
-        #zyxywzButton,
+        body,
         #search-input,
         #search-input::placeholder,
         #search-engine-select { color: #222222; }
-        .ztqh-mode .tsqp,
-        .ztqh-mode #super-popup,
-        .ztqh-mode #bzy-popup,
-        .ztqh-mode #ck-popup,
-        .ztqh-mode #gcst-popup,
-        .ztqh-mode #xzqhtx-popup,
-        .ztqh-mode #dmyz-popup,
-        .ztqh-mode #dydgst-popup,
-        .ztqh-mode #ls-popup,
-        .ztqh-mode #yszqb-popup,
-        .ztqh-mode #plcxxbj-popup,
-        .ztqh-mode #qdgc-popup,
-        .ztqh-mode #houtai-popup,
-        .ztqh-mode #wjj-popup,
-        .ztqh-mode #wjjwzButton,
-        .ztqh-mode #zyxywzButton,
-        .ztqh-mode #search-input::placeholder,
+        body.ztqh-mode,
         .ztqh-mode #search-input,
+        .ztqh-mode #search-input::placeholder,
         .ztqh-mode #search-engine-select { color: #FFFFFF; }
 
         /* 下载源码按钮样式 */
@@ -1936,7 +1511,6 @@
             transform: none;
             will-change: auto;
             overflow-y: auto;
-            color: #222222;
             white-space: pre-wrap; /* 保留换行和空格 */
             word-break: break-word; /* 自动换行 */
         }
@@ -2044,7 +1618,7 @@
         button, img {
             background-color: transparent;
             border: none;
-            cursor: pointer; /* 将鼠标状态改为手形 */
+            cursor: pointer;  /* 将鼠标状态改为手形 */
             color: inherit;
             padding: 0;
         }
@@ -2059,6 +1633,8 @@
             border: 1px solid #CCCCCC;
             text-align: left;
             padding-left: 10px;
+            user-select: text;  /* 选中文本属性 */
+            -webkit-user-select: text;  /* 选中文本属性，兼容 Safari/iOS */
         }
 
         /* super弹窗通用菜单按钮样式 */
@@ -2069,6 +1645,8 @@
             height: 40px;
             border-radius: 10px;
             border: 1px solid #CCCCCC;
+            user-select: text;  /* 选中文本属性 */
+            -webkit-user-select: text;  /* 选中文本属性，兼容 Safari/iOS */
         }
 
         /* 方形通用按钮样式 */
@@ -2079,6 +1657,16 @@
             border-radius: 10px;
             border: 1px solid #CCCCCC;
             font-size: 30px;
+            user-select: text;  /* 设置可选中文本属性 */
+            -webkit-user-select: text;  /* 设置可选中文本属性，兼容 Safari/iOS */
+        }
+
+        /* 方形通用图片样式 */
+        .img-fx {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
         }
 
         /* 文字通用按钮样式 */
@@ -2087,6 +1675,9 @@
             width: 50px;
             height: 20px;
             font-size: 10px;
+            cursor: text;  /* 将鼠标状态改为𝙸字形 */
+            user-select: text;  /* 设置可选中文本属性 */
+            -webkit-user-select: text;  /* 设置可选中文本属性，兼容 Safari/iOS */
         }
 
         button:hover, img:hover, .button-fl:hover, .button-cd:hover, .button-fx:hover {
@@ -2099,21 +1690,20 @@
 <body>
     <!-- 设置背景-视频 -->
     <video id="szbj-video" autoplay muted loop></video>
-    <!-- 状态栏按钮 -->
-    <button id="ztlButon"></button>
-    <button id="superButton">🏵️</button>
-    <button id="ckButton">🪟</button>
-    <button id="houtaiButton">≡</button>
-    <!-- 屏幕保持 -->
-    <button id="pmbcButton">⭕️</button>
     <!-- 提示气泡 -->
     <div id="tsqp" class="tsqp"></div>
-    <button id="wjgbButton">📡</button>
-    <button id="chatButton">🤖</button>
+    <!-- 状态栏按钮 -->
+    <button id="ztlButon"></button>
+    <button id="superButton" class="button-fx">🏵️</button>
+    <button id="ckButton" class="button-fx">🪟</button>
+    <button id="houtaiButton" class="button-fx">≡</button>
+    <button id="pmbcButton" class="button-fx">⭕️</button>
+    <button id="wjgbButton" class="button-fx">📡</button>
+    <button id="chatButton" class="button-fx">🤖</button>
     <button id="wjjButton" class="button-fx">📁</button>
     <button id="wjjwzButton" class="button-wz">文件夹</button>
     <button id="zyxyButton" class="button-fx">📖</button>
-    <button id="zyxywzButton" class="button-wz">中医许阳 1-21</button>
+    <button id="zyxywzButton" class="button-wz">中医许阳 1-36</button>
     <div id="super-popup">
         <!-- 搜索区域 -->
         <div class="search">
@@ -2295,66 +1885,70 @@
         <img id="t2Img" data-src="https://appimg-drcn.dbankcdn.com/entranceIcon/9a3d003858bc47969d2bb461a2c11b12/64/1595299811024_1080x684.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
 
         <button id="crxButton">Crx</button>
-        <img id="jjcjImg" data-src="https://ts3.tc.mm.bing.net/th/id/ODLS.88b1a41a-9d3c-4391-98b0-c8ba6133e010?w=18&h=18&o=6&pid=1.2" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="jjcjwzButton">极简插件</button>
-        <img id="add-onsImg" data-src="https://www.firefox.com.cn/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="add-onswzButton">ADD-ONS</button>
-        <img id="hjImg" data-src="https://www.faviconextractor.com/favicon/huajiakeji.com?larger=true" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="hjwzButton">画夹</button>
-        <img id="aixImg" data-src="https://cdn3.zzzmh.cn/v3/crx/5d6503e0ead341df8c433deb043600af/logo/logo.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="aixwzButton">AIX</button>
-        <img id="cjsfyImg" data-src="https://s.immersivetranslate.com/static/official-static/img/logo.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="cjsfywzButton">沉浸式翻译</button>
-        <img id="BewlyBewlyImg" data-src="https://cdn3.zzzmh.cn/v3/crx/c8acfc146313495eb884ff478d313461/logo/logo.png/logo?auth_key=1751644800-ad31ae586097e883b18b066801f9d5b9258cb5a5-0-37c946efa6fbb9acd7d608782305989f" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="BewlyBewlywzButton">Bewly Bewly</button>
+        <img id="jjcjImg" class="img-fx" data-src="https://ts3.tc.mm.bing.net/th/id/ODLS.88b1a41a-9d3c-4391-98b0-c8ba6133e010?w=18&h=18&o=6&pid=1.2" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="jjcjwzButton" class="button-wz" class="button-wz">极简插件</button>
+        <img id="add-onsImg" class="img-fx" data-src="https://www.firefox.com.cn/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="add-onswzButton" class="button-wz">ADD-ONS</button>
+        <img id="hjImg" class="img-fx" data-src="https://www.faviconextractor.com/favicon/huajiakeji.com?larger=true" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="hjwzButton" class="button-wz">画夹</button>
+        <img id="aixImg" class="img-fx" data-src="https://cdn3.zzzmh.cn/v3/crx/5d6503e0ead341df8c433deb043600af/logo/logo.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="aixwzButton" class="button-wz">AIX</button>
+        <img id="cjsfyImg" class="img-fx" data-src="https://s.immersivetranslate.com/static/official-static/img/logo.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="cjsfywzButton" class="button-wz">沉浸式翻译</button>
+        <img id="BewlyBewlyImg" class="img-fx" data-src="https://cdn3.zzzmh.cn/v3/crx/c8acfc146313495eb884ff478d313461/logo/logo.png/logo?auth_key=1751644800-ad31ae586097e883b18b066801f9d5b9258cb5a5-0-37c946efa6fbb9acd7d608782305989f" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="BewlyBewlywzButton" class="button-wz">Bewly Bewly</button>
 
         <button id="isoButton">𝙸so</button>
-        <img id="firepeImg" data-src="https://tse1-mm.cn.bing.net/th/id/OIP-C.5FDsF9ct6ELbcqCnJXTM2gAAAA?w=167&h=169&c=7&r=0&o=5&dpr=1.3&pid=1.7" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="firepewzButton">FirePE</button>
-        <img id="ubuntuImg" data-src="https://ts2.tc.mm.bing.net/th/id/ODLS.cdad98e9-bec7-47eb-97ef-43845aac6ae7?w=32&h=32&qlt=90&pcl=fffffc&o=6&cb=iavawebpc1&pid=1.2" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="ubuntuwzButton">Ubuntu</button>
-        <img id="ventoyImg" data-src="https://www.ventoy.net/static/img/ventoy.png?v=1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="ventoywzButton">Ventoy</button>
-        <img id="deepinImg" data-src="https://ts3.tc.mm.bing.net/th/id/OSAAS.87DB5C9FBB93881B2F70C0EB3D05241F?w=72&h=72&c=17&rs=1&o=6&dpr=1.3&pid=TechQna" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="deepinwzButton">deepin</button>
-        <img id="wubuntuImg" data-src="https://winuxos.com/wp-content/uploads/2025/01/winux_icon-150x150.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="wubuntuwzButton">wubuntu</button>
-        <img id="windows10Img" data-src="https://www.microsoft.com/favicon.ico?v2" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="windows10wzButton">windows 10</button>
+        <img id="firepeImg" class="img-fx" data-src="https://tse1-mm.cn.bing.net/th/id/OIP-C.5FDsF9ct6ELbcqCnJXTM2gAAAA?w=167&h=169&c=7&r=0&o=5&dpr=1.3&pid=1.7" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="firepewzButton" class="button-wz">FirePE</button>
+        <img id="ubuntuImg" class="img-fx" data-src="https://ts2.tc.mm.bing.net/th/id/ODLS.cdad98e9-bec7-47eb-97ef-43845aac6ae7?w=32&h=32&qlt=90&pcl=fffffc&o=6&cb=iavawebpc1&pid=1.2" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="ubuntuwzButton" class="button-wz">Ubuntu</button>
+        <img id="ventoyImg" class="img-fx" data-src="https://www.ventoy.net/static/img/ventoy.png?v=1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="ventoywzButton" class="button-wz">Ventoy</button>
+        <img id="deepinImg" class="img-fx" data-src="https://ts3.tc.mm.bing.net/th/id/OSAAS.87DB5C9FBB93881B2F70C0EB3D05241F?w=72&h=72&c=17&rs=1&o=6&dpr=1.3&pid=TechQna" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="deepinwzButton" class="button-wz">deepin</button>
+        <img id="wubuntuImg" class="img-fx" data-src="https://winuxos.com/wp-content/uploads/2025/01/winux_icon-150x150.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="wubuntuwzButton" class="button-wz">wubuntu</button>
+        <img id="windows10Img" class="img-fx" data-src="https://www.microsoft.com/favicon.ico?v2" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="windows10wzButton" class="button-wz">windows 10</button>
 
         <button id="botButton">Bot</button>
-        <img id="yuukbotImg" data-src="https://bot.yunmengdu.cn/images/logo.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="yuukbotwzButton">YuukBot</button>
+        <img id="yuukbotImg" class="img-fx" data-src="https://bot.yunmengdu.cn/images/logo.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="yuukbotwzButton" class="button-wz">YuukBot</button>
 
-        <img id="lzzyImg" data-src="https://forum.linzhuotech.com/win_forum/uploadfile/logo/logo.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="lzzywzButton">麟卓卓懿.linux</button>
-        <img id="pycharmImg" data-src="https://resources.jetbrains.com/storage/logos/web/pycharm/pycharm.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="pycharmwzButton">PyCharm.linux</button>
-        <img id="steamImg" data-src="https://store.steampowered.com/favicon.ico" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="steamwzButton">Steam.deb</button>
-        <img id="freecadImg" data-src="https://www.freecad.org/images/favicon.ico" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="freecadwzButton">FreeCAD.appImage</button>
-        <img id="qqImg" data-src="https://qzonestyle.gtimg.cn/qzone/qzact/act/external/tiqq/logo.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="qqwzButton">QQ.deb</button>
-        <img id="vscodeImg" data-src="https://code.visualstudio.com/assets/apple-touch-icon.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="vscodewzButton">vscode.deb</button>
-        <img id="wxImg" data-src="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="wxwzButton">微信</button>
-        <button id="wxwz2Button">.deb</button>
-        <button id="wxwz3Button">.exe</button>
-        <img id="wpsImg" data-src="https://tse3-mm.cn.bing.net/th/id/OIP-C.fM1R0e-skBAKchk2ID9QTAHaFc?w=234&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="wpswzButton">WPS</button>
-        <button id="wpswz2Button">linux</button>
-        <button id="wpswz3Button">.exe</button>
-        <img id="aidluxImg" data-src="https://appimg-drcn.dbankcdn.com/application/icon144/736b60962bb74a579563e3320f0e9e86.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="aidluxwzButton">AidLux</button>
-        <img id="yyscImg" data-src="https://appgallery.huawei.com/static/agweb/img/ic_navigation_appmarket.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="yyscwzButton">应用市场</button>
-        <button id="yyscwz2Button">.exe</button>
-        <img id="xxdnImg" data-src="https://ts1.tc.mm.bing.net/th/id/R-C.6a8e69bfe7fdbc681bb17e64bce88c5a?rik=UHfrMNH5WWsWXw&riu=http%3a%2f%2fpic.9663.com%2fupload%2f2024-1%2f20241101018472150.jpg&ehk=oJxIZvU6bIw3o5qqRCr%2f8IyVahuqDKtwZOBUENE%2fSF8%3d&risl=&pid=ImgRaw&r=0" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="xxdnwzButton">小小电脑</button>
-        <img id="qmyyImg" data-src="https://img.downkuai.com/logo/20250413/3b68b09634a9411a0836398bc9bcbdfe.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
-        <button id="qmyywzButton">奇妙应用</button>
+        <img id="lzzyImg" class="img-fx" data-src="https://forum.linzhuotech.com/win_forum/uploadfile/logo/logo.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="lzzywzButton" class="button-wz">麟卓卓懿.linux</button>
+        <img id="pycharmImg" class="img-fx" data-src="https://resources.jetbrains.com/storage/logos/web/pycharm/pycharm.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="pycharmwzButton" class="button-wz">PyCharm.linux</button>
+        <img id="steamImg" class="img-fx" data-src="https://ts1.tc.mm.bing.net/th/id/OIP-C.mXTes_7UDYk2khXwVMDO1gHaHa?dpr=3.3&pid=ImgDetMain&o=7&rm=3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="steamwzButton" class="button-wz">Steam.deb</button>
+        <img id="freecadImg" class="img-fx" data-src="https://www.freecad.org/images/favicon.ico" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="freecadwzButton" class="button-wz">FreeCAD.appImage</button>
+        <img id="qqImg" class="img-fx" data-src="https://qzonestyle.gtimg.cn/qzone/qzact/act/external/tiqq/logo.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="qqwzButton" class="button-wz">QQ.deb</button>
+        <img id="vscodeImg" class="img-fx" data-src="https://code.visualstudio.com/assets/apple-touch-icon.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="vscodewzButton" class="button-wz">vscode.deb</button>
+        <img id="wxImg" class="img-fx" data-src="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="wxwzButton" class="button-wz">微信</button>
+        <button id="wxwz2Button" class="button-wz">.deb</button>
+        <button id="wxwz3Button" class="button-wz">.exe</button>
+        <img id="wpsImg" class="img-fx" data-src="https://tse3-mm.cn.bing.net/th/id/OIP-C.fM1R0e-skBAKchk2ID9QTAHaFc?w=234&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="wpswzButton" class="button-wz">WPS</button>
+        <button id="wpswz2Button" class="button-wz">linux</button>
+        <button id="wpswz3Button" class="button-wz">.exe</button>
+        <img id="aidluxImg" class="img-fx" data-src="https://appimg-drcn.dbankcdn.com/application/icon144/736b60962bb74a579563e3320f0e9e86.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="aidluxwzButton" class="button-wz">AidLux</button>
+        <img id="yyscImg" class="img-fx" data-src="https://appgallery.huawei.com/static/agweb/img/ic_navigation_appmarket.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="yyscwzButton" class="button-wz">应用市场</button>
+        <button id="yyscwz2Button" class="button-wz">.exe</button>
+        <img id="xxdnImg" class="img-fx" data-src="https://ts1.tc.mm.bing.net/th/id/R-C.6a8e69bfe7fdbc681bb17e64bce88c5a?rik=UHfrMNH5WWsWXw&riu=http%3a%2f%2fpic.9663.com%2fupload%2f2024-1%2f20241101018472150.jpg&ehk=oJxIZvU6bIw3o5qqRCr%2f8IyVahuqDKtwZOBUENE%2fSF8%3d&risl=&pid=ImgRaw&r=0" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="xxdnwzButton" class="button-wz">小小电脑</button>
+        <img id="qmyyImg" class="img-fx" data-src="https://img.downkuai.com/logo/20250413/3b68b09634a9411a0836398bc9bcbdfe.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="qmyywzButton" class="button-wz">奇妙应用</button>
+        <img id="dzpdImg" class="img-fx" data-src="https://tse3-mm.cn.bing.net/th/id/OIP-C.DarvbLGKBQKmrYpPxp8xfQHaHa?w=174&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="dzpdwzButton" class="button-wz">蛋仔派对</button>
+        <img id="sgyxImg" class="img-fx" data-src="https://webcloudplt.srv.jjmatch.cn/0/upload/100016/officialWebsitePC/picture/55df56f13902b194_90866_512x512.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
+        <button id="sgyxwzButton" class="button-wz">曙光英雄</button>
 
         <button id="bzydbwzButton">不知道写什么，先占个位吧( ´ ▽ ` )ﾉ。</button>
     </div>
@@ -2649,7 +2243,7 @@ Lv       Ts     Og
         <button id="ztqhwzButton" class="button-wz">主题切换</button>
         <button id="xzymButton" class="button-fx">📥️</button>
         <button id="xzymwzButton" class="button-wz">下载源码</button>
-        <button id="bbButton">版本：250704</button>
+        <button id="bbButton">版本：250707</button>
     </div>
 
     <div id="wjj-popup">
@@ -2840,7 +2434,7 @@ Lv       Ts     Og
                 // 主页按钮链接
                 'wjgbButton': 'https://fagedongxi.com/',
                 'chatButton': 'https://doubao.com/chat/59976916344578',
-                'zyxyButton': 'https://www.wanmeisxs.cc/dushixiaoshuo/zhongyixuyang/471149.html',
+                'zyxyButton': 'https://www.wanmeisxs.cc/dushixiaoshuo/zhongyixuyang/471194.html',
 
                 // super弹窗_固定按钮链接
                 'tinyvncButton': 'http://192.168.1.2:36082/vnc.html?host=192.168.1.2&port=36082',
@@ -2851,6 +2445,54 @@ Lv       Ts     Og
                 'wyyxButton': 'https://www.baidu.com/link?url=oLtC7nADQ2K9T3d_Hl0nOXmKo1e2JWUJFEsoPLt6ikO&wd=&eqid=d2d14eed0064acb700000005658972e3',
                 'dyButton': 'https://douyin.com/user/self?is_from_mobile_home=1&showTab=favorite_collection',
                 'dtcsButton': 'https://www.jetpunk.com/user-quizzes/2021089/provinces-in-chinaclick-map',
+
+                // 宝藏页弹窗按钮、图片链接
+                'khdButton': 'https://appgallery.huawei.com/Featured',
+                'jjcjImg': 'https://chrome.zzzmh.cn/index',
+                'add-onsImg': 'https://addons.mozilla.org/zh-CN/firefox/',
+                'hjImg': 'https://huajiakeji.com/#google_vignette',
+                'aixImg': 'https://aixdownloader.com/zh',
+                'cjsfyImg': 'https://immersivetranslate.com/zh-Hans/download/',
+                'BewlyBewlyImg': 'https://chrome.zzzmh.cn/info/bbbiejemhfihiooipfcjmjmbfdmobobp',
+                'firepeImg': 'https://firpe.cn/page-247/comment-page-22',
+                'ubuntuImg': 'https://cn.ubuntu.com/download/desktop',
+                'ventoyImg': 'https://www.ventoy.net/cn/download.html',
+                'deepinImg': 'https://www.deepin.org/zh/download/',
+                'wubuntuImg': 'https://winuxos.com/',
+                'windows10Img': 'https://www.microsoft.com/zh-cn/software-download/windows10',
+                'yuukbotImg': 'https://bot.yunmengdu.cn/',
+                'lzzyImg': 'https://www.linzhuotech.com/Product/download',
+                'lzzywzButton': 'https://zhuolin-my.sharepoint.cn/:u:/g/personal/shiyang_zhuolin_partner_onmschina_cn/EcotjJ0mRYNCiNwwzXIB4VgBY4evouYLxBQpURg1hMXoCA?download=1',
+                'pycharmImg': 'https://www.jetbrains.com/pycharm/download/?section=linux',
+                'pycharmwzButton': 'https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux',
+                'steamImg': 'https://store.steampowered.com/',
+                'steamwzButton': 'https://media.cdn.queniuqe.com/client/installer/steam.deb',
+                'freecadImg': 'https://www.freecad.org/index.php?lang=zh_CN',
+                'freecadwzButton': 'https://github.com/FreeCAD/FreeCAD/releases/download/1.0.1/FreeCAD_1.0.1-conda-Linux-x86_64-py311.AppImage',
+                'qqImg': 'https://im.qq.com/linuxqq/index.shtml',
+                'qqwzButton': 'https://dldir1.qq.com/qqfile/qq/QQNT/Linux/QQ_3.2.17_250521_amd64_01.deb',
+                'vscodeImg': 'https://code.visualstudio.com/Download',
+                'vscodewzButton': 'https://code.visualstudio.com/docs/?dv=linux64_deb',
+                'wxImg': 'https://weixin.qq.com/',
+                'wxwzButton': 'https://dldir1v6.qq.com/weixin/android/weixin8060android2860_0x28003c39_arm64.apk',
+                'wxwz2Button': 'https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb',
+                'wxwz3Button': 'https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe',
+                'wpsImg': 'https://ncre.neea.edu.cn/html1/report/1507/861-1.htm',
+                'wpswzButton': 'https://wpsgo.com/zkXikOKKP',
+                'wpswz3Button': 'https://ncre.neea.edu.cn/res/Home/2012/1ab1f38f3a81af338dbb4f6495568f28.rar',
+                'wpswz2Button': 'https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2023/17900/wps-office_12.1.0.17900_amd64.deb?t=1749790573&k=087d7140a0db1c0bd763644c3881b4af',
+                'aidluxImg': 'https://aidlux.com/platform',
+                'aidluxwzButton': 'https://file.aidlux.com/repo/apk/aidlux_2.0.0_latest_release.apk',
+                'yyscImg': 'https://appgallery.huawei.com/Featured',
+                'yyscwzButton': 'https://appgallery.cloud.huawei.com/appdl/C27162',
+                'yyscwz2Button': 'https://appgallery.cloud.huawei.com/appdl/C499170478846388928?cno=poral',
+                'xxdnImg': 'https://github.com/Cateners/tiny_computer/releases/',
+                'xxdnwzButton': 'https://gh.llkk.cc/https://github.com/Cateners/tiny_computer/releases/download/v1.0.24/tiny-computer-gxde.apk',
+                'qmyyImg': 'https://magicalstory.lanzout.com/i6Myk2ys4hsj',
+                'dzpdImg': 'https://party.163.com/',
+                'dzpdwzButton': 'https://adl.netease.com/d/g/party/c/gw?type=android',
+                'sgyxImg': 'https://www.vshero.cn/#/',
+                'sgyxwzButton': 'https://download.jj.cn/sgyxpkg/release/android/guanf/legendsofglory.apk',
 
                 // super弹窗_菜单按钮链接
                 'yesypButton': 'https://www.123pan.com/',
@@ -3020,116 +2662,6 @@ Lv       Ts     Og
                         // 可选：添加加载动画
                         img.style.opacity = '0';
                         img.onload = function() { img.style.transition = 'opacity 0.3s ease'; img.style.opacity = '1'; }; } }); }
-
-            document.getElementById('khdButton').addEventListener('click', function () {
-                window.open('https://appgallery.huawei.com/Featured', '_blank'); });
-
-            document.getElementById('jjcjImg').addEventListener('click', function () {
-                window.open('https://chrome.zzzmh.cn/index', '_blank'); });
-
-            document.getElementById('add-onsImg').addEventListener('click', function () {
-                window.open('https://addons.mozilla.org/zh-CN/firefox/', '_blank'); });
-
-            document.getElementById('hjImg').addEventListener('click', function () {
-                window.open('https://huajiakeji.com/#google_vignette', '_blank'); });
-
-            document.getElementById('aixImg').addEventListener('click', function () {
-                window.open('https://aixdownloader.com/zh', '_blank'); });
-
-            document.getElementById('cjsfyImg').addEventListener('click', function () {
-                window.open('https://immersivetranslate.com/zh-Hans/download/', '_blank'); });
-
-            document.getElementById('BewlyBewlyImg').addEventListener('click', function () {
-                window.open('https://chrome.zzzmh.cn/info/bbbiejemhfihiooipfcjmjmbfdmobobp', '_blank'); });
-
-            document.getElementById('firepeImg').addEventListener('click', function () {
-                window.open('https://firpe.cn/page-247/comment-page-22', '_blank'); });
-
-            document.getElementById('ubuntuImg').addEventListener('click', function () {
-                window.open('https://cn.ubuntu.com/download/desktop', '_blank'); });
-
-            document.getElementById('ventoyImg').addEventListener('click', function () {
-                window.open('https://www.ventoy.net/cn/download.html', '_blank'); });
-
-            document.getElementById('deepinImg').addEventListener('click', function () {
-                window.open('https://www.deepin.org/zh/download/', '_blank'); });
-
-            document.getElementById('wubuntuImg').addEventListener('click', function () {
-                window.open('https://winuxos.com/', '_blank'); });
-
-            document.getElementById('windows10Img').addEventListener('click', function () {
-                window.open('https://www.microsoft.com/zh-cn/software-download/windows10', '_blank'); });
-
-            document.getElementById('yuukbotImg').addEventListener('click', function () {
-                window.open('https://bot.yunmengdu.cn/', '_blank'); });
-
-            document.getElementById('lzzyImg').addEventListener('click', function () {
-                window.open('https://www.linzhuotech.com/Product/download', '_blank'); });
-            document.getElementById('lzzywzButton').addEventListener('click', function () {
-                window.open('https://zhuolin-my.sharepoint.cn/:u:/g/personal/shiyang_zhuolin_partner_onmschina_cn/EcotjJ0mRYNCiNwwzXIB4VgBY4evouYLxBQpURg1hMXoCA?download=1', '_blank'); });
-
-            document.getElementById('pycharmImg').addEventListener('click', function () {
-                window.open('https://www.jetbrains.com/pycharm/download/?section=linux', '_blank'); });
-            document.getElementById('pycharmwzButton').addEventListener('click', function () {
-                window.open('https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux', '_blank'); });
-
-            document.getElementById('steamImg').addEventListener('click', function () {
-                window.open('https://store.steampowered.com/', '_blank'); });
-            document.getElementById('steamwzButton').addEventListener('click', function () {
-                window.open('https://media.cdn.queniuqe.com/client/installer/steam.deb', '_blank'); });
-
-            document.getElementById('freecadImg').addEventListener('click', function () {
-                window.open('https://www.freecad.org/index.php?lang=zh_CN', '_blank'); });
-            document.getElementById('freecadwzButton').addEventListener('click', function () {
-                window.open('https://github.com/FreeCAD/FreeCAD/releases/download/1.0.1/FreeCAD_1.0.1-conda-Linux-x86_64-py311.AppImage', '_blank'); });
-
-            document.getElementById('qqImg').addEventListener('click', function () {
-                window.open('https://im.qq.com/linuxqq/index.shtml', '_blank'); });
-            document.getElementById('qqwzButton').addEventListener('click', function () {
-                window.open('https://dldir1.qq.com/qqfile/qq/QQNT/Linux/QQ_3.2.17_250521_amd64_01.deb', '_blank'); });
-
-            document.getElementById('vscodeImg').addEventListener('click', function () {
-                window.open('https://code.visualstudio.com/Download', '_blank'); });
-            document.getElementById('vscodewzButton').addEventListener('click', function () {
-                window.open('https://code.visualstudio.com/docs/?dv=linux64_deb', '_blank'); });
-
-            document.getElementById('wxImg').addEventListener('click', function () {
-                window.open('https://weixin.qq.com/', '_blank'); });
-            document.getElementById('wxwzButton').addEventListener('click', function () {
-                window.open('https://dldir1v6.qq.com/weixin/android/weixin8060android2860_0x28003c39_arm64.apk', '_blank'); });
-            document.getElementById('wxwz2Button').addEventListener('click', function () {
-                window.open('https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb', '_blank'); });
-            document.getElementById('wxwz3Button').addEventListener('click', function () {
-                window.open('https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe', '_blank'); });
-
-            document.getElementById('wpsImg').addEventListener('click', function () {
-                window.open('https://ncre.neea.edu.cn/html1/report/1507/861-1.htm', '_blank'); });
-            document.getElementById('wpswzButton').addEventListener('click', function () {
-                window.open('https://wpsgo.com/zkXikOKKP', '_blank'); });
-            document.getElementById('wpswz3Button').addEventListener('click', function () {
-                window.open('https://ncre.neea.edu.cn/res/Home/2012/1ab1f38f3a81af338dbb4f6495568f28.rar', '_blank'); });
-            document.getElementById('wpswz2Button').addEventListener('click', function () {
-                window.open('https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2023/17900/wps-office_12.1.0.17900_amd64.deb?t=1749790573&k=087d7140a0db1c0bd763644c3881b4af', '_blank'); });
-
-            document.getElementById('aidluxImg').addEventListener('click', function () {
-                window.open('https://aidlux.com/platform', '_blank'); });
-            document.getElementById('aidluxwzButton').addEventListener('click', function () {
-                window.open('https://file.aidlux.com/repo/apk/aidlux_2.0.0_latest_release.apk', '_blank'); });
-
-            document.getElementById('yyscImg').addEventListener('click', function () {
-                window.open('https://appgallery.huawei.com/Featured', '_blank'); });
-            document.getElementById('yyscwzButton').addEventListener('click', function () {
-                window.open('https://appgallery.cloud.huawei.com/appdl/C27162', '_blank'); });
-            document.getElementById('yyscwz2Button').addEventListener('click', function () {
-                window.open('https://appgallery.cloud.huawei.com/appdl/C499170478846388928?cno=poral', '_blank'); });
-
-            document.getElementById('xxdnImg').addEventListener('click', function () {
-                window.open('https://github.com/Cateners/tiny_computer/releases/', '_blank'); });
-            document.getElementById('xxdnwzButton').addEventListener('click', function () {
-                window.open('https://gh.llkk.cc/https://github.com/Cateners/tiny_computer/releases/download/v1.0.23/tiny-computer-gxde.apk', '_blank'); });
-
-            document.getElementById('qmyyImg').addEventListener('click', function () {
-                window.open('https://magicalstory.lanzout.com/i6Myk2ys4hsj', '_blank'); });
 
 // 窗口弹窗
             document.getElementById('ckButton').addEventListener('click', function () {
