@@ -25,8 +25,6 @@
             position: fixed;
             top: 10px;
             left: 50%;
-            color: #FFFFFF;
-            mix-blend-mode: difference;  /* 文字自适应背景颜色 */
             transform: translateX(-50%);
             border: 1px solid #CCCCCC;
             backdrop-filter: blur(20px);
@@ -911,8 +909,10 @@
 
         /* 窗口弹窗样式 */
         #ck-popup {
-            max-width: 300px;
+            left: 50%;  /* 将元素左侧边缘放在父容器的中心 */
+            width: 300px;
             bottom: 70px; /* 距离页面下方70px */
+            transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
         }
 
         /* 高处按钮样式 */
@@ -1242,8 +1242,10 @@
 
         /* 后台弹窗样式 */
         #houtai-popup {
-            max-width: 300px;
+            left: 50%;  /* 将元素左侧边缘放在父容器的中心 */
+            width: 300px;
             bottom: 70px;  /* 距离页面下方70px */
+            transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
         }
 
         /* 公告按钮样式 */
@@ -1357,6 +1359,7 @@
         .ztqh-mode #search-engine-select { color: #FFFFFF; }
 
         /* 主题切换-白色弹窗蒙版 */
+        .tsqp,
         #super-popup,
         #ck-popup,
         #gcst-popup,
@@ -1371,6 +1374,7 @@
         #wjj-popup
         { background-color: rgba(255, 255, 255, 0.5); }
         /* 主题切换-黑色弹窗蒙版 */
+        .ztqh-mode .tsqp,
         .ztqh-mode #super-popup,
         .ztqh-mode #ck-popup,
         .ztqh-mode #gcst-popup,
@@ -1396,8 +1400,10 @@
 
         /* 文件夹弹窗样式 */
         #wjj-popup {
-            max-width: 300px;
-            bottom: 70px;  /* 距离页面下方70px */ 
+            left: 50%;  /* 将元素左侧边缘放在父容器的中心 */
+            width: 300px;
+            bottom: 70px;  /* 距离页面下方70px */
+            transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
         }
 
         /* war thunder按钮样式 */
@@ -1605,7 +1611,7 @@
     <button id="wjjButton" class="button-fx">📁</button>
     <button id="wjjwzButton" class="button-wz">文件夹</button>
     <button id="zyxyButton" class="button-fx">📖</button>
-    <button id="zyxywzButton" class="button-wz">中医许阳 1-274</button>
+    <button id="zyxywzButton" class="button-wz">中医许阳 1-304</button>
     <a href="https://icp.hentioe.dev/sites/20251223" target="_blank">喵ICP备20251223号</a>
     <div id="super-popup" class="popup-t">
         <!-- 搜索区域 -->
@@ -2204,7 +2210,7 @@ Lv       Ts     Og
         <button id="ztqhwzButton" class="button-wz">主题切换</button>
         <button id="xzymButton" class="button-fx">📥️</button>
         <button id="xzymwzButton" class="button-wz">下载源码</button>
-        <button id="houtaidbwzButton" class="button-dbwz">版本：250802</button>
+        <button id="houtaidbwzButton" class="button-dbwz">版本：250803</button>
     </div>
 
     <div id="wjj-popup" class="popup-t">
@@ -2407,8 +2413,8 @@ Lv       Ts     Og
                 // 主页按钮链接
                 'wjgbButton': 'https://fagedongxi.com/',
                 'chatButton': 'https://doubao.com/chat/59976916344578',
-                'zyxyButton': 'https://www.wanmeisxs.cc/dushixiaoshuo/zhongyixuyang/471954.html',
-                // 'icpbaButton': 'https://icp.gov.moe/?keyword=20254364',
+                'zyxyButton': 'https://www.wanmeisxs.cc/dushixiaoshuo/zhongyixuyang/472079.html',
+                // 'icpbaButton': 'https://icp.hentioe.dev/sites/20251223',
 
                 // super弹窗_固定按钮链接
                 'tinyvncButton': 'http://192.168.1.2:36082/vnc.html?host=192.168.1.2&port=36082',
