@@ -34,11 +34,39 @@
 
         /* 蒙版 */
         #mbButton {
+            position: fixed;
             /* vw是屏幕可视值，未设置position */
             width: 100vw;
             height: 100vh;
             z-index: 2;
             pointer-events: none;  /* 关闭鼠标点击 */
+        }
+
+        /* 文件夹按钮样式 */
+        #wjjButton { top: 20px; left: 10px; }
+        #wjjwzButton {
+            top: 70px;
+            left: 10px;
+            color: #FFFFFF;
+            mix-blend-mode: difference;  文字自适应背景颜色 */
+        }
+
+        /* 中医许阳按钮样式 */
+        #zyxyButton { top: 120px; left: 10px; }
+        #zyxywzButton {
+            top: 170px;
+            left: 10px;
+            color: #FFFFFF;
+            mix-blend-mode: difference;  /*文字自适应背景颜色 */
+        }
+
+        /* plc编程教程按钮样式 */
+        #plcbcjcButton { top: 220px; left: 10px; font-size: 20px; }
+        #plcbcjcwzButton {
+            top: 270px;
+            left: 10px;
+            color: #FFFFFF;
+            mix-blend-mode: difference;  /*文字自适应背景颜色 */
         }
 
         /* 状态栏按钮样式 */
@@ -115,34 +143,14 @@
             border-radius: 0px 15px 15px 0px;  /* 给左上右上右下左下添加圆角 */
         }
 
-        /* 文件夹按钮样式 */
-        #wjjButton { top: 20px; left: 10px; }
-        /* 文件夹文字按钮样式 */
-        #wjjwzButton {
-            top: 70px;
-            left: 10px;
-            color: #FFFFFF;
-            mix-blend-mode: difference;  文字自适应背景颜色 */
-        }
-
-        /* 中医许阳按钮样式 */
-        #zyxyButton { top: 120px; left: 10px; }
-        /* 中医许阳文字按钮样式 */
-        #zyxywzButton {
-            top: 170px;
-            left: 10px;
-            color: #FFFFFF;
-            mix-blend-mode: difference;  /*文字自适应背景颜色 */
-        }
-
         /* 𝙸CP备案 */
         #icpbaButton {
-            bottom: 2px;  /* 距离页面下方值 */
+            bottom: 70px;  /* 距离页面下方值 */
             left: 50%;  /* 左侧距离父容器的水平百分比 */
-            width: 50%;
+            width: 60%;
             height: 10px;
             transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
-            font-size: 8px;
+            font-size: 10px;
             color: #FFFFFF;
             border: none;
             border-radius: 15px;
@@ -1669,6 +1677,8 @@
     <button id="wjjwzButton" class="button-wz">文件夹</button>
     <button id="zyxyButton" class="button-fx">📖</button>
     <button id="zyxywzButton" class="button-wz">中医许阳 1-595</button>
+    <button id="plcbcjcButton" class="button-fx"><span style="color: red;">-|/|-</span></button>
+    <button id="plcbcjcwzButton" class="button-wz">plc编程教程</button>
     <button id="ztlButton">18 02</button>
     <button id="superButton" class="button-fx">🏵️</button>
     <button id="ckButton" class="button-fx">🪟</button>
@@ -3057,13 +3067,14 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         const buttonLinks = {
             // 主页按钮链接
             'zyxyButton': 'https://www.wanmeisxs.cc/dushixiaoshuo/zhongyixuyang/473480.html',
+            'plcbcjcButton': 'https://www.bilibili.com/video/BV1B14y1F7w4?vd_source=b5192a7c6a87fa4e5bcc934eeb99cdba&spm_id_from=333.788.videopod.episodes&p=35',
             'wjgbButton': 'https://fagedongxi.com/',
             'chatButton': 'https://doubao.com/chat/59976916344578',
             'icpbaButton': 'https://icp.hentioe.dev/sites/20251223',
 
             // super弹窗_固定按钮链接
             'vncButton': 'http://192.168.3.2:36082/vnc.html',
-            'blblButton': 'https://www.bilibili.com/video/BV1B14y1F7w4?vd_source=b5192a7c6a87fa4e5bcc934eeb99cdba&spm_id_from=333.788.videopod.episodes&p=34',
+            'blblButton': 'https://www.bilibili.com/',
             'blblwzButton': 'https://www.bilibili.com/?page=Favorites',
             'dyButton': 'https://www.douyin.com/?recommend=1',
             'dywzButton': 'https://douyin.com/user/self?is_from_mobile_home=1&showTab=favorite_collection',
@@ -9137,7 +9148,14 @@ My为辅助继电器，及其编号。
 【<span style="color: blue;">交替输出</span>】
 （输出指令）
 ALT：交替输出
-（线路通断两次，改变保持的通或断）。
+（线路通断两次，改变保持的通或断）
+
+
+
+【<span style="color: blue;">步进开始指令</span>】
+（输入指令）
+[STL Sx]
+（STL为步进开始指令，允许在不同步骤中，写入编号相同的输出线圈）
 
 
 
