@@ -38,7 +38,7 @@
             /* vw是屏幕可视值，未设置position */
             width: 100vw;
             height: 100vh;
-            z-index: 2;
+            z-index: -1;
             pointer-events: none;  /* 关闭鼠标点击 */
         }
 
@@ -51,9 +51,9 @@
             mix-blend-mode: difference;  文字自适应背景颜色 */
         }
 
-        /* 中医许阳按钮样式 */
-        #zyxyButton { top: 120px; left: 10px; }
-        #zyxywzButton {
+        /* 文件夹2按钮样式 */
+        #wjj2Button { top: 120px; left: 10px; }
+        #wjj2wzButton {
             top: 170px;
             left: 10px;
             color: #FFFFFF;
@@ -64,6 +64,33 @@
         #plcbcjcButton { top: 220px; left: 10px; font-size: 20px; }
         #plcbcjcwzButton {
             top: 270px;
+            left: 10px;
+            color: #FFFFFF;
+            mix-blend-mode: difference;  /*文字自适应背景颜色 */
+        }
+
+        /* 编程游戏按钮样式 */
+        #bcyxButton { top: 320px; left: 10px; font-size: 20px; }
+        #bcyxwzButton {
+            top: 370px;
+            left: 10px;
+            color: #FFFFFF;
+            mix-blend-mode: difference;  /*文字自适应背景颜色 */
+        }
+
+        /* 翁法罗斯按钮样式 */
+        #wflsButton { top: 420px; left: 10px; }
+        #wflswzButton {
+            top: 470px;
+            left: 10px;
+            color: #FFFFFF;
+            mix-blend-mode: difference;  /*文字自适应背景颜色 */
+        }
+
+        /* 多元派按钮样式 */
+        #dypButton { top: 520px; left: 10px; }
+        #dypwzButton {
+            top: 570px;
             left: 10px;
             color: #FFFFFF;
             mix-blend-mode: difference;  /*文字自适应背景颜色 */
@@ -145,6 +172,7 @@
 
         /* 𝙸CP备案 */
         #icpbaButton {
+            position: fixed;
             bottom: 70px;  /* 距离页面下方值 */
             left: 50%;  /* 左侧距离父容器的水平百分比 */
             width: 60%;
@@ -618,8 +646,9 @@
         #dyButton { top: 230px; left: 345px; }
         #dywzButton { top: 280px; left: 345px; }
 
-        /* 拼多多按钮样式 */
-        #pddButton { top: 230px; left: 425px; }
+        /* PhiTogether按钮样式 */
+        #phitogetherButton { top: 230px; left: 425px; }
+        #phitogetherwzButton { top: 280px; left: 425px; }
 
         /* 邮箱按钮样式 */
         #yxButton { top: 230px; left: 505px; }
@@ -648,10 +677,6 @@
         /* 地图测试按钮样式 */
         #dtcsButton { top: 490px; left: 270px; }
         #dtcswzButton { top: 540px; left: 270px; }
-
-        /* PhiTogether按钮样式 */
-        #phitogetherButton { top: 490px; left: 345px; }
-        #phitogetherwzButton { top: 540px; left: 345px; }
 
         /* 搜索区域样式 */
         .search {
@@ -841,188 +866,191 @@
         /* python解释器按钮样式 */
         #pyjsqButton { top: 3400px; }
 
+        /* 拼多多按钮样式 */
+        #pddButton { top: 3450px; }
+
         /* 分类按钮Q样式 */
-        #qButton { top: 3500px; }
+        #qButton { top: 3550px; }
 
         /* 取色器按钮样式 */
-        #qsqButton { top: 3550px; }
+        #qsqButton { top: 3600px; }
 
         /* 企业微信·文档按钮样式 */
-        #qywxwdButton { top: 3600px; }
+        #qywxwdButton { top: 3650px; }
 
         /* 分类按钮R样式 */
-        #rButton { top: 3700px; }
+        #rButton { top: 3750px; }
 
         /* 分类按钮S样式 */
-        #sButton { top: 3800px; }
+        #sButton { top: 3850px; }
 
         /* 扫黄打非按钮样式 */
-        #shdfButton { top: 3850px; }
+        #shdfButton { top: 3900px; }
 
         /* 骚扰电话举报按钮样式 */
-        #srdhjbButton { top: 3900px; }
+        #srdhjbButton { top: 3950px; }
 
         /* 视频去背景按钮样式 */
-        #spqbjButton { top: 3950px; }
+        #spqbjButton { top: 4000px; }
 
         /* 手写字体转换按钮样式 */
-        #sxztzhButton { top: 4000px; }
+        #sxztzhButton { top: 4050px; }
 
         /* 视频解析按钮样式 */
-        #spjxButton { top: 4050px; }
+        #spjxButton { top: 4100px; }
 
         /* 视频解析_v2ob按钮样式 */
-        #spjx2Button { top: 4100px; }
+        #spjx2Button { top: 4150px; }
 
         /* 鼠标练习按钮样式 */
-        #sblxButton { top: 4150px; }
+        #sblxButton { top: 4200px; }
 
         /* 分类按钮T样式 */
-        #tButton { top: 4250px; }
+        #tButton { top: 4300px; }
 
         /* 图片编辑器按钮样式 */
-        #tpbjqButton { top: 4300px; }
+        #tpbjqButton { top: 4350px; }
 
         /* 图片放大按钮样式 */
-        #tpfdButton { top: 4350px; }
+        #tpfdButton { top: 4400px; }
 
         /* 图片圆角按钮样式 */
-        #tpyjButton { top: 4400px; }
+        #tpyjButton { top: 4450px; }
 
         /* 图片橡皮按钮样式 */
-        #tpxpButton { top: 4450px; }
+        #tpxpButton { top: 4500px; }
 
         /* 图片取色器按钮样式 */
-        #tpqsqButton { top: 4500px; }
+        #tpqsqButton { top: 4550px; }
 
         /* 图片压缩按钮样式 */
-        #tpysButton { top: 4550px; }
+        #tpysButton { top: 4600px; }
 
         /* 图片修复按钮样式 */
-        #tpxfButton { top: 4600px; }
+        #tpxfButton { top: 4650px; }
 
         /* 图片修复2按钮样式 */
-        #tpxf2Button { top: 4650px; }
+        #tpxf2Button { top: 4700px; }
 
         /* 图片转Base64按钮样式 */
-        #tpzbase64Button { top: 4700px; }
+        #tpzbase64Button { top: 4750px; }
 
         /* 图表制作按钮样式 */
-        #tbzzButton { top: 4750px; }
+        #tbzzButton { top: 4800px; }
 
         /* 投屏按钮样式 */
-        #tpButton { top: 4800px; }
+        #tpButton { top: 4850px; }
 
         /* 特种作业操作证查询按钮样式 */
-        #tzzyczzcxButton { top: 4850px; }
+        #tzzyczzcxButton { top: 4900px; }
 
         /* 分类按钮U样式 */
-        #uButton { top: 4950px; }
+        #uButton { top: 5000px; }
 
         /* URL编码解码按钮样式 */
-        #urlbmjmButton { top: 5000px; }
+        #urlbmjmButton { top: 5050px; }
 
         /* 分类按钮V样式 */
-        #vButton { top: 5100px; }
+        #vButton { top: 5150px; }
 
         /* 分类按钮W样式 */
-        #wButton { top: 5200px; }
+        #wButton { top: 5250px; }
 
         /* 文字识别按钮样式 */
-        #wzsbButton { top: 5250px; }
+        #wzsbButton { top: 5300px; }
 
         /* win11按钮样式 */
-        #win11Button { top: 5300px; }
+        #win11Button { top: 5350px; }
 
         /* win12按钮样式 */
-        #win12Button { top: 5350px; }
+        #win12Button { top: 5400px; }
 
         /* winujjm按钮样式 */
-        #winujjmButton { top: 5400px; }
+        #winujjmButton { top: 5450px; }
 
         /* 蔚蓝档案标题生成按钮样式 */
-        #wldabtscButton { top: 5450px; }
+        #wldabtscButton { top: 5500px; }
 
         /* wlcs按钮样式 */
-        #wlcsButton { top: 5500px; }
+        #wlcsButton { top: 5550px; }
 
         /* 微信公众平台按钮样式 */
-        #wxgvptButton { top: 5550px; }
+        #wxgvptButton { top: 5600px; }
 
         /* 网站图标提取按钮样式 */
-        #wvtbtqButton { top: 5600px; }
+        #wvtbtqButton { top: 5650px; }
 
         /* 文字转语音按钮样式 */
-        #wzvyyButton { top: 5650px; }
+        #wzvyyButton { top: 5700px; }
 
         /* 我画你猜按钮样式 */
-        #whncButton { top: 5700px; }
+        #whncButton { top: 5750px; }
 
         /* 王者荣耀按钮样式 */
-        #wzryButton { top: 5750px; }
+        #wzryButton { top: 5800px; }
 
         /* 文字删除线按钮样式 */
-        #wzscxButton { top: 5800px; }
+        #wzscxButton { top: 5850px; }
 
         /* 微软激活工具按钮样式 */
-        #wrjhgjButton { top: 5850px; }
+        #wrjhgjButton { top: 5900px; }
 
         /* 文件解压缩按钮样式 */
-        #wjjysButton { top: 5900px; }
+        #wjjysButton { top: 5950px; }
 
         /* 分类按钮X样式 */
-        #xButton { top: 6000px; }
+        #xButton { top: 6050px; }
 
         /* 学堂在线按钮样式 */
-        #xtzxButton { top: 6050px; }
+        #xtzxButton { top: 6100px; }
 
         /* 小艺按钮样式 */
-        #xyButton { top: 6100px; }
+        #xyButton { top: 6150px; }
 
         /* 星铁光锥生成按钮样式 */
-        #xtgzscButton { top: 6150px; }
+        #xtgzscButton { top: 6200px; }
 
         /* 象棋按钮样式 */
-        #xqButton { top: 6200px; }
+        #xqButton { top: 6250px; }
 
         /* 星铁短信生成按钮样式 */
-        #xtdxscButton { top: 6250px; }
+        #xtdxscButton { top: 6300px; }
 
         /* 分类按钮Y样式 */
-        #yButton { top: 6350px; }
+        #yButton { top: 6400px; }
 
         /* 域名注册按钮样式 */
-        #ymzcButton { top: 6400px; }
+        #ymzcButton { top: 6450px; }
 
         /* 音频剪辑按钮样式 */
-        #ypjjButton { top: 6450px; }
+        #ypjjButton { top: 6500px; }
 
         /* 音乐网2按钮样式 */
-        #yyw2Button { top: 6500px; }
+        #yyw2Button { top: 6550px; }
 
         /* 云星铁按钮样式 */
-        #yxtButton { top: 6550px; }
+        #yxtButton { top: 6600px; }
 
         /* 跃动星穹 */
-        #ydxqButton { top: 6600px; }
+        #ydxqButton { top: 6650px; }
 
         /* 分类按钮Z样式 */
-        #zButton { top: 6700px; }
+        #zButton { top: 6750px; }
 
         /* 中国移动按钮样式 */
-        #vgydButton { top: 6750px; }
+        #vgydButton { top: 6800px; }
 
         /* 中国联通按钮样式 */
-        #vgltButton { top: 6800px; }
+        #vgltButton { top: 6850px; }
 
         /* 中文域名转码按钮样式 */
-        #zwymzmButton { top: 6850px; }
+        #zwymzmButton { top: 6900px; }
 
         /* 在线小游戏按钮样式 */
-        #zxxyxButton { top: 6900px; }
+        #zxxyxButton { top: 6950px; }
 
         /* 在下莫老师按钮样式 */
-        #zxmlsButton { top: 6950px; }
+        #zxmlsButton { top: 7000px; }
 
         /* 生字文字按钮样式 */
         #szButton {
@@ -1030,7 +1058,7 @@
             top: 700px;
             left: 250px;
             width: 320px;
-            height: 1100px;
+            height: 1120px;
             font-size: 20px;
             text-align: left;
             cursor: text;  /* 将鼠标状态改为𝙸字形 */
@@ -1043,10 +1071,9 @@
 
         /* 窗口弹窗样式 */
         #ck-popup {
-            left: 50%;  /* 左侧距离父容器的水平百分比 */
+            left: 10;  /* 左侧距离父容器的水平百分比 */
             width: 300px;
-            bottom: 70px; /* 顶部距离下方值 */
-            transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
+            bottom: 70px;  /* 顶部距离下方值 */
         }
 
         /* 高处按钮样式 */
@@ -1211,7 +1238,7 @@
             left: 100%;  /* 左侧距离父容器的水平百分比 */
             width: 300px;
             bottom: 70px;  /* 顶部距离下方值 */
-            transform: translateX(-104%);  /* 将元素向左移动自身宽度的一半 */
+            transform: translateX(-104%);  /* 将元素向左移动自身宽度 */
         }
 
         /* 广告按钮样式 */
@@ -1339,7 +1366,8 @@
         #yszqb-popup,
         #hgst-popup,
         #ht-popup,
-        #wjj-popup
+        #wjj-popup,
+        #wjj2-popup
         { background-color: rgba(255, 255, 255, 0.5); }
         /* 主题切换-黑色弹窗蒙版 */
         .ztqh-mode .tsqp,
@@ -1357,7 +1385,8 @@
         .ztqh-mode #yszqb-popup,
         .ztqh-mode #hgst-popup,
         .ztqh-mode #ht-popup,
-        .ztqh-mode #wjj-popup
+        .ztqh-mode #wjj-popup,
+        .ztqh-mode #wjj2-popup
         { background-color: rgba(0, 0, 0, 0.5); }
 
         /* 下载源码按钮样式 */
@@ -1370,10 +1399,9 @@
 
         /* 文件夹弹窗样式 */
         #wjj-popup {
-            left: 50%;  /* 左侧距离父容器的水平百分比 */
+            left: 10;  /* 左侧距离父容器的水平百分比 */
             width: 300px;
             bottom: 70px;  /* 顶部距离下方值 */
-            transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
         }
 
         /* war thunder按钮样式 */
@@ -1428,8 +1456,23 @@
         #llButton { top: 450px; left: 30px; }
         #llwzButton { top: 500px; left: 30px; }
 
+        /* 魔女之旅按钮样式 */
+        #mnzlButton { top: 450px; left: 125px; }
+        #mnzlwzButton { top: 500px; left: 125px; }
+
         /* 文件夹底部文字按钮样式 */
         #wjjdbwzButton { top: 600px; z-index: 2; }
+
+        /* 文件夹2弹窗样式 */
+        #wjj2-popup {
+            left: 10;  /* 左侧距离父容器的水平百分比 */
+            width: 300px;
+            bottom: 70px;  /* 顶部距离下方值 */
+        }
+
+        /* 中医许阳按钮样式 */
+        #zyxyButton { top: 50px; left: 30px; }
+        #zyxywzButton { top: 100px; left: 30px; }
 
         /* 手机富文本样式 - 通过媒体查询应用 */
         @media only screen and (max-width: 500px) {
@@ -1444,9 +1487,9 @@
             }
         }
 
-        /* 手机后台弹窗样式 - 通过媒体查询应用 */
+        /* 手机弹窗样式 - 通过媒体查询应用 */
         @media only screen and (max-width: 1000px) {
-            #ht-popup {
+            #wjj-popup, #wjj2-popup, #ck-popup, #ht-popup {
                 left: 50%;  /* 左侧距离父容器的水平百分比 */
                 transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
             }
@@ -1652,6 +1695,7 @@
             left: 50%;  /* 左侧距离父容器的水平百分比 */
             width: 90%;
             height: 40px;
+            font-size: 10px;
             border-radius: 10px;
             transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
             user-select: text;  /* 设置可选中文本属性 */
@@ -1675,11 +1719,17 @@
     <button id="mbButton"></button>
     <button id="wjjButton" class="button-fx">📁</button>
     <button id="wjjwzButton" class="button-wz">文件夹</button>
-    <button id="zyxyButton" class="button-fx">📖</button>
-    <button id="zyxywzButton" class="button-wz">中医许阳 1-595</button>
+    <button id="wjj2Button" class="button-fx">📁</button>
+    <button id="wjj2wzButton" class="button-wz">文件夹2</button>
     <button id="plcbcjcButton" class="button-fx"><span style="color: red;">-|/|-</span></button>
     <button id="plcbcjcwzButton" class="button-wz">plc编程教程</button>
-    <button id="ztlButton">18 02</button>
+    <button id="bcyxButton" class="button-fx">< / ></button>
+    <button id="bcyxwzButton" class="button-wz">编程游戏</button>
+    <button id="wflsButton" class="button-fx"><span style="color: #00ade7;">哔</span></button>
+    <button id="wflswzButton" class="button-wz">翁法罗斯</button>
+    <button id="dypButton" class="button-fx"><span style="color: #00ade7;">哔</span></button>
+    <button id="dypwzButton" class="button-wz">多元派</button>
+    <button id="ztlButton">18 05 09</button>
     <button id="superButton" class="button-fx">🏵️</button>
     <button id="ckButton" class="button-fx">🪟</button>
     <button id="htButton" class="button-fx">≡</button>
@@ -1718,7 +1768,8 @@
         <button id="blblwzButton" class="button-wz">哔哩哔哩</button>
         <button id="dyButton" class="button-fx">抖</button>
         <button id="dywzButton" class="button-wz">抖音</button>
-        <button id="pddButton" class="button-fx">拼</button>
+        <button id="phitogetherButton" class="button-fx">🎹</button>
+        <button id="phitogetherwzButton" class="button-wz">PhiTogether</button>
         <button id="yxButton" class="button-fx">📧</button>
         <button id="yxwzButton" class="button-wz">邮箱</button>
         <button id="yywButton" class="button-fx">♪</button>
@@ -1728,8 +1779,6 @@
         <button id="ys3Button"></button>
         <button id="dtcsButton" class="button-fx">🗺️</button>
         <button id="dtcswzButton" class="button-wz">地图测试</button>
-        <button id="phitogetherButton" class="button-fx">🎹</button>
-        <button id="phitogetherwzButton" class="button-wz">PhiTogether</button>
         <button id="shuziButton" class="button-fl">#</button>
         <button id="yesypButton" class="button-cd">123云盘</button>
         <button id="aButton" class="button-fl">A</button>
@@ -1781,6 +1830,7 @@
         <button id="oButton" class="button-fl">O</button>
         <button id="pButton" class="button-fl">P</button>
         <button id="pyjsqButton" class="button-cd">Python解释器</button>
+        <button id="pddButton" class="button-cd">拼多多</button>
         <button id="qButton" class="button-fl">Q</button>
         <button id="qsqButton" class="button-cd">取色器</button>
         <button id="qywxwdButton" class="button-cd">企业微信·文档</button>
@@ -1844,6 +1894,7 @@
         <button id="zxmlsButton" class="button-cd">在下莫老师附件表</button>
         <button id="szButton">
         ⌬𝙸
+        /•᷅•᷄\
         忒：tuì/tè
         姚（yáo·幺ˊ）意：姓氏
         桔梗（jié gěng）
@@ -2806,9 +2857,9 @@ Esc"是弹窗关闭键。
 自动聚焦，按下"Tab"键停止聚焦，手机端……(；ˉ▽ˉ)。
 <br>
 07.
-新增弹窗尺寸自适应屏幕分辨率的功能，
-而异形屏幕任然没有适配（如此小众的屏
-幕，真的有必要适配吗(ˉ▽ˉ；)...）。
+新增弹窗尺寸与位置自适应屏幕分辨率的
+功能，而异形屏幕任然没有适配（如此小
+众的屏幕，真的有必要适配吗(ˉ▽ˉ；)）。
 <br>
 08.
 新增''<span style="color: blue;">文本自适应背景颜色</span>''功能，而新版
@@ -2838,7 +2889,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             <audio id="audioPlayer" controls></audio>
             <ul class="bflb" id="bflb"></ul>
         </div>
-        <button id="wlButton" class="button-fx">ᯤ</button>
+        <button id="wlButton" class="button-fx">🛜</button>
         <button id="wlwzButton" class="button-wz">网络信息</button>
         <button id="lyButton" class="button-fx">💬</button>
         <button id="lywzButton" class="button-wz">留言</button>
@@ -2857,7 +2908,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         <button id="warButton" class="button-fx">🛩️</button>
         <button id="warwzButton" class="button-wz">war thunder</button>
         <button id="fatenightButton" class="button-fx">🎞️</button>
-        <button id="fatenightwzButton" class="button-wz">fate night UBW-13</button>
+        <button id="fatenightwzButton" class="button-wz">fate night HFⅡ</button>
         <button id="zsdfllButton" class="button-fx">🎞️</button>
         <button id="zsdfllwzButton" class="button-wz">葬送的芙莉莲 1-0</button>
         <button id="zyhsButton" class="button-fx">🎞️</button>
@@ -2880,7 +2931,14 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         <button id="lxhzjddywzButton" class="button-wz">罗小黑战记大电影 2</button>
         <button id="llButton" class="button-fx">🎞️</button>
         <button id="llwzButton" class="button-wz">灵笼 1-1</button>
-        <button id="wjjdbwzButton" class="button-dbwz">不知道写什么，先这样吧( ´ ▽ ` )ﾉ！</button>
+        <button id="mnzlButton" class="button-fx">🎞️</button>
+        <button id="mnzlwzButton" class="button-wz">魔女之旅 1-1</button>
+        <button id="wjjdbwzButton" class="button-dbwz">整个宇宙将为你闪烁！</button>
+    </div>
+
+    <div id="wjj2-popup" class="popup-t">
+        <button id="zyxyButton" class="button-fx">📖</button>
+        <button id="zyxywzButton" class="button-wz">中医许阳 1-658</button>
     </div>
 
     <div id="popup-overlay"></div>
@@ -2919,7 +2977,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             // 忽略输入框内的按键
             if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
             // 所有弹窗的ID列表
-            const allPopupIds = ['super-popup', 'bzy-popup', 'ck-popup', 'gcst-popup', 'xzqhtx-popup', 'dmyz-popup', 'dydgst-popup', 'ls-popup', 'plcxxbj-popup', 'qdgc-popup', 'yszqb-popup', 'hgst-popup', 'ht-popup', 'wjj-popup'];
+            const allPopupIds = ['super-popup', 'bzy-popup', 'ck-popup', 'gcst-popup', 'xzqhtx-popup', 'dmyz-popup', 'dydgst-popup', 'ls-popup', 'plcxxbj-popup', 'qdgc-popup', 'yszqb-popup', 'hgst-popup', 'ht-popup', 'wjj-popup', 'wjj2-popup'];
             const popupOverlay = document.getElementById('popup-overlay');
             // ESC键处理：关闭所有弹窗
             if (event.key === 'Escape') {
@@ -2980,6 +3038,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         const hgstButton = document.getElementById('hgstButton');
         const htButton = document.getElementById('htButton');
         const wjjButton = document.getElementById('wjjButton');
+        const wjj2Button = document.getElementById('wjj2Button');
         const tsqp = document.getElementById('tsqp');
 
 // 屏幕保持
@@ -3053,6 +3112,9 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         // 文件夹按钮点击事件
         wjjButton.addEventListener('click', () => { showNotification('文件夹弹窗'); });
 
+        // 文件夹2按钮点击事件
+        wjj2Button.addEventListener('click', () => { showNotification('文件夹2弹窗'); });
+
         // 封装通知显示逻辑
         function showNotification(message) {
             tsqp.textContent = message;
@@ -3066,8 +3128,11 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
 // 按钮链接（ButtonLink）
         const buttonLinks = {
             // 主页按钮链接
-            'zyxyButton': 'https://www.wanmeisxs.cc/dushixiaoshuo/zhongyixuyang/473480.html',
-            'plcbcjcButton': 'https://www.bilibili.com/video/BV1B14y1F7w4?vd_source=b5192a7c6a87fa4e5bcc934eeb99cdba&spm_id_from=333.788.videopod.episodes&p=35',
+            'zyxyButton': 'https://www.wanmeisxs.cc/dushixiaoshuo/zhongyixuyang/473732.html',
+            'plcbcjcButton': 'https://www.bilibili.com/video/BV1B14y1F7w4?vd_source=b5192a7c6a87fa4e5bcc934eeb99cdba&spm_id_from=333.788.videopod.episodes&p=37',
+            'bcyxButton': 'https://www.starcoders.net/game',
+            'wflsButton': 'https://www.bilibili.com/video/BV16Wc6ekEoP?spm_id_from=333.788.videopod.episodes&vd_source=b5192a7c6a87fa4e5bcc934eeb99cdba&p=27',
+            'dypButton': 'https://www.bilibili.com/video/BV1hGere1Ed1?vd_source=b5192a7c6a87fa4e5bcc934eeb99cdba&spm_id_from=333.788.videopod.sections&p=3',
             'wjgbButton': 'https://fagedongxi.com/',
             'chatButton': 'https://doubao.com/chat/59976916344578',
             'icpbaButton': 'https://icp.hentioe.dev/sites/20251223',
@@ -3078,14 +3143,12 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             'blblwzButton': 'https://www.bilibili.com/?page=Favorites',
             'dyButton': 'https://www.douyin.com/?recommend=1',
             'dywzButton': 'https://douyin.com/user/self?is_from_mobile_home=1&showTab=favorite_collection',
+            'phitogetherButton': 'https://phitogether.fun/#/loading',
             'yxButton': 'https://www.petalmail.com/#/',
             'yxwzButton': 'https://mail.yeah.net/',
             'yywButton': 'https://www.gequbao.com/',
             'jlbButton': 'https://julebu.co/home',
             'dtcsButton': 'https://www.jetpunk.com/user-quizzes/2021089/provinces-in-chinaclick-map',
-            'phitogetherButton': 'https://phitogether.fun/#/loading',
-
-            'pddButton': 'https://mobile.yangkeduo.com/',
 
             // 宝藏页
             'jjcjImg': 'https://chrome.zzzmh.cn/index',
@@ -3267,6 +3330,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             'mywrjuhkqzhglptButton': 'https://uom.caac.gov.cn/#/main',
             'mtButton': 'https://metaso.cn',
             'pyjsqButton': 'https://www.jyshare.com/compile/9/',
+            'pddButton': 'https://mobile.yangkeduo.com/',
             'qsqButton': 'https://www.qiguangit.com/colorPicker/',
             'qywxwdButton': 'https://doc.weixin.qq.com/home/recent',
             'shdfButton': 'https://bzpt.shdf.gov.cn/report/frontend/?from=wx#/external/1',
@@ -3325,7 +3389,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
 
             // 文件夹弹窗按钮链接
             'warButton': 'steam://rungameid/236390',
-            'fatenightButton': 'https://www.bilibili.com/bangumi/play/ep29143/',
+            'fatenightButton': 'https://www.bilibili.com/bangumi/play/ss28332?from_spmid=666.25.series.0',
             'zsdfllButton': 'https://lkvod.me/vodplay/2139-5-1.html',
             'zyhsButton': 'https://lkvod.me/vodplay/29586-1-1.html',
             'hjhzblrButton': 'https://lkvod.me/vodplay/142931-2-1.html',
@@ -3337,6 +3401,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             'blenderButton': 'steam://rungameid/365670',
             'lxhzjddyButton': 'https://lkvod.org/play/151424-1-1.html',
             'llButton': 'https://lkvod.org/play/41406-3-1.html',
+            'mnzlButton': 'https://www.yxxq8.cc/play/29599-1-1.html',
         };  // 代码块闭合语句。
         Object.entries(buttonLinks).forEach(([id, url]) => {
             document.getElementById(id)?.addEventListener('click', () => {
@@ -3360,6 +3425,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             document.getElementById('hgst-popup').style.display = 'none';
             document.getElementById('ht-popup').style.display = 'none';
             document.getElementById('wjj-popup').style.display = 'none';
+            document.getElementById('wjj2-popup').style.display = 'none';
             document.getElementById('popup-overlay').style.display = 'none';
         });
 
@@ -8999,7 +9065,8 @@ RCD的选择，必须考虑用电设备和电路正常泄漏电流的影响
             });
         const plcxxbjfwb1 = `
 【<span style="color: blue;">plc学习笔记</span>】
-
+我我我我我我我我我我我我我我我
+（15个我，用来做字符间距测试）
 
 
 【<span style="color: blue;">笔记</span>：】
@@ -9152,20 +9219,62 @@ ALT：交替输出
 
 
 
-【<span style="color: blue;">步进开始指令</span>】
-（输入指令）
-[STL Sx]
-（STL为步进开始指令，允许在不同步骤中，写入编号相同的输出线圈）
+【<span style="color: blue;">输入继电器</span>】
+𝙸N X
 
 
 
-【输入继电器】
-X
+【<span style="color: blue;">输出继电器</span>】
+OUT Y
 
 
 
-【输出继电器】
-Y
+【<span style="color: blue;">步进指令</span>】
+（输入指令 / 输出指令）
+[STL Sx] / [OUT RET]
+（STL为步进开始指令，RET为步进结束指令）
+
+例如：
+（"𝙸N X"输入单元以自动复位的𝙸/O单元为例）
+<span style="background-color: #ff6600;">
+┤X0├───────(SET S0)
+
+┤STL S0├┬────(Y0)
+                   └────(S1)
+
+┤STL S1├┬────(Y1)
+                   ├────(Y1)
+                   └────(S2)
+
+┤STL S2├┬────(Y2)
+                   └────(RET)
+
+┤X1├───────(S1)
+</span>
+注解(●'◡'●)：
+
+①：
+当子[STL]步进指令的所有输出线圈全部动作时，线圈父[STL]步进指令复位一次。
+例如：
+S0导通时，Y0和S1被导通。此时[STL S0]里的所有输出指令"OUT Y"被激活，[STL S0]就被复位一次（并非保持复位）。
+
+②：
+步进指令，开始和结束中间，不能添加与当前步进指令无关的指令。
+
+③：
+子[STL]步进指令允许被步进指令外围激活。
+例如：
+X1被导通时，[STL S1]就被导通，[STL S0]被跳过。
+
+④：
+允许在不同步骤中，写入编号相同的输出线圈。
+
+⑤：
+最后一个子[STL]步进指令，因为有个[RET]步进结束指令，可能会保持导通。
+
+⑥：
+其中，Sx是什么？
+是状态状态继电器，别的我也不知道（〜^∇^)〜。
 
 
 
@@ -10190,6 +10299,12 @@ const loadBackgroundFromDB = async (id) => {
 // 文件夹弹窗
         document.getElementById('wjjButton').addEventListener('click', function () {
             document.getElementById('wjj-popup').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        });
+
+// 文件夹2弹窗
+        document.getElementById('wjj2Button').addEventListener('click', function () {
+            document.getElementById('wjj2-popup').style.display = 'block';
             document.getElementById('popup-overlay').style.display = 'block';
         });
 
