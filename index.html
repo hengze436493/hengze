@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -15,6 +16,8 @@
             padding: 0;
             min-height: 100vh;
             color: #222222; /* 默认文字颜色 */
+            user-select: text;  /* 设置可选中文本属性 */
+            -webkit-user-select: text;  /* 设置可选中文本属性，兼容 Safari/iOS */
         }
 
         /* 提示气泡样式 */
@@ -35,11 +38,20 @@
         /* 蒙版 */
         #mbButton {
             position: fixed;
-            /* vw是屏幕可视值，未设置position */
             width: 100vw;
             height: 100vh;
             z-index: -1;
             pointer-events: none;  /* 关闭鼠标点击 */
+        }
+
+        #jsButton {
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            width: auto;  /* 自适应宽度 */
+            color: #FFFFFF;
+            mix-blend-mode: difference;  /* 文字自适应背景颜色 */
+            transform: translateX(-50%);  /* 元素向左移动自身宽度的值 */
         }
 
         /* 文件夹按钮样式 */
@@ -48,7 +60,7 @@
             top: 70px;
             left: 10px;
             color: #FFFFFF;
-            mix-blend-mode: difference;  文字自适应背景颜色 */
+            mix-blend-mode: difference;  /* 文字自适应背景颜色 */
         }
 
         /* 文件夹2按钮样式 */
@@ -177,7 +189,7 @@
             left: 50%;  /* 左侧距离父容器的水平百分比 */
             width: 60%;
             height: 10px;
-            transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
+            transform: translateX(-50%);  /* 元素向左移动自身宽度的值 */
             font-size: 10px;
             color: #FFFFFF;
             border: none;
@@ -389,6 +401,10 @@
         #gxworks2Img { top: 1250px; left: 1100px; }
         #gxworks2wzButton { top: 1300px; left: 1100px; }
 
+        /* LivelyWallpaper样式 */
+        #livelywallpaperImg { top: 1250px; left: 1200px; }
+        #livelywallpaperwzButton { top: 1300px; left: 1200px; }
+
         /* AidLux样式 */
         #aidluxImg { top: 1350px; left: 300px; }
         #aidluxwzButton { top: 1400px; left: 300px; }
@@ -424,6 +440,10 @@
         /* Shizuku样式 */
         #shizukuImg { top: 1350px; left: 1100px; }
         #shizukuwzButton { top: 1400px; left: 1100px; }
+
+        /* SolidWorks样式 */
+        #solidworksImg { top: 1350px; left: 1200px; }
+        #solidworkswzButton { top: 1400px; left: 1200px; }
 
         /* Apktool样式 */
         #apktoolImg { top: 1450px; left: 300px; }
@@ -588,6 +608,10 @@
         /* 米游社样式 */
         #mysImg { top: 2200px; left: 400px; }
         #myswzButton { top: 2250px; left: 400px; }
+
+        /* 逃离鸭科夫样式 */
+        #tlykfImg { top: 2200px; left: 500px; }
+        #tlykfwzButton { top: 2250px; left: 500px; }
 
         /* 更多按钮样式 */
         #gdButton {
@@ -1317,6 +1341,7 @@
         #szbjButton { top: 420px; left: 230px; }
         /* 设置背景文字按钮样式 */
         #szbjwzButton { top: 470px; left: 230px; }
+        /* 设置背景图片样式 */
         #szbj-Img {
             position: absolute;
             top: 0;
@@ -1326,7 +1351,7 @@
             object-fit: cover;
             z-index: -1;
         }
-        /* 视频背景样式 */
+        /* 设置背景视频样式 */
         #szbj-video {
             position: absolute;
             top: 0;
@@ -1474,6 +1499,40 @@
         #zyxyButton { top: 50px; left: 30px; }
         #zyxywzButton { top: 100px; left: 30px; }
 
+        /* 元素自适应body高度位置样式 - 通过媒体查询应用 */
+        @media only screen and (max-height: 370px) { #plcbcjcButton { top: 20px; left: 100px; } }
+        @media only screen and (max-height: 370px) { #plcbcjcwzButton { top: 70px; left: 100px; } }
+
+        /* 编程游戏自适应body高度位置样式 - 通过媒体查询应用 */
+        @media only screen and (max-height: 470px) { #bcyxButton { top: 20px; left: 100px; } }
+        @media only screen and (max-height: 470px) { #bcyxwzButton { top: 70px; left: 100px; } }
+
+        @media only screen and (max-height: 370px) { #bcyxButton { top: 120px; left: 100px; } }
+        @media only screen and (max-height: 370px) { #bcyxwzButton { top: 170px; left: 100px; } }
+
+        /* 翁法罗斯自适应body高度位置样式 - 通过媒体查询应用 */
+        @media only screen and (max-height: 570px) { #wflsButton { top: 20px; left: 100px; } }
+        @media only screen and (max-height: 570px) { #wflswzButton { top: 70px; left: 100px; } }
+
+        @media only screen and (max-height: 470px) { #wflsButton { top: 120px; left: 100px; } }
+        @media only screen and (max-height: 470px) { #wflswzButton { top: 170px; left: 100px; } }
+
+        @media only screen and (max-height: 370px) { #wflsButton { top: 20px; left: 170px; } }
+        @media only screen and (max-height: 370px) { #wflswzButton { top: 70px; left: 170px; } }
+
+        /* 多元派自适应body高度位置样式 - 通过媒体查询应用 */
+        @media only screen and (max-height: 670px) { #dypButton { top: 20px; left: 100px; } }
+        @media only screen and (max-height: 670px) { #dypwzButton { top: 70px; left: 100px; } }
+
+        @media only screen and (max-height: 570px) { #dypButton { top: 120px; left: 100px; } }
+        @media only screen and (max-height: 570px) { #dypwzButton { top: 170px; left: 100px; } }
+
+        @media only screen and (max-height: 470px) { #dypButton { top: 220px; left: 100px; } }
+        @media only screen and (max-height: 470px) { #dypwzButton { top: 270px; left: 100px; } }
+
+        @media only screen and (max-height: 370px) { #dypButton { top: 120px; left: 170px; } }
+        @media only screen and (max-height: 370px) { #dypwzButton { top: 170px; left: 170px; } }
+
         /* 手机富文本样式 - 通过媒体查询应用 */
         @media only screen and (max-width: 500px) {
             #gcstfwb1, #gcstfwb2, #gcstfwb3,
@@ -1491,7 +1550,7 @@
         @media only screen and (max-width: 1000px) {
             #wjj-popup, #wjj2-popup, #ck-popup, #ht-popup {
                 left: 50%;  /* 左侧距离父容器的水平百分比 */
-                transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
+                transform: translateX(-50%);  /* 元素向左移动自身宽度的值 */
             }
         }
 
@@ -1697,7 +1756,7 @@
             height: 40px;
             font-size: 10px;
             border-radius: 10px;
-            transform: translateX(-50%);  /* 将元素向左移动自身宽度的一半 */
+            transform: translateX(-50%);  /* 元素向左移动自身宽度的值 */
             user-select: text;  /* 设置可选中文本属性 */
             -webkit-user-select: text;  /* 设置可选中文本属性，兼容 Safari/iOS */
         }
@@ -1717,6 +1776,7 @@
     <!-- 提示气泡 -->
     <div id="tsqp" class="tsqp"></div>
     <button id="mbButton"></button>
+    <button id="jsButton">18 05 09 09 02</button>
     <button id="wjjButton" class="button-fx">📁</button>
     <button id="wjjwzButton" class="button-wz">文件夹</button>
     <button id="wjj2Button" class="button-fx">📁</button>
@@ -1729,7 +1789,7 @@
     <button id="wflswzButton" class="button-wz">翁法罗斯</button>
     <button id="dypButton" class="button-fx"><span style="color: #00ade7;">哔</span></button>
     <button id="dypwzButton" class="button-wz">多元派</button>
-    <button id="ztlButton">18 05 09</button>
+    <button id="ztlButton"></button>
     <button id="superButton" class="button-fx">🏵️</button>
     <button id="ckButton" class="button-fx">🪟</button>
     <button id="htButton" class="button-fx">≡</button>
@@ -1943,7 +2003,7 @@
         <button id="jjcjwzButton" class="button-wz" class="button-wz">极简插件</button>
         <img id="add-onsImg" class="img-fx" data-src="https://www.firefox.com.cn/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg">
         <button id="add-onswzButton" class="button-wz">ADD-ONS</button>
-        <img id="hjImg" class="img-fx" data-src="https://huajiakeji.com/favicon.ico">
+        <img id="hjImg" class="img-fx" data-src="https://www.faviconextractor.com/favicon/huajiakeji.com?larger=true">
         <button id="hjwzButton" class="button-wz">画夹</button>
         <img id="aixImg" class="img-fx" data-src="https://cdn3.zzzmh.cn/v3/crx/5d6503e0ead341df8c433deb043600af/logo/logo.png">
         <button id="aixwzButton" class="button-wz">AIX</button>
@@ -1987,13 +2047,15 @@
         <button id="steamcommunitywzButton" class="button-wz">steamcommunity 302</button>
         <img id="freecadImg" class="img-fx" data-src="https://www.freecad.org/images/favicon.ico">
         <button id="freecadwzButton" class="button-wz">FreeCAD</button>
-        <img id="blenderImg" class="img-fx" data-src="https://www.blender.org/wp-content/themes/bthree/assets/icons/apple-touch-icon.png">
+        <img id="blenderImg" class="img-fx" data-src="https://images.icon-icons.com/195/PNG/96/Blender_23505.png">
         <button id="blenderwzButton" class="button-wz">Blender</button>
         <img id="wpsImg" class="img-fx" data-src="https://tse3-mm.cn.bing.net/th/id/OIP-C.fM1R0e-skBAKchk2ID9QTAHaFc?w=234&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
         <button id="wpswzButton" class="button-wz">WPS</button>
         <button id="wpswz2Button" class="button-wz">.exe</button>
         <img id="gxworks2Img" class="img-fx" data-src="https://img3.downza.cn/download/202003/091343-5e683b47e1e61.jpg">
         <button id="gxworks2wzButton" class="button-wz">GX Works2 .exe</button>
+        <img id="livelywallpaperImg" class="img-fx" data-src="https://www.rocksdanister.com/lively/assets/logo.webp">
+        <button id="livelywallpaperwzButton" class="button-wz">LivelyWallpaper .exe</button>
         <img id="aidluxImg" class="img-fx" data-src="https://appimg-drcn.dbankcdn.com/application/icon144/736b60962bb74a579563e3320f0e9e86.png">
         <button id="aidluxwzButton" class="button-wz">AidLux</button>
         <img id="xxdnImg" class="img-fx" data-src="https://ts1.tc.mm.bing.net/th/id/R-C.6a8e69bfe7fdbc681bb17e64bce88c5a?rik=UHfrMNH5WWsWXw&riu=http%3a%2f%2fpic.9663.com%2fupload%2f2024-1%2f20241101018472150.jpg&ehk=oJxIZvU6bIw3o5qqRCr%2f8IyVahuqDKtwZOBUENE%2fSF8%3d&risl=&pid=ImgRaw&r=0">
@@ -2012,6 +2074,8 @@
         <button id="appopswzButton" class="button-wz">App Ops</button>
         <img id="shizukuImg" class="img-fx" data-src="https://shizuku.rikka.app/logo.png">
         <button id="shizukuwzButton" class="button-wz">Shizuku</button>
+        <img id="solidworksImg" class="img-fx" data-src="https://pic.pngsucai.com/00/14/60/5ec3d4e9308d163b.webp">
+        <button id="solidworkswzButton" class="button-wz">SolidWorks2025</button>
         <img id="apktoolImg" class="img-fx" data-src="https://img.downkuai.com/logo/20250327/c04b32f06d15a0e5bfec869caff978ac.png">
         <button id="apktoolwzButton" class="button-wz">Apktool m</button>
         <img id="zerotermuxImg" class="img-fx" data-src="https://tse4-mm.cn.bing.net/th/id/OIP-C.JfaRXtJoxqXwQmfDx0OoFwAAAA?w=171&h=171&c=7&r=0&o=5&dpr=3.3&pid=1.7">
@@ -2044,7 +2108,7 @@
         <button id="dlgwzButton" class="button-wz">多邻国</button>
         <img id="plcImg" class="img-fx" data-src="https://imgres.crsky.com/crsky/78/385145-2022011316400161dfe561bc78e.jpg">
         <button id="plcwzButton" class="button-wz">FX-TRN-BEG-C .exe</button>
-        <img id="dgjnysxImg" class="img-fx" data-src="http://pic.3673.com/upload/2025-3/20253171830233304.png">
+        <img id="dgjnysxImg" class="img-fx" data-src="https://src.pcsoft.com.cn/d/file/soft/yygj/jyjx/2019-10-14/8284abe7d4cd2e44f53644bd93af2401.jpg">
         <button id="dgjnysxwzButton" class="button-wz">电工技能与实训</button>
 
         <button id="txButton">通讯</button>
@@ -2080,10 +2144,12 @@
         <button id="jqlwzButton" class="button-wz">绝区零</button>
         <img id="xqtdImg" class="img-fx" data-src="https://act-webstatic.mihoyo.com/puzzle/hkrpg/pz_FkO6OKviYD/resource/puzzle/2024/01/19/177fd814ebd453d5b41957e4f46ffc98_3280172900314225336.png?x-oss-process=image/format,webp/quality,Q_90">
         <button id="xqtdwzButton" class="button-wz">星穹铁道</button>
-        <img id="starwordImg" class="img-fx" data-src="https://windows-cdn.softpedia.com/screenshots/ico/Starward.png">
+        <img id="starwordImg" class="img-fx" data-src="https://pic.downxia.com/upload/2024/0426/20240426035821194.png">
         <button id="starwordwzButton" class="button-wz">Starword</button>
         <img id="mysImg" class="img-fx" data-src="https://upload-bbs.miyoushe.com/upload/2023/09/24/323784465/5d03d6ee99e454fe47b43e38828b3bc8_1871247878345168426.png">
         <button id="myswzButton" class="button-wz">米游社</button>
+        <img id="tlykfImg" class="img-fx" data-src="https://ts1.tc.mm.bing.net/th/id/OIP-C.mXTes_7UDYk2khXwVMDO1gHaHa?dpr=3.3&pid=ImgDetMain&o=7&rm=3">
+        <button id="tlykfwzButton" class="button-wz">逃离鸭科夫</button>
 
         <button id="gdButton">更多</button>
         <img id="yyscImg" class="img-fx" data-src="https://appgallery.huawei.com/static/agweb/img/ic_navigation_appmarket.png">
@@ -2808,41 +2874,47 @@ Lv       Ts     Og
     <div id="ht-popup" class="popup-t">
         <button id="ggButton">
 <span style="color: blue;">广告：</span>
-<br>
-由于版本更新过于频繁，更新详情信息已
-移除！
+
+        由于版本更新过于频繁，更新详情
+信息已移除！
 
 01.
-<span style="color: blue;">状态键值</span>，为wasd（弹窗）、b（宝藏页
-）、v（vnc）、z（B站）、c（豆包）、
-t（主题切换），i（设置背景）。此外"
-Esc"是弹窗关闭键。
+        <span style="color: blue;">状态键值</span>，为wasd（弹窗）、b
+（宝藏页）、v（vnc）、z（B站）、c
+（豆包）、t（主题切换），i（设置背
+背景）。此外"Esc"是弹窗关闭键。
+        在新版本中，解决了键位冲突的问
+题，忽略的修饰键有：Ctrl、Alt、meta（
+windows、command、super）、Shift，
+一次性全都加了๑＞ڡ＜。
 
 02.
-"<span style="color: blue;">屏幕保持</span>"无法使用，这是因为浏览器对
-非"超文本传输安全协议，即https"网站的
-敏感权限限制。
+        "<span style="color: blue;">屏幕保持</span>"无法使用，这是因为浏览
+器对非"超文本传输安全协议，即https"网
+站的敏感权限限制。
 &emsp;&emsp;如：摄像头啦、麦克风啦……什么
 的，虽然不知道屏幕保持（也有可能是浏
 览器不支持Wake Lock AP𝙸，现在的浏览
 器好像不太可能）能有什么安全隐患……
 &emsp;&emsp;解决办法就是，下载源代码，本地使
 用（ 自己定期更新下哦）(●'◡'●)。
-<br>
+
 03.
-"<span style="color: blue;">设置背景</span>"对图片大小的限制，终于解决
-啦，放弃使用localStorage，而用
-𝙸ndexedDB，Ciallo～(∠・ω< )⌒☆，此
-外，旧文件无法自动删除，任未解决。
-<br>
+        "<span style="color: blue;">设置背景</span>"对图片大小的限制，终于
+解决啦，放弃使用localStorage，而用
+𝙸ndexedDB，Ciallo～(∠・ω< )。
+        新增"<span style="color: blue;">背景消除</span>"功能，点击"设置背
+景"这个文字即可，同时释放之前创建的
+Object URL，避免内存泄漏。
+
 04.
-<span style="color: blue;">宝藏页</span>里的图片，用的是"src+延迟载入
-"，防止在没有打开宝藏页的时候，加载
-图片，造成不必要的流量消耗。
-<br>
+        <span style="color: blue;">宝藏页</span>里的图片，用的是"src+延迟
+载入"，防止在没有打开宝藏页的时候，
+加载图片，造成不必要的流量消耗。
+
 05.
-新增"<span style="color: blue;">下载源码</span>"的功能，可直接在后台弹
-窗里，下载这个网站的所有源代码。
+        新增"<span style="color: blue;">下载源码</span>"的功能，可直接在后
+台弹窗里，下载这个网站的所有源代码。
 &emsp;&emsp;构建方法用的是css+html+javaScript
 的纯前端，没有后端的方式写的请放心
 食用（> y <）。
@@ -2851,35 +2923,46 @@ Esc"是弹窗关闭键。
 &emsp;&emsp;对了，这个下载功能只能在"超文本
 传输协议/超文本传输安全协议"中运行，
 无法在文件交互协议中运行哦(●'◡'●)。
-<br>
+
 06.
-新增"<span style="color: blue;">输入框聚焦</span>"的功能，按下"/"键，
-自动聚焦，按下"Tab"键停止聚焦，手机端……(；ˉ▽ˉ)。
-<br>
+        新增"<span style="color: blue;">输入框聚焦</span>"的功能，按
+下"/"键，自动聚焦，按下"Tab"键停止聚
+焦，手机端……(；ˉ▽ˉ)。
+
 07.
-新增弹窗尺寸与位置自适应屏幕分辨率的
-功能，而异形屏幕任然没有适配（如此小
-众的屏幕，真的有必要适配吗(ˉ▽ˉ；)）。
-<br>
+        新增弹窗尺寸与位置自适应屏幕分
+辨率的功能，而异形屏幕任然没有适配
+（如此小众的屏幕，真的有必要适配吗
+(ˉ▽ˉ；)）。
+
 08.
-新增''<span style="color: blue;">文本自适应背景颜色</span>''功能，而新版
-本中，去除弹窗里的文字自适应背景效果
-，转用类似黑白蒙版，并添加模糊，解决
-了看起来怪怪的。
-<br>
+        新增''<span style="color: blue;">文本自适应背景颜色</span>''功能，而
+新版本中，去除弹窗里的文字自适应背景
+效果，转用类似黑白蒙版，并添加模糊，
+解决了看起来怪怪的。
+
 09.
-新增黑色蒙版，解决了黑色主题时，背景
-任然高亮。
-<br>
+        新增黑色蒙版，解决了黑色主题
+时，背景任然高亮。
+
 10.
-''文件下载功能''，在浏览器地址栏中，用
-''/''将域名与文件全名隔开，输入文件全名
-即可（包括后缀），资金有限，有很大限
-制，（〜^∇^)〜。
-<br>
+        ''文件下载功能''，在浏览器地址
+栏中，用/''将域名与文件全名隔开，输入
+文件全名即可（包括后缀），资金有限，
+有很大限制，（〜^∇^)〜。
+
 11.
-linux install steam会提示：
-sudo apt-get install libgl1-nvidia-glvnd-glx:i386
+        linux run steam会提示：You are
+missing the following 32-bit libraries, and
+Steam may not run: libGL.so.1
+        解决办法是：sudo apt-get install
+libgl1-nvidia-glvnd-glx:i386
+
+12.
+        新增主页按钮和文字，自适应窗口
+高度位置。纵轴最小容纳两个按钮和文
+字。
+
         </button>
 
         <!-- 播放控件容器 -->
@@ -2901,7 +2984,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         <button id="ztqhwzButton" class="button-wz">主题切换</button>
         <button id="xzymButton" class="button-fx">📥️</button>
         <button id="xzymwzButton" class="button-wz">下载源码</button>
-        <button id="htdbwzButton" class="button-dbwz">版本：251004</button>
+        <button id="htdbwzButton" class="button-dbwz">版本：251030</button>
     </div>
 
     <div id="wjj-popup" class="popup-t">
@@ -2930,9 +3013,9 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         <button id="lxhzjddyButton" class="button-fx">🎞️</button>
         <button id="lxhzjddywzButton" class="button-wz">罗小黑战记大电影 2</button>
         <button id="llButton" class="button-fx">🎞️</button>
-        <button id="llwzButton" class="button-wz">灵笼 1-1</button>
+        <button id="llwzButton" class="button-wz">灵笼 2-0</button>
         <button id="mnzlButton" class="button-fx">🎞️</button>
-        <button id="mnzlwzButton" class="button-wz">魔女之旅 1-1</button>
+        <button id="mnzlwzButton" class="button-wz">魔女之旅 1-0</button>
         <button id="wjjdbwzButton" class="button-dbwz">整个宇宙将为你闪烁！</button>
     </div>
 
@@ -2973,56 +3056,107 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         initTheme();
 
 // 键盘监听事件
-        document.addEventListener('keydown', function (event) {
-            // 忽略输入框内的按键
-            if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
-            // 所有弹窗的ID列表
-            const allPopupIds = ['super-popup', 'bzy-popup', 'ck-popup', 'gcst-popup', 'xzqhtx-popup', 'dmyz-popup', 'dydgst-popup', 'ls-popup', 'plcxxbj-popup', 'qdgc-popup', 'yszqb-popup', 'hgst-popup', 'ht-popup', 'wjj-popup', 'wjj2-popup'];
-            const popupOverlay = document.getElementById('popup-overlay');
-            // ESC键处理：关闭所有弹窗
-            if (event.key === 'Escape') {
-                allPopupIds.forEach(id => {
-                    const popup = document.getElementById(id);
-                    if (popup) popup.style.display = 'none'; });
-                popupOverlay.style.display = 'none';
-                event.preventDefault();
-               return; }
-            let targetPopupId;  // 根据按键匹配目标弹窗
-            switch (event.key) {
-                case 'w': targetPopupId = 'wjj-popup'; break;
-                case 'a': targetPopupId = 'super-popup'; break;
-                case '/': targetPopupId = 'super-popup'; break;
-                case 'b': targetPopupId = 'bzy-popup'; break;
-                case 'z': const blblButton = document.getElementById('blblButton'); if (blblButton) { blblButton.click(); event.preventDefault(); } return;
-                case 'v': const vncButton = document.getElementById('vncButton'); if (vncButton) { vncButton.click(); event.preventDefault(); } return;
-                case 's': targetPopupId = 'ck-popup'; break;
-                case 'd': targetPopupId = 'ht-popup'; break;
-                case 'c': const chatButton = document.getElementById('chatButton'); if (chatButton) { chatButton.click(); event.preventDefault(); } return;
-                case 'p': const pmbcButton = document.getElementById('pmbcButton'); if (pmbcButton) { pmbcButton.click(); event.preventDefault(); } return;
-                case 't': const ztqhButton = document.getElementById('ztqhButton'); if (ztqhButton) { ztqhButton.click(); event.preventDefault(); } return;
-                case 'i': const szbjButton = document.getElementById('szbjButton'); if (szbjButton) { szbjButton.click(); event.preventDefault(); } return;
-            default: return; }  // 忽略其他按键
-            // 获取目标弹窗
-            const targetPopup = document.getElementById(targetPopupId);
-            if (!targetPopup) return;
-            // 检查目标弹窗当前是否可见
-            const isTargetVisible = targetPopup.style.display === 'block';
-            // 1. 关闭所有其他弹窗（不包括目标弹窗）
-            allPopupIds.forEach(id => {
-                if (id !== targetPopupId) {
-                    const popup = document.getElementById(id);
-                    if (popup) popup.style.display = 'none'; } });
-            // 2. 切换目标弹窗状态
-            targetPopup.style.display = isTargetVisible ? 'none' : 'block';
-            popupOverlay.style.display = isTargetVisible ? 'none' : 'block';
-            // 当宝藏页弹窗被打开时加载图片
-            if (!isTargetVisible && targetPopupId) { loadPopupImages(targetPopupId); }
-            event.preventDefault();
+document.addEventListener('keydown', function (event) {
+    // 忽略输入框内的按键
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
+    
+    // 所有弹窗的ID列表
+    const allPopupIds = ['super-popup', 'bzy-popup', 'ck-popup', 'gcst-popup', 'xzqhtx-popup', 'dmyz-popup', 'dydgst-popup', 'ls-popup', 'plcxxbj-popup', 'qdgc-popup', 'yszqb-popup', 'hgst-popup', 'ht-popup', 'wjj-popup', 'wjj2-popup'];
+    const popupOverlay = document.getElementById('popup-overlay');
+    
+    // ESC键处理：关闭所有弹窗
+    if (event.key === 'Escape') {
+        allPopupIds.forEach(id => {
+            const popup = document.getElementById(id);
+            if (popup) popup.style.display = 'none'; 
         });
+        popupOverlay.style.display = 'none';
+        event.preventDefault();
+        return; 
+    }
+    
+    // 当按下Ctrl、Alt、Meta（windows、command、super）、shift键时，不处理单键弹窗逻辑（不然会快捷键冲突）
+    if (event.ctrlKey || event.altKey || event.metaKey || event.shiftKey) return;
+    
+    let targetPopupId;  // 根据按键匹配目标弹窗
+    switch (event.key) {
+        case 'w': targetPopupId = 'wjj-popup'; break;
+        case 'a': targetPopupId = 'super-popup'; break;
+        case '/': targetPopupId = 'super-popup'; break;
+        case 'b': targetPopupId = 'bzy-popup'; break;
+        case 'z': 
+            const blblButton = document.getElementById('blblButton'); 
+            if (blblButton) { 
+                blblButton.click(); 
+                event.preventDefault(); 
+            } 
+            return;
+        case 'v': 
+            const vncButton = document.getElementById('vncButton'); 
+            if (vncButton) { 
+                vncButton.click(); 
+                event.preventDefault(); 
+            } 
+            return;
+        case 's': targetPopupId = 'ck-popup'; break;
+        case 'd': targetPopupId = 'ht-popup'; break;
+        case 'c': 
+            const chatButton = document.getElementById('chatButton'); 
+            if (chatButton) { 
+                chatButton.click(); 
+                event.preventDefault(); 
+            } 
+            return;
+        case 'p': 
+            const pmbcButton = document.getElementById('pmbcButton'); 
+            if (pmbcButton) { 
+                pmbcButton.click(); 
+                event.preventDefault(); 
+            } 
+            return;
+        case 't': 
+            const ztqhButton = document.getElementById('ztqhButton'); 
+            if (ztqhButton) { 
+                ztqhButton.click(); 
+                event.preventDefault(); 
+            } 
+            return;
+        case 'i': 
+            const szbjButton = document.getElementById('szbjButton'); 
+            if (szbjButton) { 
+                szbjButton.click(); 
+                event.preventDefault(); 
+            } 
+            return;
+        default: return; 
+    }
+    // 获取目标弹窗
+    const targetPopup = document.getElementById(targetPopupId);
+    if (!targetPopup) return;
+    // 检查目标弹窗当前是否可见
+    const isTargetVisible = targetPopup.style.display === 'block';
+    // 1. 关闭所有其他弹窗（不包括目标弹窗）
+    allPopupIds.forEach(id => {
+        if (id !== targetPopupId) {
+            const popup = document.getElementById(id);
+            if (popup) popup.style.display = 'none'; 
+        } 
+    });
+    // 2. 切换目标弹窗状态
+    targetPopup.style.display = isTargetVisible ? 'none' : 'block';
+    popupOverlay.style.display = isTargetVisible ? 'none' : 'block';
+    // 当宝藏页弹窗被打开时加载图片
+    if (!isTargetVisible && targetPopupId) { 
+        loadPopupImages(targetPopupId); 
+    }
+    event.preventDefault();
+});
 
 // 状态栏
 // 提示气泡
         let wakeLock = null;
+        const wjjButton = document.getElementById('wjjButton');
+        const wjj2Button = document.getElementById('wjj2Button');
         const pmbcButton = document.getElementById('pmbcButton');
         const superButton = document.getElementById('superButton');
         const bzyButton = document.getElementById('bzyButton');
@@ -3037,8 +3171,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         const yszqbButton = document.getElementById('yszqbButton');
         const hgstButton = document.getElementById('hgstButton');
         const htButton = document.getElementById('htButton');
-        const wjjButton = document.getElementById('wjjButton');
-        const wjj2Button = document.getElementById('wjj2Button');
+        const szbjwzButton = document.getElementById('szbjwzButton');
         const tsqp = document.getElementById('tsqp');
 
 // 屏幕保持
@@ -3067,6 +3200,12 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         });
 
 // 提示气泡点击事件
+        // 文件夹按钮点击事件
+        wjjButton.addEventListener('click', () => { showNotification('文件夹弹窗'); });
+
+        // 文件夹2按钮点击事件
+        wjj2Button.addEventListener('click', () => { showNotification('文件夹2弹窗'); });
+
         // super按钮点击事件
         superButton.addEventListener('click', () => { showNotification('super弹窗'); });
 
@@ -3109,11 +3248,8 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
         // 主题切换按钮点击事件
         ztqhButton.addEventListener('click', () => { showNotification('主题切换'); });
 
-        // 文件夹按钮点击事件
-        wjjButton.addEventListener('click', () => { showNotification('文件夹弹窗'); });
-
-        // 文件夹2按钮点击事件
-        wjj2Button.addEventListener('click', () => { showNotification('文件夹2弹窗'); });
+        // 设置背景文字按钮点击事件
+        szbjwzButton.addEventListener('click', () => { showNotification('背景清楚'); });
 
         // 封装通知显示逻辑
         function showNotification(message) {
@@ -3191,6 +3327,8 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             'wpswz2Button': 'https://ncre.neea.edu.cn/res/Home/2012/1ab1f38f3a81af338dbb4f6495568f28.rar',
             'gxworks2Img': 'https://www.downza.cn/soft/293301.html',
             'gxworks2wzButton': 'https://xz54aer1w.yzhy17.cn/2020/03/11/GXWorks.rar?timestamp=68d51981&auth_key=04b76e6533794def3c4f663ab9dc276c&sign=7d987a49ac0cd5f00bd98106c4344ca1&t=68d52791',
+            'livelywallpaperImg': 'https://www.rocksdanister.com/lively/',
+            'livelywallpaperwzButton': 'https://github.com/rocksdanister/lively/releases/download/v2.2.1.0/lively_setup_x86_full_v2210.exe',
             'aidluxImg': 'https://aidlux.com/platform',
             'aidluxwzButton': 'https://file.aidlux.com/repo/apk/aidlux_2.0.0_latest_release.apk',
             'xxdnImg': 'https://github.com/Cateners/tiny_computer/releases/',
@@ -3209,6 +3347,8 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             'appopswzButton': 'https://github.com/RikkaApps/App-Ops-issue-tracker/releases/download/files/appops-v9.0.7.r1708.57e6ad70.apk',
             'shizukuImg': 'https://shizuku.rikka.app/zh-hans/',
             'shizukuwzButton': 'https://apt.izzysoft.de/fdroid/repo/moe.shizuku.privileged.api_1086.apk',
+            'solidworksImg': 'https://www.cnblogs.com/hengze/articles/19171829',
+            'solidworkswzButton': 'https://www.123865.com/s/CPZxTd-bcj3d',
             'apktoolImg': 'https://m.downkuai.com/android/145961.html',
             'apktoolwzButton': 'https://maximoff.su/files/apk/apktool/Apktool_M_v2.4.0-250916(2025091601).apk',
             'zerotermuxImg': 'https://od.ixcmstudio.cn/repository/main/ZeroTermux/',
@@ -3281,6 +3421,8 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             'starwordwzButton': ' https://github.com/Scighost/Starward/releases/download/0.15.1/Starward_Portable_0.15.1_x64.7z',
             'mysImg': 'https://www.miyoushe.com/sr/',
             'myswzButton': 'https://download-bbs.miyoushe.com/app/mihoyobbs_2.93.1_miyousheluodi.apk',
+            'tlykfImg': 'https://store.steampowered.com/app/3167020/_/',
+            'tlykfwzButton': 'https://www.123865.com/s/CPZxTd-U7j3d',
 
             // 宝藏页（更多）
             'yyscImg': 'https://appgallery.huawei.com/Featured',
@@ -3400,7 +3542,7 @@ sudo apt-get install libgl1-nvidia-glvnd-glx:i386
             'cadlzButton': 'https://lkvod.me/vodplay/148740-1-1.html',
             'blenderButton': 'steam://rungameid/365670',
             'lxhzjddyButton': 'https://lkvod.org/play/151424-1-1.html',
-            'llButton': 'https://lkvod.org/play/41406-3-1.html',
+            'llButton': 'https://lkvod.org/play/147978-4-1.html',
             'mnzlButton': 'https://www.yxxq8.cc/play/29599-1-1.html',
         };  // 代码块闭合语句。
         Object.entries(buttonLinks).forEach(([id, url]) => {
@@ -10284,6 +10426,56 @@ const loadBackgroundFromDB = async (id) => {
                         videoBackground.src = newURL;
                         localStorage.setItem('backgroundURL', newURL); }
                 } catch (e) { console.error('Error loading video from IndexedDB:', e); } } });
+
+// 给清除背景按钮绑定点击事件
+document.getElementById('szbjwzButton').addEventListener('click', function(event) {
+    event.stopPropagation(); // 阻止事件冒泡（如果需要）
+    clearAllBackgrounds(); // 执行清除操作
+});
+// 清除所有保存的背景
+async function clearAllBackgrounds() {
+    try {
+        // 1. 清除IndexedDB中的背景数据
+        const db = await openDB();
+        const transaction = db.transaction('backgrounds', 'readwrite');
+        const store = transaction.objectStore('backgrounds');
+        // 删除图片和视频背景记录
+        await new Promise((resolve, reject) => {
+            const deleteImage = store.delete('backgroundImage');
+            deleteImage.onsuccess = () => {
+                const deleteVideo = store.delete('backgroundVideo');
+                deleteVideo.onsuccess = resolve;
+                deleteVideo.onerror = reject;
+            };
+            deleteImage.onerror = reject;
+        });
+        // 2. 清除localStorage中的缓存
+        localStorage.removeItem('backgroundType');
+        localStorage.removeItem('backgroundURL');
+        // 3. 清除页面上的背景显示
+        const imageBackground = document.getElementById('szbj-image');
+        const videoBackground = document.getElementById('szbj-video');
+// 在清除函数中添加 URL 释放逻辑
+const currentImageUrl = imageBackground.style.backgroundImage;
+if (currentImageUrl && currentImageUrl !== 'none') {
+    const urlMatch = currentImageUrl.match(/url\(["']?(.*?)["']?\)/);
+    if (urlMatch && urlMatch[1]) {
+        URL.revokeObjectURL(urlMatch[1]);
+    }
+}
+
+if (videoBackground.src && videoBackground.src.startsWith('blob:')) {
+    URL.revokeObjectURL(videoBackground.src);
+}
+        imageBackground.style.backgroundImage = 'none'; // 清除图片背景
+        imageBackground.style.display = 'none';
+        videoBackground.src = ''; // 清除视频源
+        videoBackground.style.display = 'none';
+        console.log('所有背景已成功清除');
+    } catch (error) {
+        console.error('清除背景失败:', error);
+    }
+}
 
 // 下载源码
         document.getElementById("xzymButton").addEventListener("click", function() {
