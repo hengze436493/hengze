@@ -26,7 +26,7 @@
             left: 50%;
             transform: translateX(-50%);
             border: 1px solid #CCCCCC;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
             padding: 10px 10px;
             border-radius: 10px;
             z-index: 9999;
@@ -124,7 +124,7 @@
             height: 70px;
             border-radius: 50px;
             pointer-events: auto;  /* 鼠标可点击 */
-            border: 1px solid #CCCCCC;
+            border: 5px solid #CCCCCC;
         }
 
         /* 状态栏按钮样式 */
@@ -139,7 +139,7 @@
             border: 1px solid #CCCCCC;
             border-radius: 15px;
             background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
             z-index: -1;
         }
 
@@ -221,10 +221,11 @@
             position: absolute;
             top: 100px;
             left: 250px;
-            border: 1px solid #CCCCCC;
-            width: 245px;
+            width: 240px;
             height: 100px;
             border-radius: 10px;
+            pointer-events: none;  /* 关闭鼠标点击 */
+            border: 1px solid #CCCCCC;
         }
 
         /* 宝藏页按钮样式 */
@@ -323,9 +324,9 @@
         #deepinwzButton { top: 700px; left: 600px; }
 
         /* Windows10样式 */
-        #windows10Img { top: 650px; left: 700px; }
+        #qlImg { top: 650px; left: 700px; }
         /* Windows10文字样式 */
-        #windows10wzButton { top: 700px; left: 700px; }
+        #qlwzButton { top: 700px; left: 700px; }
 
         /* Bot按钮样式 */
         #botButton {
@@ -655,79 +656,96 @@
         #vncButton { top: 120px; left: 345px; }
         #vncwzButton { top: 170px; left: 345px; }
 
+        /* plc模拟按钮样式 */
+        #plcmnButton { top: 120px; left: 420px; }
+        #plcmnwzButton { top: 170px; left: 420px; }
+
+        /* plc模拟弹窗样式 */
+        #plcmn-popup { bottom: 70px; /* 顶部距离下方值 */ }
+        /* 输入框行样式 */
+        .input-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .input-cell {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #CCCCCC;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+            min-width: 60px; /* 最小宽度确保不会太窄 */
+        }
+
+        .input-cell:focus {
+            outline: none;
+            border-color: #4A90E2;
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+#input-container {
+    margin-top: 0; /* 清除顶部外边距 */
+    padding-top: 0; /* 清除顶部内边距 */
+    line-height: 0; /* 消除块级元素默认的基线间距（关键！） */
+}
+
+
         /* 颜色2按钮样式 */
         #ys2Button {
             position: absolute;
-            top: 220px;
+            top: 210px;
             left: 250px;
             width: 320px;
             height: 200px;
             border-radius: 10px;
+            pointer-events: none;  /* 关闭鼠标点击 */
             border: 1px solid #CCCCCC;
         }
 
         /* 哔哩哔哩按钮样式 */
-        #blblButton { top: 240px; left: 270px; }
-        #blblwzButton { top: 290px; left: 270px; }
-
-        /* 抖音按钮样式 */
-        #dyButton { top: 240px; left: 345px; }
-        #dywzButton { top: 290px; left: 345px; }
-
-        /* PhiTogether按钮样式 */
-        #phitogetherButton { top: 240px; left: 425px; }
-        #phitogetherwzButton { top: 290px; left: 425px; }
-
-        /* 邮箱按钮样式 */
-        #yxButton { top: 240px; left: 505px; }
-        #yxwzButton { top: 290px; left: 505px; }
+        #blblButton { top: 230px; left: 270px; }
+        #blblwzButton { top: 280px; left: 270px; }
 
         /* 音乐网按钮样式 */
-        #yywButton { top: 330px; left: 270px; }
-        #yywwzButton { top: 380px; left: 270px; }
+        #yywButton { top: 230px; left: 345px; }
+        #yywwzButton { top: 280px; left: 345px; }
+
+        /* PhiTogether按钮样式 */
+        #phitogetherButton { top: 230px; left: 420px; }
+        #phitogetherwzButton { top: 280px; left: 420px; }
+
+        /* 邮箱按钮样式 */
+        #yxButton { top: 230px; left: 500px; }
+        #yxwzButton { top: 280px; left: 500px; }
+
+        /* 抖音按钮样式 */
+        #dyButton { top: 320px; left: 270px; }
+        #dywzButton { top: 370px; left: 270px; }
 
         /* 句乐部按钮样式 */
-        #jlbButton { top: 330px; left: 345px; }
-        #jlbwzButton { top: 380px; left: 345px; }
+        #jlbButton { top: 320px; left: 345px; }
+        #jlbwzButton { top: 370px; left: 345px; }
 
         /* 地图测试按钮样式 */
-        #dtcsButton { top: 330px; left: 425px; }
-        #dtcswzButton { top: 380px; left: 425px; }
+        #dtcsButton { top: 320px; left: 420px; }
+        #dtcswzButton { top: 370px; left: 420px; }
 
         /* 颜色3按钮样式 */
         #ys3Button {
             position: absolute;
-            top: 440px;
+            top: 420px;
             left: 250px;
-            border: 1px solid #CCCCCC;
             width: 320px;
             height: 200px;
             border-radius: 10px;
-}
-
-        /* 启动器按钮样式 */
-        #qdqButton { top: 460px; left: 270px; }
-        #qdqwzButton { top: 510px; left: 270px; }
-
-        /* 星铁按钮样式 */
-        #xtButton { top: 460px; left: 345px; }
-        #xtwzButton { top: 510px; left: 345px; }
+            pointer-events: none;  /* 关闭鼠标点击 */
+            border: 1px solid #CCCCCC;
+        }
 
         /* index pages按钮样式 */
-        #indexpagesButton { top: 460px; left: 425px; }
-        #indexpageswzButton { top: 510px; left: 425px; }
-
-        /* FreeCAD按钮样式 */
-        #fcButton { top: 460px; left: 505px; }
-        #fcwzButton { top: 510px; left: 505px; }
-
-       /* QQ按钮样式 */
-        #qqButton { top: 550px; left: 270px; }
-        #qqwzButton { top: 600px; left: 270px; }
-
-       /* 微信按钮样式 */
-        #wxButton { top: 550px; left: 345px; }
-        #wxwzButton { top: 600px; left: 345px; }
+        #indexpagesButton { top: 440px; left: 420px; }
+        #indexpageswzButton { top: 490px; left: 420px; }
 
         /* 搜索区域样式 */
         .search {
@@ -773,6 +791,9 @@
         /* 分类按钮A样式 */
         #aButton { top: 250px; }
 
+        /* 爱壹番按钮样式 */
+        #ayfButton { top: 300px; }
+
         /* 分类按钮B样式 */
         #bButton { top: 350px; }
 
@@ -797,44 +818,44 @@
         /* 分类按钮C样式 */
         #cButton { top: 750px; }
 
-        /* CSDN按钮样式 */
-        #csdnButton { top: 800px; }
-
         /* cctv按钮样式 */
-        #cctvButton { top: 850px; }
+        #cctvButton { top: 800px; }
 
         /* 分类按钮D样式 */
-        #dButton { top: 950px; }
+        #dButton { top: 900px; }
 
         /* deepseek按钮样式 */
-        #deepseekButton { top: 1000px; }
+        #deepseekButton { top: 950px; }
 
         /* 电影解析按钮样式 */
-        #dyjxButton { top: 1050px; }
+        #dyjxButton { top: 1000px; }
 
         /* deepin论坛按钮样式 */
-        #deepinltButton { top: 1100px; }
+        #deepinltButton { top: 1050px; }
 
         /* 豆包按钮样式 */
-        #dbButton { top: 1150px; }
+        #dbButton { top: 1100px; }
 
         /* 分类按钮E样式 */
-        #eButton { top: 1250px; }
+        #eButton { top: 1200px; }
 
         /* Emoji按钮样式 */
-        #emojiButton { top: 1300px; }
+        #emojiButton { top: 1250px; }
 
         /* 二维码_兔子按钮样式 */
-        #ewmButton { top: 1350px; }
+        #ewmButton { top: 1300px; }
 
         /* Excel_懒人按钮样式 */
-        #excelButton { top: 1400px; }
+        #excelButton { top: 1350px; }
 
         /* 分类按钮F样式 */
-        #fButton { top: 1500px; }
+        #fButton { top: 1450px; }
 
         /* 风物之诗琴按钮样式 */
-        #fwvuqButton { top: 1550px; }
+        #fwvuqButton { top: 1500px; }
+
+        /* FC按钮样式 */
+        #fcButton { top: 1550px; }
 
         /* 分类按钮G样式 */
         #gButton { top: 1650px; }
@@ -899,8 +920,8 @@
         /* 米游社按钮样式 */
         #mysButton { top: 2950px; }
 
-        /* 民用无人驾驶航空器综合管理平台按钮样式 */
-        #mywrjuhkqzhglptButton { top: 3000px; }
+        /* 民用航空器综合管理平台按钮样式 */
+        #myhkqzhglptButton { top: 3000px; }
 
         /* 密塔AI按钮样式 */
         #mtButton { top: 3050px; }
@@ -929,179 +950,188 @@
         /* 企业微信·文档按钮样式 */
         #qywxwdButton { top: 3650px; }
 
+        /* 启动器按钮样式 */
+        #qdqButton { top: 3700px; }
+
+        /* QQ按钮样式 */
+        #qqButton { top: 3750px; }
+
         /* 分类按钮R样式 */
-        #rButton { top: 3750px; }
+        #rButton { top: 3850px; }
 
         /* 分类按钮S样式 */
-        #sButton { top: 3850px; }
+        #sButton { top: 3950px; }
 
         /* 扫黄打非按钮样式 */
-        #shdfButton { top: 3900px; }
+        #shdfButton { top: 4000px; }
 
         /* 骚扰电话举报按钮样式 */
-        #srdhjbButton { top: 3950px; }
+        #srdhjbButton { top: 4050px; }
 
         /* 视频去背景按钮样式 */
-        #spqbjButton { top: 4000px; }
+        #spqbjButton { top: 4100px; }
 
         /* 手写字体转换按钮样式 */
-        #sxztzhButton { top: 4050px; }
+        #sxztzhButton { top: 4150px; }
 
         /* 视频解析按钮样式 */
-        #spjxButton { top: 4100px; }
+        #spjxButton { top: 4200px; }
 
         /* 视频解析_v2ob按钮样式 */
-        #spjx2Button { top: 4150px; }
+        #spjx2Button { top: 4250px; }
 
         /* 鼠标练习按钮样式 */
-        #sblxButton { top: 4200px; }
+        #sblxButton { top: 4300px; }
 
         /* 分类按钮T样式 */
-        #tButton { top: 4300px; }
+        #tButton { top: 4400px; }
 
         /* 图片编辑器按钮样式 */
-        #tpbjqButton { top: 4350px; }
+        #tpbjqButton { top: 4450px; }
 
         /* 图片放大按钮样式 */
-        #tpfdButton { top: 4400px; }
+        #tpfdButton { top: 4500px; }
 
         /* 图片圆角按钮样式 */
-        #tpyjButton { top: 4450px; }
+        #tpyjButton { top: 4550px; }
 
         /* 图片橡皮按钮样式 */
-        #tpxpButton { top: 4500px; }
+        #tpxpButton { top: 4600px; }
 
         /* 图片取色器按钮样式 */
-        #tpqsqButton { top: 4550px; }
+        #tpqsqButton { top: 4650px; }
 
         /* 图片压缩按钮样式 */
-        #tpysButton { top: 4600px; }
+        #tpysButton { top: 4700px; }
 
         /* 图片修复按钮样式 */
-        #tpxfButton { top: 4650px; }
+        #tpxfButton { top: 4750px; }
 
         /* 图片修复2按钮样式 */
-        #tpxf2Button { top: 4700px; }
+        #tpxf2Button { top: 4800px; }
 
         /* 图片转Base64按钮样式 */
-        #tpzbase64Button { top: 4750px; }
+        #tpzbase64Button { top: 4850px; }
 
         /* 图表制作按钮样式 */
-        #tbzzButton { top: 4800px; }
+        #tbzzButton { top: 4900px; }
 
         /* 投屏按钮样式 */
-        #tpButton { top: 4850px; }
+        #tpButton { top: 4950px; }
 
         /* 特种作业操作证查询按钮样式 */
-        #tzzyczzcxButton { top: 4900px; }
+        #tzzyczzcxButton { top: 5000px; }
 
         /* 分类按钮U样式 */
-        #uButton { top: 5000px; }
+        #uButton { top: 5100px; }
 
         /* URL编码解码按钮样式 */
-        #urlbmjmButton { top: 5050px; }
+        #urlbmjmButton { top: 5150px; }
 
         /* 分类按钮V样式 */
-        #vButton { top: 5150px; }
+        #vButton { top: 5250px; }
 
         /* 分类按钮W样式 */
-        #wButton { top: 5250px; }
+        #wButton { top: 5350px; }
 
         /* 文字识别按钮样式 */
-        #wzsbButton { top: 5300px; }
+        #wzsbButton { top: 5400px; }
 
-        /* win11按钮样式 */
-        #win11Button { top: 5350px; }
+        /* 微信按钮样式 */
+        #wxButton { top: 5450px; }
 
         /* win12按钮样式 */
-        #win12Button { top: 5400px; }
+        #win12Button { top: 5500px; }
 
         /* winujjm按钮样式 */
-        #winujjmButton { top: 5450px; }
+        #winujjmButton { top: 5550px; }
 
         /* 蔚蓝档案标题生成按钮样式 */
-        #wldabtscButton { top: 5500px; }
+        #wldabtscButton { top: 5600px; }
 
         /* wlcs按钮样式 */
-        #wlcsButton { top: 5550px; }
+        #wlcsButton { top: 5650px; }
 
         /* 微信公众平台按钮样式 */
-        #wxgvptButton { top: 5600px; }
+        #wxgvptButton { top: 5700px; }
 
         /* 网站图标提取按钮样式 */
-        #wvtbtqButton { top: 5650px; }
+        #wvtbtqButton { top: 5750px; }
 
         /* 文字转语音按钮样式 */
-        #wzvyyButton { top: 5700px; }
+        #wzvyyButton { top: 5800px; }
 
         /* 我画你猜按钮样式 */
-        #whncButton { top: 5750px; }
+        #whncButton { top: 5850px; }
 
         /* 王者荣耀按钮样式 */
-        #wzryButton { top: 5800px; }
+        #wzryButton { top: 5900px; }
 
         /* 文字删除线按钮样式 */
-        #wzscxButton { top: 5850px; }
+        #wzscxButton { top: 5950px; }
 
         /* 微软激活工具按钮样式 */
-        #wrjhgjButton { top: 5900px; }
+        #wrjhgjButton { top: 6000px; }
 
         /* 文件解压缩按钮样式 */
-        #wjjysButton { top: 5950px; }
+        #wjjysButton { top: 6050px; }
 
         /* 分类按钮X样式 */
-        #xButton { top: 6050px; }
+        #xButton { top: 6150px; }
 
         /* 学堂在线按钮样式 */
-        #xtzxButton { top: 6100px; }
+        #xtzxButton { top: 6200px; }
 
         /* 小艺按钮样式 */
-        #xyButton { top: 6150px; }
+        #xyButton { top: 6250px; }
 
         /* 星铁光锥生成按钮样式 */
-        #xtgzscButton { top: 6200px; }
+        #xtgzscButton { top: 6300px; }
 
         /* 象棋按钮样式 */
-        #xqButton { top: 6250px; }
+        #xqButton { top: 6350px; }
+
+        /* 星铁按钮样式 */
+        #xtButton { top: 6400px; }
 
         /* 星铁短信生成按钮样式 */
-        #xtdxscButton { top: 6300px; }
+        #xtdxscButton { top: 6450px; }
 
         /* 分类按钮Y样式 */
-        #yButton { top: 6400px; }
+        #yButton { top: 6550px; }
 
         /* 域名注册按钮样式 */
-        #ymzcButton { top: 6450px; }
+        #ymzcButton { top: 6600px; }
 
         /* 音频剪辑按钮样式 */
-        #ypjjButton { top: 6500px; }
+        #ypjjButton { top: 6650px; }
 
         /* 音乐网2按钮样式 */
-        #yyw2Button { top: 6550px; }
+        #yyw2Button { top: 6700px; }
 
         /* 云星铁按钮样式 */
-        #yxtButton { top: 6600px; }
+        #yxtButton { top: 6750px; }
 
         /* 跃动星穹 */
-        #ydxqButton { top: 6650px; }
+        #ydxqButton { top: 6800px; }
 
         /* 分类按钮Z样式 */
-        #zButton { top: 6750px; }
+        #zButton { top: 6900px; }
 
         /* 中国移动按钮样式 */
-        #vgydButton { top: 6800px; }
+        #vgydButton { top: 6950px; }
 
         /* 中国联通按钮样式 */
-        #vgltButton { top: 6850px; }
+        #vgltButton { top: 7000px; }
 
         /* 中文域名转码按钮样式 */
-        #zwymzmButton { top: 6900px; }
+        #zwymzmButton { top: 7050px; }
 
         /* 在线小游戏按钮样式 */
-        #zxxyxButton { top: 6950px; }
+        #zxxyxButton { top: 7100px; }
 
         /* 在下莫老师按钮样式 */
-        #zxmlsButton { top: 7000px; }
+        #zxmlsButton { top: 7150px; }
 
         /* 生字文字按钮样式 */
         #szButton {
@@ -1118,7 +1148,7 @@
         }
 
         /* super底部文字按钮样式 */
-        #superdbwzButton { top: 7150px; }
+        #superdbwzButton { top: 7400px; }
 
         /* 窗口弹窗样式 */
         #ck-popup {
@@ -1407,6 +1437,7 @@
         .tsqp,
         #super-popup,
         #bzy-popup,
+        #plcmn-popup,
         #ck-popup,
         #gcst-popup,
         #xzqhtx-popup,
@@ -1426,6 +1457,7 @@
         .ztqh-mode #mbButton,
         .ztqh-mode #super-popup,
         .ztqh-mode #bzy-popup,
+        .ztqh-mode #plcmn-popup,
         .ztqh-mode #ck-popup,
         .ztqh-mode #gcst-popup,
         .ztqh-mode #xzqhtx-popup,
@@ -1511,6 +1543,14 @@
         /* 魔女之旅按钮样式 */
         #mnzlButton { top: 450px; left: 125px; }
         #mnzlwzButton { top: 500px; left: 125px; }
+
+        /* 间谍过家家按钮样式 */
+        #jdgjjButton { top: 450px; left: 220px; }
+        #jdgjjwzButton { top: 500px; left: 220px; }
+
+        /* 罗小黑战记按钮样式 */
+        #lxhzjButton { top: 550px; left: 30px; }
+        #lxhzjwzButton { top: 550px; left: 30px; }
 
         /* 文件夹底部文字按钮样式 */
         #wjjdbwzButton { top: 600px; z-index: 2; }
@@ -1613,7 +1653,7 @@
             bottom: 10px; /* 距离下方保持10px距离 */
             border-radius: 10px;
             border: 1px solid #CCCCCC;
-            /* backdrop-filter: blur(20px); 磨砂玻璃效果 */
+            backdrop-filter: blur(10px);  /* 磨砂玻璃效果 */
             box-shadow: none;
             z-index: 1001;
             box-sizing: border-box;
@@ -1632,10 +1672,10 @@
             left: 10px;
             width: 230px;
             height: 40px;
-            border-radius: 10px;
-            border: 1px solid #CCCCCC;
             text-align: left;
             padding-left: 10px;
+            border-radius: 10px;
+            border: 1px solid #CCCCCC;
             user-select: text;  /* 设置可选中文本属性 */
             -webkit-user-select: text;  /* 设置可选中文本属性，兼容 Safari/iOS */
         }
@@ -1667,6 +1707,8 @@
             left: 10px;
             width: 230px;
             height: 40px;
+            text-align: left;
+            padding-left: 10px;
             border-radius: 10px;
             border: 1px solid #CCCCCC;
             user-select: text;  /* 设置可选中文本属性 */
@@ -1803,7 +1845,7 @@
     <!-- 提示气泡 -->
     <div id="tsqp" class="tsqp"></div>
     <button id="mbButton"></button>
-    <button id="jsButton">18 05 09 09 08</button>
+    <button id="jsButton">18 05 09 09 24 05 03 02</button>
     <button id="wjjButton" class="button-fx">📁</button>
     <button id="wjjwzButton" class="button-wz">文件夹</button>
     <button id="wjj2Button" class="button-fx">📁</button>
@@ -1834,8 +1876,7 @@
                 <option value="https://cn.bing.com/search?q=">Bing</option>
                 <option value="https://baidu.com/s?wd=">百度</option>
                 <option value="https://metaso.cn/?q=">密塔</option>
-                <option value="https://github.com/search?q=">Github</option>
-                <option value="https://appgallery.huawei.com/search/">华为应用市场</option>
+                <option value="https://www.yfvod.com/vod-search/-------------.html?wd=">爱壹番</option>
                 <option value="https://yangh9.github.io/baidu/?s=">不会百度吗</option>
                 <option value="https://www.miyoushe.com/sr/search?keyword=">米游社</option>
                 <option value="https://api.xingzhige.com/API/dingqiu/?qq=">猫猫虫_填写QQ号</option>
@@ -1851,6 +1892,8 @@
         <button id="bzywzButton" class="button-wz" class="button-wz">宝藏页</button>
         <button id="vncButton" class="button-fx">🖥️</button>
         <button id="vncwzButton" class="button-wz">vnc</button>
+        <button id="plcmnButton" class="button-fx">p</button>
+        <button id="plcmnwzButton" class="button-wz">plc模拟</button>
         <button id="ys2Button"></button>
         <button id="blblButton" class="button-fx">📺️</button>
         <button id="blblwzButton" class="button-wz">哔哩哔哩</button>
@@ -1867,131 +1910,125 @@
         <button id="dtcsButton" class="button-fx">🗺️</button>
         <button id="dtcswzButton" class="button-wz">地图测试</button>
         <button id="ys3Button"></button>
-        <button id="qdqButton" class="button-fx">🕹️</button>
-        <button id="qdqwzButton" class="button-wz">启动器</button>
-        <button id="xtButton" class="button-fx">🚋</button>
-        <button id="xtwzButton" class="button-wz">星铁</button>
         <button id="indexpagesButton" class="button-fx">🌐</button>
         <button id="indexpageswzButton" class="button-wz">index pages</button>
-        <button id="fcButton" class="button-fx">F</button>
-        <button id="fcwzButton" class="button-wz">FreeCAD</button>
-        <button id="qqButton" class="button-fx">Q</button>
-        <button id="qqwzButton" class="button-wz">QQ</button>
-        <button id="wxButton" class="button-fx">微</button>
-        <button id="wxwzButton" class="button-wz">微信</button>
         <button id="shuziButton" class="button-fl">#</button>
-        <button id="yesypButton" class="button-cd">123云盘.yp</button>
+        <button id="yesypButton" class="button-cd">🌐  123云盘.yp</button>
         <button id="aButton" class="button-fl">A</button>
+        <button id="ayfButton" class="button-cd">🌐  爱壹番.ys</button>
         <button id="bButton" class="button-fl">B</button>
-        <button id="bdstButton" class="button-cd">百度识图.st</button>
-        <button id="bmqButton" class="button-cd">编码器</button>
-        <button id="bhbdmButton" class="button-cd">不会百度吗</button>
-        <button id="bvButton" class="button-cd">壁纸_wallpaper Engine Space</button>
-        <button id="bkyButton" class="button-cd">博客园_后台.bk</button>
-        <button id="bzButton" class="button-cd">壁纸_哲风</button>
+        <button id="bdstButton" class="button-cd">🌐  百度识图.st</button>
+        <button id="bmqButton" class="button-cd">🌐  编码器</button>
+        <button id="bhbdmButton" class="button-cd">🌐 不会百度吗</button>
+        <button id="bvButton" class="button-cd">🌐 壁纸引擎_Space</button>
+        <button id="bkyButton" class="button-cd">🌐 博客园_后台.bk</button>
+        <button id="bzButton" class="button-cd">🌐 壁纸_哲风</button>
         <button id="cButton" class="button-fl">C</button>
-        <button id="csdnButton" class="button-cd">CSDN</button>
-        <button id="cctvButton" class="button-cd">CCTV_央视网</button>
+        <button id="cctvButton" class="button-cd">🌐 CCTV_央视网</button>
         <button id="dButton" class="button-fl">D</button>
-        <button id="deepseekButton" class="button-cd">Deepseek.ds</button>
-        <button id="dyjxButton" class="button-cd">电影解析_wn.run/</button>
-        <button id="deepinltButton" class="button-cd">Deepin论坛.lt</button>
-        <button id="dbButton" class="button-cd">豆包.db</button>
+        <button id="deepseekButton" class="button-cd">🌐 Deepseek.ds</button>
+        <button id="dyjxButton" class="button-cd">🌐 电影解析_wn.run/</button>
+        <button id="deepinltButton" class="button-cd">🌐 Deepin论坛.lt</button>
+        <button id="dbButton" class="button-cd">🌐 豆包.db</button>
         <button id="eButton" class="button-fl">E</button>
-        <button id="emojiButton" class="button-cd">Emoji.emj</button>
-        <button id="ewmButton" class="button-cd">二维码_兔子.ewm</button>
-        <button id="excelButton" class="button-cd">Excel_懒人</button>
+        <button id="emojiButton" class="button-cd">🌐 Emoji.emj</button>
+        <button id="ewmButton" class="button-cd">🌐 二维码_兔子.ewm</button>
+        <button id="excelButton" class="button-cd">🌐 Excel_懒人</button>
         <button id="fButton" class="button-fl">F</button>
-        <button id="fwvuqButton" class="button-cd">风物之诗琴</button>
+        <button id="fwvuqButton" class="button-cd">🌐 风物之诗琴</button>
+        <button id="fcButton" class="button-cd">📦️ FC.fc</button>
         <button id="gButton" class="button-fl">G</button>
-        <button id="gifuiButton" class="button-cd">G𝙸F生成</button>
-        <button id="gjgdjyvhjyptButton" class="button-cd">国家高等教育智慧教育平台</button>
-        <button id="githubButton" class="button-cd">Github.gh</button>
-        <button id="githubdlxzButton" class="button-cd">Github_代理下载</button>
-        <button id="gszhButton" class="button-cd">格式转换_Aconvert.gs</button>
-        <button id="guvh2Button" class="button-cd">格式转换_Alltoall</button>
-        <button id="guvh3Button" class="button-cd">格式转换_PDF</button>
+        <button id="gifuiButton" class="button-cd">🌐 G𝙸F生成</button>
+        <button id="gjgdjyvhjyptButton" class="button-cd">🌐 国家高等教育智慧教育平台</button>
+        <button id="githubButton" class="button-cd">🌐 Github.gh</button>
+        <button id="githubdlxzButton" class="button-cd">🌐 Github_代理下载</button>
+        <button id="gszhButton" class="button-cd">🌐 格式转换_Aconvert.gs</button>
+        <button id="guvh2Button" class="button-cd">🌐 格式转换_Alltoall</button>
+        <button id="guvh3Button" class="button-cd">🌐 格式转换_PDF</button>
         <button id="hButton" class="button-fl">H</button>
-        <button id="hwyButton" class="button-cd">华为云.hwy</button>
+        <button id="hwyButton" class="button-cd">🌐 华为云.hwy</button>
         <button id="iButton" class="button-fl">𝙸</button>
         <button id="jButton" class="button-fl">J</button>
-        <button id="jqlswscButton" class="button-cd">绝区零绳网生成</button>
+        <button id="jqlswscButton" class="button-cd">🌐 绝区零绳网生成</button>
         <button id="kButton" class="button-fl">K</button>
-        <button id="klysButton" class="button-cd">可乐影视.kl</button>
-        <button id="ktButton" class="button-cd">抠图.kt</button>
+        <button id="klysButton" class="button-cd">🌐 可乐影视.kl</button>
+        <button id="ktButton" class="button-cd">🌐 抠图.kt</button>
         <button id="lButton" class="button-fl">L</button>
-        <button id="ltwgButton" class="button-cd">联通网关.wg</button>
-        <button id="ltmxylButton" class="button-cd">立体模型预览.mx</button>
+        <button id="ltwgButton" class="button-cd">🌐 联通网关.wg</button>
+        <button id="ltmxylButton" class="button-cd">🌐 立体模型预览.mx</button>
         <button id="mButton" class="button-fl">M</button>
-        <button id="mysButton" class="button-cd">米游社.mys</button>
-        <button id="mywrjuhkqzhglptButton" class="button-cd">民用无人驾驶航空器综合管理平台</button>
-        <button id="mtButton" class="button-cd">密塔AI</button>
+        <button id="mysButton" class="button-cd">🌐 米游社.mys</button>
+        <button id="myhkqzhglptButton" class="button-cd">🌐 民用航空器综合管理平台</button>
+        <button id="mtButton" class="button-cd">🌐 密塔AI</button>
         <button id="nButton" class="button-fl">N</button>
         <button id="oButton" class="button-fl">O</button>
         <button id="pButton" class="button-fl">P</button>
-        <button id="pyjsqButton" class="button-cd">Python解释器</button>
-        <button id="pddButton" class="button-cd">拼多多</button>
+        <button id="pyjsqButton" class="button-cd">🌐 Python解释器</button>
+        <button id="pddButton" class="button-cd">🌐 拼多多</button>
         <button id="qButton" class="button-fl">Q</button>
-        <button id="qsqButton" class="button-cd">取色器.qsq</button>
-        <button id="qywxwdButton" class="button-cd">企业微信·文档.wd</button>
+        <button id="qsqButton" class="button-cd">🌐 取色器.qsq</button>
+        <button id="qywxwdButton" class="button-cd">🌐 企业微信·文档.wd</button>
+        <button id="qdqButton" class="button-cd">📦️ 启动器.qdq</button>
+        <button id="qqButton" class="button-cd">📦️ QQ.qq</button>
         <button id="rButton" class="button-fl">R</button>
         <button id="sButton" class="button-fl">S</button>
-        <button id="shdfButton" class="button-cd">扫黄打非.sh</button>
-        <button id="srdhjbButton" class="button-cd">骚扰电话举报.sr</button>
-        <button id="spqbjButton" class="button-cd">视频去背景</button>
-        <button id="sxztzhButton" class="button-cd">手写字体转换</button>
-        <button id="spjxButton" class="button-cd">视频解析_下载狗</button>
-        <button id="spjx2Button" class="button-cd">视频解析_V2OB</button>
-        <button id="sblxButton" class="button-cd">鼠标练习</button>
+        <button id="shdfButton" class="button-cd">🌐 扫黄打非.sh</button>
+        <button id="srdhjbButton" class="button-cd">🌐 骚扰电话举报.sr</button>
+        <button id="spqbjButton" class="button-cd">🌐 视频去背景</button>
+        <button id="sxztzhButton" class="button-cd">🌐 手写字体转换</button>
+        <button id="spjxButton" class="button-cd">🌐 视频解析_下载狗</button>
+        <button id="spjx2Button" class="button-cd">🌐 视频解析_V2OB</button>
+        <button id="sblxButton" class="button-cd">🌐 鼠标练习</button>
         <button id="tButton" class="button-fl">T</button>
-        <button id="tpbjqButton" class="button-cd">图片编辑器</button>
-        <button id="tpfdButton" class="button-cd">图片放大</button>
-        <button id="tpyjButton" class="button-cd">图片圆角</button>
-        <button id="tpxpButton" class="button-cd">图片橡皮</button>
-        <button id="tpqsqButton" class="button-cd">图片取色器</button>
-        <button id="tpysButton" class="button-cd">图片压缩</button>
-        <button id="tpxfButton" class="button-cd">图片修复</button>
-        <button id="tpxf2Button" class="button-cd">图片修复2</button>
-        <button id="tpzbase64Button" class="button-cd">图片转Base64</button>
-        <button id="tbzzButton" class="button-cd">图表制作</button>
-        <button id="tpButton" class="button-cd">投屏_AirDroid</button>
-        <button id="tzzyczzcxButton" class="button-cd">特种作业操作证查询</button>
+        <button id="tpbjqButton" class="button-cd">🌐 图片编辑器</button>
+        <button id="tpfdButton" class="button-cd">🌐 图片放大</button>
+        <button id="tpyjButton" class="button-cd">🌐 图片圆角</button>
+        <button id="tpxpButton" class="button-cd">🌐 图片橡皮</button>
+        <button id="tpqsqButton" class="button-cd">🌐 图片取色器</button>
+        <button id="tpysButton" class="button-cd">🌐 图片压缩</button>
+        <button id="tpxfButton" class="button-cd">🌐 图片修复</button>
+        <button id="tpxf2Button" class="button-cd">🌐 图片修复2</button>
+        <button id="tpzbase64Button" class="button-cd">🌐 图片转Base64</button>
+        <button id="tbzzButton" class="button-cd">🌐 图表制作</button>
+        <button id="tpButton" class="button-cd">🌐 投屏_AirDroid</button>
+        <button id="tzzyczzcxButton" class="button-cd">🌐 特种作业操作证查询</button>
         <button id="uButton" class="button-fl">U</button>
-        <button id="urlbmjmButton" class="button-cd">URL_编码解码</button>
+        <button id="urlbmjmButton" class="button-cd">🌐 URL_编码解码</button>
         <button id="vButton" class="button-fl">V</button>
         <button id="wButton" class="button-fl">W</button>
-        <button id="wzsbButton" class="button-cd">文字识别</button>
-        <button id="win11Button" class="button-cd">Win11模拟器</button>
-        <button id="win12Button" class="button-cd">Win12模拟器</button>
-        <button id="winujjmButton" class="button-cd">Windows升级界面</button>
-        <button id="wldabtscButton" class="button-cd">蔚蓝档案标题生成</button>
-        <button id="wlcsButton" class="button-cd">网络测速.cs</button>
-        <button id="wxgvptButton" class="button-cd">微信公众平台</button>
-        <button id="wvtbtqButton" class="button-cd">网站图标提取</button>
-        <button id="wzvyyButton" class="button-cd">文字转语音</button>
-        <button id="whncButton" class="button-cd">我画你猜</button>
-        <button id="wzryButton" class="button-cd">王者荣耀</button>
-        <button id="wzscxButton" class="button-cd"><s>文字删除线</s></button>
-        <button id="wrjhgjButton" class="button-cd">微软激活工具</button>
-        <button id="wjjysButton" class="button-cd">文件解压缩</button>
+        <button id="wzsbButton" class="button-cd">🌐 文字识别</button>
+        <button id="wxButton" class="button-cd">📦️ 微信.wx</button>
+        <button id="win12Button" class="button-cd">🌐 Win12模拟器</button>
+        <button id="winujjmButton" class="button-cd">🌐 Windows升级界面</button>
+        <button id="wldabtscButton" class="button-cd">🌐 蔚蓝档案标题生成</button>
+        <button id="wlcsButton" class="button-cd">🌐 网络测速.cs</button>
+        <button id="wxgvptButton" class="button-cd">🌐 微信公众平台</button>
+        <button id="wvtbtqButton" class="button-cd">🌐 网站图标提取</button>
+        <button id="wzvyyButton" class="button-cd">🌐 文字转语音</button>
+        <button id="whncButton" class="button-cd">🌐 我画你猜</button>
+        <button id="wzryButton" class="button-cd">🌐 王者荣耀</button>
+        <button id="wzscxButton" class="button-cd">🌐 <s>文字删除线</s></button>
+        <button id="wrjhgjButton" class="button-cd">🌐 微软激活工具</button>
+        <button id="wjjysButton" class="button-cd">🌐 文件解压缩</button>
         <button id="xButton" class="button-fl">X</button>
-        <button id="xtzxButton" class="button-cd">学堂在线</button>
-        <button id="xyButton" class="button-cd">小艺</button>
-        <button id="xqButton" class="button-cd">象棋</button>
-        <button id="xtdxscButton" class="button-cd">星铁短信生成</button>
-        <button id="xtgzscButton" class="button-cd">星铁光锥生成</button>
+        <button id="xtzxButton" class="button-cd">🌐 学堂在线</button>
+        <button id="xyButton" class="button-cd">🌐 小艺</button>
+        <button id="xtgzscButton" class="button-cd">🌐 星铁光锥生成</button>
+        <button id="xqButton" class="button-cd">🌐 象棋</button>
+        <button id="xtButton" class="button-cd">📦️ 星铁.xt</button>
+        <button id="xtdxscButton" class="button-cd">🌐 星铁短信生成</button>
         <button id="yButton" class="button-fl">Y</button>
-        <button id="ymzcButton" class="button-cd">域名注册_SFC</button>
-        <button id="ypjjButton" class="button-cd">音频剪辑</button>
-        <button id="yyw2Button" class="button-cd">音乐网2</button>
-        <button id="yxtButton" class="button-cd">云星铁_4399</button>
-        <button id="ydxqButton" class="button-cd">跃动星穹</button>
+        <button id="ymzcButton" class="button-cd">🌐 域名注册_SFC</button>
+        <button id="ypjjButton" class="button-cd">🌐 音频剪辑</button>
+        <button id="yyw2Button" class="button-cd">🌐 音乐网2</button>
+        <button id="yxtButton" class="button-cd">🌐 云星铁_4399</button>
+        <button id="ydxqButton" class="button-cd">🌐 跃动星穹</button>
         <button id="zButton" class="button-fl">Z</button>
-        <button id="vgydButton" class="button-cd">中国移动</button>
-        <button id="vgltButton" class="button-cd">中国联通</button>
-        <button id="zwymzmButton" class="button-cd">中文域名转码</button>
-        <button id="zxxyxButton" class="button-cd">在线小游戏</button>
-        <button id="zxmlsButton" class="button-cd">在下莫老师附件表</button>
+        <button id="vgydButton" class="button-cd">🌐 中国移动</button>
+        <button id="vgltButton" class="button-cd">🌐 中国联通</button>
+        <button id="zwymzmButton" class="button-cd">🌐 中文域名转码</button>
+        <button id="zxxyxButton" class="button-cd">🌐 在线小游戏</button>
+        <button id="zxmlsButton" class="button-cd">🌐 在下莫老师附件表</button>
         <button id="szButton">
         ⌬𝙸
         /•᷅•᷄\
@@ -2021,6 +2058,7 @@
         臃肿（yōng zhǒng·ㄩㄥ ㄓㄨㄙˇ）
         芩草（qín cǎo·ㄑㄧㄣˊ）
         胸痹（xiōng bì·ㄒㄩㄥㄅㄧˋ）
+        玲绮（líng qǐ）
         云岿山（kuī）
         颐养天年（yí yǎng tiān nián）
         枘凿六合（ruì záo）
@@ -2061,8 +2099,8 @@
         <button id="ventoywzButton" class="button-wz">Ventoy</button>
         <img id="deepinImg" class="img-fx" data-src="https://ts3.tc.mm.bing.net/th/id/OSAAS.87DB5C9FBB93881B2F70C0EB3D05241F?w=72&h=72&c=17&rs=1&o=6&dpr=1.3&pid=TechQna">
         <button id="deepinwzButton" class="button-wz">deepin</button>
-        <img id="windows10Img" class="img-fx" data-src="https://img.88icon.com/download/jpg/20200906/fecef9030b5948b5ba11ab3c91b2c620_512_512.jpg!bg">
-        <button id="windows10wzButton" class="button-wz">windows 10</button>
+        <img id="qlImg" class="img-fx" data-src="https://img.88icon.com/download/jpg/20200906/fecef9030b5948b5ba11ab3c91b2c620_512_512.jpg!bg">
+        <button id="qlwzButton" class="button-wz">麒麟</button>
 
         <button id="botButton">Bot</button>
         <img id="yuukbotImg" class="img-fx" data-src="https://bot.yunmengdu.cn/images/logo.webp">
@@ -2205,9 +2243,16 @@
         <button id="bzydbwzButton" class="button-dbwz">不知道写什么，先占个位吧( ´ ▽ ` )ﾉ。</button>
     </div>
 
+    <!-- plc模拟弹窗 -->  
+    <div id="plcmn-popup" class="popup-t">
+        <!-- 输入框容器，动态生成输入行 -->
+        <div id="input-container">
+        </div>
+    </div>
+
     <!-- 窗口弹窗 -->  
     <div id="ck-popup" class="popup-t">
-        <button id="gcstButton" class="button-fx">📄</button>
+       <button id="gcstButton" class="button-fx">📄</button>
         <button id="gcstwzButton" class="button-wz">高处试题</button>
         <button id="xzqhtxButton" class="button-fx">🗺️</button>
         <button id="xzqhtxwzButton" class="button-wz">行政区划体系</button>
@@ -2936,9 +2981,6 @@ Lv       Ts     Og
 当前按钮。当然，为了避免异常，限制了
 键位数量和触发时间（10s）。
 
-        部分 URL Scheme 得改注册表，所以
-没有生效。
-
 <s>想法从中望CAD那里抄来的(=•ω＜=)。</s>
 
         在新版本中，解决了键位冲突的问
@@ -3026,6 +3068,15 @@ Steam may not run: libGL.so.1
 13.
         新增光标练习组件，提高鼠标点击
 精度吧ヾ(•ω•`)o。
+
+14.
+        新增通过 URL Scheme 打开应用（仅限windows），使用Emoji 🌐｜📦️
+来区分网站和已安装的程序。菜单中的文
+字内容，由居中改为居左。
+
+        大部分 URL Scheme 得改注册表，
+所以没有生效。
+
         </button>
 
         <!-- 播放控件容器 -->
@@ -3047,7 +3098,7 @@ Steam may not run: libGL.so.1
         <button id="ztqhwzButton" class="button-wz">主题切换</button>
         <button id="xzymButton" class="button-fx">📥️</button>
         <button id="xzymwzButton" class="button-wz">下载源码</button>
-        <button id="htdbwzButton" class="button-dbwz">版本：251107</button>
+        <button id="htdbwzButton" class="button-dbwz">版本：251203</button>
     </div>
 
     <div id="wjj-popup" class="popup-t">
@@ -3079,12 +3130,16 @@ Steam may not run: libGL.so.1
         <button id="llwzButton" class="button-wz">灵笼 2-0</button>
         <button id="mnzlButton" class="button-fx">🎞️</button>
         <button id="mnzlwzButton" class="button-wz">魔女之旅 1-0</button>
+        <button id="jdgjjButton" class="button-fx">🎞️</button>
+        <button id="jdgjjwzButton" class="button-wz">间谍过家家 2-0</button>
+        <button id="lxhzjButton" class="button-fx">🎞️</button>
+        <button id="lxhzjwzButton" class="button-wz">罗小黑战记 1-0</button>
         <button id="wjjdbwzButton" class="button-dbwz">整个宇宙将为你闪烁！</button>
     </div>
 
     <div id="wjj2-popup" class="popup-t">
         <button id="zyxyButton" class="button-fx">📖</button>
-        <button id="zyxywzButton" class="button-wz">中医许阳 1-677</button>
+        <button id="zyxywzButton" class="button-wz">中医许阳 1-683</button>
     </div>
 
     <div id="popup-overlay"></div>
@@ -3234,6 +3289,7 @@ const keySequenceMap = {
 
     // Y
     'yx ': { buttonId: 'yxButton', handler: (button) => button.click() },
+    'ys ': { buttonId: 'ayfButton', handler: (button) => button.click() },
 
     // Z
     'z ': { buttonId: 'blblButton', handler: (button) => button.click() },
@@ -3308,11 +3364,15 @@ function handleKeySequence(key) {
     }
 }
 document.addEventListener('keydown', function (event) {
-    // 忽略输入框内的按键
-    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
+    // -------------- 修复1：忽略contenteditable输入框内的按键 --------------
+    // 新增：判断目标是否是contenteditable输入框（类名input-srk）
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || 
+        (event.target.tagName === 'DIV' && event.target.classList.contains('input-srk'))) {
+        return; // 直接返回，不处理任何按键，保留默认输入行为
+    }
     
     // 所有弹窗的ID列表
-    const allPopupIds = ['super-popup', 'bzy-popup', 'ck-popup', 'gcst-popup', 'xzqhtx-popup', 'dmyz-popup', 'dydgst-popup', 'ls-popup', 'plcxxbj-popup', 'qdgc-popup', 'yszqb-popup', 'hgst-popup', 'ht-popup', 'wjj-popup', 'wjj2-popup'];
+    const allPopupIds = ['super-popup', 'bzy-popup', 'plcmn-popup', 'ck-popup', 'gcst-popup', 'xzqhtx-popup', 'dmyz-popup', 'dydgst-popup', 'ls-popup', 'plcxxbj-popup', 'qdgc-popup', 'yszqb-popup', 'hgst-popup', 'ht-popup', 'wjj-popup', 'wjj2-popup'];
     const popupOverlay = document.getElementById('popup-overlay');
     
     // ESC键处理：关闭所有弹窗
@@ -3481,7 +3541,7 @@ document.addEventListener('keydown', function (event) {
         ztqhButton.addEventListener('click', () => { showNotification('主题切换'); });
 
         // 设置背景文字按钮点击事件
-        szbjwzButton.addEventListener('click', () => { showNotification('背景清楚'); });
+        szbjwzButton.addEventListener('click', () => { showNotification('背景清除'); });
 
         // 封装通知显示逻辑
         function showNotification(message) {
@@ -3496,13 +3556,31 @@ document.addEventListener('keydown', function (event) {
 // 按钮链接（ButtonLink）
         const buttonLinks = {
             // 主页按钮链接
-            'zyxyButton': 'https://www.wanmeisxs.cc/dushixiaoshuo/zhongyixuyang/473789.html',
+            'zyxyButton': 'https://www.wanmeisxs.cc/dushixiaoshuo/zhongyixuyang/473807.html',
             'plcbcjcButton': 'https://www.bilibili.com/video/BV1B14y1F7w4?vd_source=b5192a7c6a87fa4e5bcc934eeb99cdba&spm_id_from=333.788.videopod.episodes&p=37',
             'bcyxButton': 'https://www.starcoders.net/game',
             'wflsButton': 'https://www.bilibili.com/video/BV16Wc6ekEoP?spm_id_from=333.788.videopod.episodes&vd_source=b5192a7c6a87fa4e5bcc934eeb99cdba&p=27',
             'dypButton': 'https://www.bilibili.com/video/BV1hGere1Ed1?vd_source=b5192a7c6a87fa4e5bcc934eeb99cdba&spm_id_from=333.788.videopod.sections&p=3',
             'wjgbButton': 'https://fagedongxi.com/',
             'icpbaButton': 'https://icp.hentioe.dev/sites/20251223',
+
+            // 文件夹弹窗按钮链接
+            'warButton': 'steam://rungameid/236390',
+            'fatenightButton': 'https://www.bilibili.com/bangumi/play/ss28332?from_spmid=666.25.series.0',
+            'zsdfllButton': 'https://lkvod.me/vodplay/2139-5-1.html',
+            'zyhsButton': 'https://lkvod.me/vodplay/29586-1-1.html',
+            'hjhzblrButton': 'https://lkvod.me/vodplay/142931-2-1.html',
+            'ysButton': 'https://lkvod.me/vodplay/1058-1-1.html',
+            'gdygButton': 'https://lkvod.me/vodplay/8299-1-1.html',
+            'bdonjlButton': 'https://www.hdmoli.pro/play/1721-0-0.html',
+            'ckwlqButton': 'https://lkvod.me/vodplay/850-1-1.html',
+            'cadlzButton': 'https://lkvod.me/vodplay/148740-1-1.html',
+            'blenderButton': 'steam://rungameid/365670',
+            'lxhzjddyButton': 'https://lkvod.org/play/151424-1-1.html',
+            'llButton': 'https://lkvod.org/play/147978-4-1.html',
+            'mnzlButton': 'https://www.yxxq8.cc/play/29599-1-1.html',
+            'jdgjjButton': 'https://www.yfvod.com/vod-play/137488-1-1.html',
+            'lxhzjButton': 'https://knvod.me/play/160913-1-1/',
 
             // super弹窗_固定按钮链接
             'vncButton': 'http://192.168.3.2:36082/vnc.html',
@@ -3514,14 +3592,10 @@ document.addEventListener('keydown', function (event) {
             'yxButton': 'https://www.petalmail.com/#/',
             'yxwzButton': 'https://mail.yeah.net/',
             'yywButton': 'https://www.gequbao.com/',
-            'jlbButton': 'https://julebu.co/home',
+            'jlbButton': 'https://julebu.co/my-course-packs/p3yk3vz0hlrjmllcioibchww',
             'dtcsButton': 'https://www.jetpunk.com/user-quizzes/2021089/provinces-in-chinaclick-map',
-            'qdqButton': 'qdq://',
             'xtButton': 'xt://',
             'indexpagesButton': 'https://hengze436493.github.io/hengze/index.html',
-            'fcButton': 'fc://',
-            'qqButton': 'tim://',
-            'wxButton': 'wx://',
 
             // 宝藏页
             'jjcjImg': 'https://chrome.zzzmh.cn/index',
@@ -3535,7 +3609,7 @@ document.addEventListener('keydown', function (event) {
             'ventoyImg': 'https://www.ventoy.net/cn/download.html',
             'deepinImg': 'https://www.deepin.org/zh/download/',
             'deepinwzButton': 'https://mirrors.hust.edu.cn/deepin-cd/25.0.1/amd64/deepin-desktop-community-25.0.1-amd64.iso',
-            'windows10Img': 'https://www.microsoft.com/zh-cn/software-download/windows10',
+            'qlImg': 'https://eco.kylinos.cn/partners/mirror.html?page=2',
             'yuukbotImg': 'https://bot.yunmengdu.cn/',
 
             // 宝藏页（出行）
@@ -3674,13 +3748,13 @@ document.addEventListener('keydown', function (event) {
 
             // super弹窗_菜单按钮链接
             'yesypButton': 'https://www.123pan.com/',
+            'ayfButton': 'https://www.yfvod.com/',
             'bdstButton': 'https://graph.baidu.com/pcpage/index?tpl_from=pc',
             'bmqButton': 'https://encoder.shangzhenyang.com/',
             'bhbdmButton': 'https://yangh9.github.io/baidu/',
             'bvButton': 'https://www.wallpaperengine.space',
             'bkyButton': 'https://i.cnblogs.com/articles',
             'bzButton': 'https://haowallpaper.com/',
-            'csdnButton': 'https://mp.csdn.net/mp_blog/manage/article?spm=1001.2014.3001.5448',
             'cctvButton': 'https://tv.cctv.com/live/cctv1/',
             'deepseekButton': 'https://chat.deepseek.com',
             'dyjxButton': 'https://wannengrun.net/s/?k=',
@@ -3690,6 +3764,7 @@ document.addEventListener('keydown', function (event) {
             'ewmButton': 'https://tuzim.net/',
             'excelButton': 'https://www.lanrenexcel.com',
             'fwvuqButton': 'https://haveyouwantto.github.io/WindsongLyre-Sim/',
+            'fcButton': 'fc://',
             'gifuiButton': 'https://cloudconvert.com/mp4-to-gif',
             'gjgdjyvhjyptButton': 'https://www.chinaooc.com.cn/',
             'githubButton': 'https://github.com/',
@@ -3704,12 +3779,14 @@ document.addEventListener('keydown', function (event) {
             'ltwgButton': 'http://192.168.1.1/loginUser.html',
             'ltmxylButton': 'https://3d.pic.net/#',
             'mysButton': 'https://www.miyoushe.com/sr/',
-            'mywrjuhkqzhglptButton': 'https://uom.caac.gov.cn/#/main',
+            'myhkqzhglptButton': 'https://uom.caac.gov.cn/#/main',
             'mtButton': 'https://metaso.cn',
             'pyjsqButton': 'https://www.jyshare.com/compile/9/',
             'pddButton': 'https://mobile.yangkeduo.com/',
             'qsqButton': 'https://www.qiguangit.com/colorPicker/',
             'qywxwdButton': 'https://doc.weixin.qq.com/home/recent',
+            'qdqButton': 'qdq://',
+            'qqButton': 'tim://',
             'shdfButton': 'https://bzpt.shdf.gov.cn/report/frontend/?from=wx#/external/1',
             'srdhjbButton': 'https://wechat.12321.cn',
             'spqbjButton': 'https://www.unscreen.com',
@@ -3731,7 +3808,7 @@ document.addEventListener('keydown', function (event) {
             'tzzyczzcxButton': 'https://cx.mem.gov.cn/wxcx/pages/certificateQuery/inquirySpecialCertificate?personTypeCode=03',
             'urlbmjmButton': 'https://www.codeeeee.com/encode/url.html',
             'wzsbButton': 'https://catocr.com/#/',
-            'win11Button': 'https://win11.blueedge.me/',
+            'wxButton': 'wx://',
             'win12Button': 'https://tjy-gitnub.github.io/win12/desktop.html',
             'winujjmButton': 'https://sit.widget4.com/',
             'wldabtscButton': 'https://logo.bluearchive.cc',
@@ -3760,25 +3837,10 @@ document.addEventListener('keydown', function (event) {
             'zxxyxButton': 'https://poki.com/zh/g/kour-io',
             'zxmlsButton': 'https://www.xn--ghqy5t5uf651b82d.com/#/',
 
-            // super弹窗_菜单按钮链接
+            // 后台弹窗按钮链接
             'wlButton': 'https://www.itdog.cn/localhost/',
             'lyButton': 'https://xn--xoyo45b.mysxl.cn',
 
-            // 文件夹弹窗按钮链接
-            'warButton': 'steam://rungameid/236390',
-            'fatenightButton': 'https://www.bilibili.com/bangumi/play/ss28332?from_spmid=666.25.series.0',
-            'zsdfllButton': 'https://lkvod.me/vodplay/2139-5-1.html',
-            'zyhsButton': 'https://lkvod.me/vodplay/29586-1-1.html',
-            'hjhzblrButton': 'https://lkvod.me/vodplay/142931-2-1.html',
-            'ysButton': 'https://lkvod.me/vodplay/1058-1-1.html',
-            'gdygButton': 'https://lkvod.me/vodplay/8299-1-1.html',
-            'bdonjlButton': 'https://www.hdmoli.pro/play/1721-0-0.html',
-            'ckwlqButton': 'https://lkvod.me/vodplay/850-1-1.html',
-            'cadlzButton': 'https://lkvod.me/vodplay/148740-1-1.html',
-            'blenderButton': 'steam://rungameid/365670',
-            'lxhzjddyButton': 'https://lkvod.org/play/151424-1-1.html',
-            'llButton': 'https://lkvod.org/play/147978-4-1.html',
-            'mnzlButton': 'https://www.yxxq8.cc/play/29599-1-1.html',
         };  // 代码块闭合语句。
         Object.entries(buttonLinks).forEach(([id, url]) => {
             document.getElementById(id)?.addEventListener('click', () => {
@@ -3790,6 +3852,7 @@ document.addEventListener('keydown', function (event) {
         document.getElementById('popup-overlay').addEventListener('click', function () {
             document.getElementById('super-popup').style.display = 'none';
             document.getElementById('bzy-popup').style.display = 'none';
+            document.getElementById('plcmn-popup').style.display = 'none';
             document.getElementById('ck-popup').style.display = 'none';
             document.getElementById('gcst-popup').style.display = 'none';
             document.getElementById('xzqhtx-popup').style.display = 'none';
@@ -3872,6 +3935,115 @@ document.addEventListener('keydown', function (event) {
         // 选择所有 class 为 .img-fx 的元素，并为它们添加 src 属性
         document.querySelectorAll('.img-fx').forEach(img => {
           img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        });
+
+// plc模拟弹窗
+        document.getElementById('plcmnButton').addEventListener('click', function () {
+            document.getElementById('super-popup').style.display = 'none';
+            document.getElementById('plcmn-popup').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block'; });
+
+        // 替换规则配置（可扩展）
+        const replaceRules = [
+            // 规则1：匹配 "ld x数字" 格式，数字范围0-9999，替换为 "-x数字-"
+            {
+                regex: /^ld\s*x(\d{1,4})$/i, // 不区分大小写，匹配1-4位数字
+                replace: (match, num) => `-x${num}-`
+            }
+            // 可在此处添加更多替换规则
+            // 示例：
+            // {
+            //     regex: /^mov\s*y(\d{1,3})$/i,
+            //     replace: (match, num) => `=y${num}=`
+            // }
+        ];
+
+        // 输入框容器
+        const inputContainer = document.getElementById('input-container');
+        const plcmnPopup = document.getElementById('plcmn-popup');
+
+        // 初始化：生成第一行12个输入框
+        generateInputRow();
+
+        // 生成一行12个输入框的函数
+        function generateInputRow() {
+            const row = document.createElement('div');
+            row.className = 'input-row';
+
+            // 创建12个输入框
+            for (let i = 0; i < 12; i++) {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'input-cell';
+                input.placeholder = '';  // 输入提示
+                
+                // 绑定输入事件
+                input.addEventListener('input', handleInputChange);
+                
+                row.appendChild(input);
+            }
+
+            inputContainer.appendChild(row);
+            return row;
+        }
+
+        // 处理输入框变化的函数
+        function handleInputChange(e) {
+            const input = e.target;
+            const inputValue = input.value.trim();
+            
+            // 应用所有替换规则
+            let replacedValue = inputValue;
+            replaceRules.forEach(rule => {
+                if (rule.regex.test(replacedValue)) {
+                    replacedValue = replacedValue.replace(rule.regex, rule.replace);
+                }
+            });
+            
+            // 如果有替换，更新输入框值
+            if (replacedValue !== inputValue) {
+                input.value = replacedValue;
+            }
+
+            // 获取当前行和所有行
+            const currentRow = input.closest('.input-row');
+            const allRows = Array.from(inputContainer.querySelectorAll('.input-row'));
+            const lastRow = allRows[allRows.length - 1];
+
+            // 检查当前行是否是最后一行，且输入框有内容（非空）
+            if (currentRow === lastRow && inputValue !== '') {
+                // 检查当前行所有输入框是否至少有一个有内容（避免空输入生成新行）
+                const hasContent = Array.from(currentRow.querySelectorAll('.input-cell'))
+                    .some(cell => cell.value.trim() !== '');
+                
+                if (hasContent) {
+                    // 生成新的一行输入框
+                    const newRow = generateInputRow();
+                    
+                    // 滚动到新行（优化体验）
+                    newRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }
+        }
+
+        // 弹窗控制逻辑
+        document.getElementById('popup-overlay').addEventListener('click', function () {
+            plcmnPopup.style.display = 'none';
+            this.style.display = 'none';
+        });
+
+        document.getElementById('plcmnButton').addEventListener('click', function () {
+            // 如果没有super-popup可以注释掉这行
+            const superPopup = document.getElementById('super-popup');
+            if (superPopup) superPopup.style.display = 'none';
+            
+            plcmnPopup.style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        });
+
+        // 阻止弹窗内容区域点击事件冒泡到遮罩（避免点击输入框关闭弹窗）
+        plcmnPopup.addEventListener('click', function (e) {
+            e.stopPropagation();
         });
 
 // 窗口弹窗
@@ -7273,12 +7445,13 @@ ZLD800型电动吊篮的额定速度不大于【8】m/min 。
 
 
 
-【网线线序标准】
+【RJ45接口线序标准】
 ''T568B''线序为：
 白橙 橙色 白绿 蓝色，白蓝 绿色 白棕 棕色。
 <span style="color: blue;">口诀：</span>
-橙绿蓝棕白在前，三五对调样呈现；
-色调重组添新趣，白绿白蓝对调完。
+橙绿蓝棕白在前，四六对调样呈现；
+色调重组添新趣，绿色蓝色对调完。
+注：水晶头以金属插接件为正面！
 
 
 
