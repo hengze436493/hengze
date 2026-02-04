@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Notification API 演示</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    }
+    body {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 0 20px;
+      background: #f7f9fc;
+      color: #222;
+    }
+    .container {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1a73e8;
+      text-align: center;
+    }
+    .desc {
+      color: #5f6368;
+      margin-bottom: 24px;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    button {
+      flex: 1;
+      min-width: 140px;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #1a73e8;
+      color: #fff;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #0d66d0;
+    }
+    button.gray {
+      background: #5f6368;
+    }
+    button.gray:hover {
+      background: #4d5156;
+    }
+    .log-box {
+      padding: 16px;
+      background: #f1f3f4;
+      border-radius: 8px;
+      min-height: 100px;
+      white-space: pre-line;
+      font-size: 14px;
+      color: #202124;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Notification API 演示</h1>
+  <p class="desc">
+    浏览器桌面通知演示，需 HTTPS 或 localhost 环境<br>
+    请先授权通知权限，再点击按钮测试
+  </p>
+
+  <div class="btn-group">
+    <button id="requestBtn">请求通知权限</button>
+    <button id="showBtn">立即发送通知</button>
+  </div>
+  <div class="btn-group">
+    <button id="delayBtn">3秒后发送</button>
+    <button id="closeBtn" class="gray">关闭所有通知</button>
+  </div>
+
+  <h3 style="margin:24px 0 10px;">操作日志</h3>
+  <div id="log" class="log-box">等待操作...</div>
+</div>
+
+<script>
+  const logBox = document.getElementById('log');
+  let notifications = []; // 保存通知实例，用于统一关闭
+
+  // 日志输出
+  function log(msg) {
+    logBox.textContent = `[${new Date().toLocaleTimeString()}] ${msg}\n` + logBox.textContent;
+  }
+
+  // 1. 请求权限
+  document.getElementById('requestBtn').addEventListener('click', async () => {
+    if (!('Notification' in window)) {
+      log('❌ 当前浏览器不支持 Notification API');
+      return;
+    }
+    const perm = await Notification.requestPermission();
+    log(`🔐 权限状态：${perm}`);
+  });
+
+  // 2. 立即发送通知
+  document.getElementById('showBtn').addEventListener('click', () => {
+    showNotification('即时通知', {
+      body: '这是一条立即触发的桌面通知',
+      icon: 'https://picsum.photos/64/64'
+    });
+  });
+
+  // 3. 延迟发送
+  document.getElementById('delayBtn').addEventListener('click', () => {
+    log('⏰ 3秒后将发送通知...');
+    setTimeout(() => {
+      showNotification('延时通知', {
+        body: '我是延迟3秒弹出的消息',
+        icon: 'https://picsum.photos/64/64'
+      });
+    }, 3000);
+  });
+
+  // 4. 关闭所有通知
+  document.getElementById('closeBtn').addEventListener('click', () => {
+    notifications.forEach(n => n.close());
+    notifications = [];
+    log('🗑 已关闭所有通知');
+  });
+
+  // 封装发送通知
+  function showNotification(title, options) {
+    if (!('Notification' in window)) {
+      log('❌ 不支持 Notification');
+      return;
+    }
+    if (Notification.permission !== 'granted') {
+      log('⚠️ 请先点击「请求通知权限」并允许');
+      return;
+    }
+
+    const n = new Notification(title, options);
+
+    // 事件监听
+    n.onclick = () => {
+      log('✅ 用户点击了通知');
+      window.focus(); // 切回页面
+      n.close();
+    };
+    n.onclose = () => {
+      log('ℹ️ 通知已关闭');
+    };
+    n.onerror = (err) => {
+      log(`❌ 通知出错：${err.message}`);
+    };
+
+    notifications.push(n);
+  }
+</script>
+</body>
+</html>
