@@ -8,7 +8,8 @@
 
         /* 通配符"*"，配置所有html元素，和所有伪元素 */
         * {
-            box-sizing: border-box;  /* 宽度=设定值，padding/border不向外扩展，防止再次踩坑(^～^)。 */
+            /* 宽度=设定值，padding/border不向外扩展，防止再次踩坑(^～^)。 */
+            box-sizing: border-box;
         }
 
         body {
@@ -85,7 +86,7 @@
             position: absolute;
             top: 40px;
             left: 800px;
-            border: 1px solid #FFFFFF;
+            /* border: 1px solid #FFFFFF; */
         }
 
         /* 文件夹按钮样式 */
@@ -96,7 +97,7 @@
             /* filter: drop-shadow(0 0 10px #FFF);  阴影 */
             /* mix-blend-mode: difference;  文字自适应背景颜色 */
             mix-blend-mode: difference;  /* 文字自适应背景颜色 */
-            scroll-snap-stop: always;  /* 强制决断 */
+            scroll-snap-stop: always;  /* 吸附效果强制决断 */
             scroll-snap-align: center;  /* 吸附到元素的位置 */
         }
 
@@ -132,8 +133,8 @@
             mix-blend-mode: difference;  /*文字自适应背景颜色 */
         }
 
-        /* 记录容器 */
-        #recordContainer {
+        /* 命令行容器 */
+        #terminal {
             position: absolute;
             top: 50px;
             bottom: 70px;  /* 距离页面下方值 */
@@ -145,70 +146,67 @@
             border: 1px solid #FFFFFF;
             overflow-y: auto;  /* overflow-y 控制垂直滚动；overflow-x 控制水平滚动；overflow: auto; 横向和纵向都自动。 */
             white-space: pre-line;
-            display: flex;  /* 启用flex布局 */
-            scroll-snap-stop: always;  /* 强制决断 */
+            /* display: flex;启用flex布局，用于吸附效果 */
+            scroll-snap-stop: always;  /* 吸附效果强制决断 */
             scroll-snap-align: center;  /* 吸附到元素的位置 */
-            flex-direction: column-reverse;  /* 反向排列，导致内容从底部开始渲染，需要 flex 布局 */
+            /* flex-direction: column-reverse;反向排列，导致内容从底部开始渲染，需要 flex 布局 */
             filter: drop-shadow(0 0 10px #222222);  /* 阴影 */
         }
-        /* 原生下拉选择器 */
-        #selectOption {
-            position: absolute;
-            bottom: 10px;
-            right: 260px;
-            width: 50px;
-            height: 30px;
-            border-radius: 5px;
-            border: 1px solid #FFFFFF;
-            background-color: transparent;  /* 设置背景为透明 */
-            text-align: center;  /* 使文字居中 */
+        /* 置顶语 */
+        #terminal-header {
+            white-space: pre-line;
+            color: #00ff00;
+            font-size: 14px;
         }
-        /* 记录容器, 选择器手机样式 - 通过媒体查询应用 */
+        /* 命令回显 */
+        .command-output {
+            color: #00ff00;
+            font-size: 14px;
+            margin-bottom: 8px;
+            white-space: pre-line;
+        }
+        .error-output {
+            color: #ff4444;
+            font-size: 14px;
+            margin-bottom: 8px;
+            white-space: pre-line;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        /* 输入报头 */
+        .prompt {
+            color: #00ff00;
+            font-size: 14px;
+            margin-right: 0px;
+        }
+        .prompt::placeholder { color: #00ff00; }
+        /* 命令输入框 */
+        #commandInput {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #00ff00;
+            font-size: 14px;
+            flex: 1;
+            caret-color: #00ff00;
+        }
+        /* 滚动条样式优化 */
+        #terminal::-webkit-scrollbar {
+            background-color: transparent;  /* 设置背景为透明 */
+        }
+        #terminal::-webkit-scrollbar-track {
+            background-color: transparent;  /* 设置背景为透明 */
+        }
+        #terminal::-webkit-scrollbar-thumb {
+            background-color: transparent;  /* 设置背景为透明 */
+        }
+        /* 命令行容器手机样式 - 通过媒体查询应用 */
         @media only screen and (max-width: 730px) {
-            #recordContainer, #selectOption {
+            #terminal {
                 left: 400px;
-            }
-        }
-        /* 记录输入框 */
-        #jlInput {
-            position: absolute;
-            bottom: 10px;
-            right: 70px;
-            width: 180px;
-            height: 30px;
-            padding-left: 10px;
-            border: 1px solid #FFFFFF;
-            border-radius: 5px;
-            background-color: transparent;  /* 设置背景为透明 */
-            text-align: left;  /* 使文字居左 */
-            z-index: 1;
-        }
-        /* 输入框占位符 #jlInput::placeholder { color: #000000; } */
-        /* 记录输入框手机样式 - 通过媒体查询应用 */
-        @media only screen and (max-width: 730px) {
-            #jlInput {
-                left: 460px;
-            }
-        }
-        /* 记录按钮 */
-        #jlButton {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 50px;
-            height: 30px;
-            border-radius: 5px;
-            border: 1px solid #FFFFFF;
-            background-color: green;
-            color: #FFFFFF;
-        }
-        #jlButton:hover {
-            background-color: transparent; /* 设置背景为透明 */
-        }
-        /* 记录输入框手机样式 - 通过媒体查询应用 */
-        @media only screen and (max-width: 730px) {
-            #jlButton {
-                left: 650px;
             }
         }
 
@@ -1640,13 +1638,11 @@
         /* 主题切换（弹窗内，所有子级的颜色） */
         /* body, */
         *,
-        #jlInput::placeholder,
         #search-input,
         #search-input::placeholder,
         #search-engine-select { color: #000000; }
         /* body.ztqh-mode, */
         .ztqh-mode *,
-        .ztqh-mode #jlInput::placeholder,
         .ztqh-mode #search-input,
         .ztqh-mode #search-input::placeholder,
         .ztqh-mode #search-engine-select { color: #FFFFFF; }
@@ -1747,6 +1743,15 @@
             z-index: 2;
             text-align: center; /* 使文字居中 */
         }
+        #qpButton {
+            position: fixed;
+            top: 0px;
+            right: 40px;
+            width: 40px;
+            height: 40px;
+            z-index: 2;
+            text-align: center;  /* 使文字居中 */
+        }
         #closeButton {
             position: fixed;
             top: 0px;
@@ -1787,7 +1792,7 @@
         #fatenightButton {
             top: 50px;
             left: 255px;
-            scroll-snap-stop: always;  /* 强制决断 */
+            scroll-snap-stop: always;  /* 吸附效果强制决断 */
             scroll-snap-align: center;  /* 吸附到元素的位置 */
         }
         #fatenightwzButton { top: 100px; left: 250px; }
@@ -1852,7 +1857,7 @@
         #noneButton {
             top: 50px;
             left: 550px;
-            scroll-snap-stop: always;  /* 强制决断 */
+            scroll-snap-stop: always;  /* 吸附效果强制决断 */
             scroll-snap-align: center;  /* 吸附到元素的位置 */
         }
         #nonewzButton { top: 100px; left: 550px; }
@@ -2180,20 +2185,25 @@
         <button id="bcyxwzButton" class="button-wz">编程游戏</button>
         <button id="wflsButton" class="button-fx"><span style="color: #00ade7;">哔</span></button>
         <button id="wflswzButton" class="button-wz">翁法罗斯</button>
-        <!-- 记录显示区域 -->
-        <div id="recordContainer"></div>
-        <!-- 原生下拉选择器 -->
-        <select id="selectOption">
-            <option value="-">-</option>
-            <option value="+">+</option>
-            <option value="÷">÷</option>
-        </select>
-        <textarea id="jlInput" placeholder="cn"></textarea>
-        <button id="jlButton">记录</button>
     </div>
+
+    <div class="terminal" id="terminal">
+        <div class="terminal-header" id="terminal-header">
+你好
+欢迎来到命令行！
+
+记录内容：
+        </div>
+        <div id="output-area"></div>
+        <div class="input-container">
+            <span class="prompt">~$:</span>
+            <input type="text" id="commandInput">
+        </div>
+    </div>
+
     <!-- 光标练习区域 -->
     <div class="gblxqy" id="gblx"></div>
-    <button id="ztlButton">05 01 02 03</button>
+    <button id="ztlButton">02 06 03 01</button>
     <button id="superButton" class="button-fx">🏵️</button>
     <button id="ckButton" class="button-fx">🪟</button>
     <button id="htButton" class="button-fx">≡</button>
@@ -2385,7 +2395,7 @@
         <button id="BewlyBewlywzButton" class="button-wz">Bewly Bewly</button>
 
         <button id="isoButton">𝙸so</button>
-        <img id="firepeImg" class="img-fx" data-src="https://tse1-mm.cn.bing.net/th/id/OIP-C.5FDsF9ct6ELbcqCnJXTM2gAAAA?w=167&h=169&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+        <img id="firepeImg" class="img-fx" data-src="https://tse1-mm.cn.bing.net/th/id/OIP-C.5FDsF9ct6ELbcqCnJXTM2AAA?w=167&h=169&c=7&r=0&o=5&dpr=1.3&pid=1.7">
         <button id="firepewzButton" class="button-wz">FirePE</button>
         <img id="ubuntuImg" class="img-fx" data-src="https://ts2.tc.mm.bing.net/th/id/ODLS.cdad98e9-bec7-47eb-97ef-43845aac6ae7?w=32&h=32&qlt=90&pcl=fffffc&o=6&cb=iavawebpc1&pid=1.2">
         <button id="ubuntuwzButton" class="button-wz">Ubuntu</button>
@@ -3162,9 +3172,9 @@ Lv       Ts     Og
         便携（biàn xié）
         濒危（bīn wēi）
         波澜（bō lán）
-        步骤（bùzhòu）
+        步骤（bù zhòu）
         踩踏（cǎi tà）
-        惭愧（cán kuì
+        惭愧（cán kuì）
         颤抖（chàn dǒu）
         肠痈（cháng yōng）
         焯水（chāo shuǐ）
@@ -3172,6 +3182,7 @@ Lv       Ts     Og
         承诺（chéng nuò）
         筹备（chóu bèi）
         处方笺（chǔ fāng jīan）
+        催促（cuī cù）
         存储（cún chǔ）
         撮合（cuō he）从中介绍说事。
         措施（cuò shī）
@@ -3180,6 +3191,7 @@ Lv       Ts     Og
         地狱（dì yù）
         戥称（děng chèng）
         抵押（dǐ yā）
+        丢弃（diū qì）
         豆菽（dòu shū）
         端子（duān zǐ）
         敦促（dūn cù）
@@ -3189,24 +3201,29 @@ Lv       Ts     Og
         烦恼（fán nǎo）
         返璞归真（fǎn pú guī zhēn）去除外在修饰，恢复本来面貌。
         妨碍（fáng ài）
+        分泌（fēn mì）
         粉碎（fěn suì）
         符箓（fú lù）
         呷茶（xiá chá）小口地喝。
         尴尬（gān gà）
         橄榄（gǎn lǎn）
+        赣榆区（gàn yǘ）
+        疙瘩（gē da）
         搁浅（gē qiǎn）
         根深蒂固（gēn shēn dì gù）
+        亘古（gèn gǔ）整个古代。亘：延续不断。
         钴酸锂（gǔ suān lǐ）
         惯例（guàn lì）
         盥洗（guàn xǐ）
         轨道（guǐ dào）
         裹挟（guǒ xié）
         咳嗽（ké sou）
-        海滨（hǎi bīn）意：海边。
+        海滨（hǎi bīn）海边。
         汗腺（hàn xiàn）
         痕迹（hén jì）
         葫芦（hú lu）
         花卉（huā huì）
+        滑稽（huá jī）
         缓慢（huǎn màn）
         恢复（huī fù）
         秽息（huì xī）
@@ -3215,6 +3232,7 @@ Lv       Ts     Og
         机械（jī xiè）
         疾病（jí bìng）
         疾驰（jí chí）
+        嫉妒（jí dù）
         寄宿（jì sù）
         间歇（jiàn xiē）
         肩膀（jiān bǎng）
@@ -3228,11 +3246,13 @@ Lv       Ts     Og
         桔梗（jié gěng）
         咀嚼（jǔ jué）
         倦怠（juàn dài）
+        硁硁之愚（kēng kēng zhī yú）
         恐怖（kǒng bù）
         蜡烛（là zhú）
         累赘（léi zhuì）
         罹难（lí nàn）
         礼貌（lǐ mào）
+        吝啬（lìn sè）
         玲绮（líng qǐ）
         陆续（lù xù）
         螺旋（luó xuán）
@@ -3241,18 +3261,23 @@ Lv       Ts     Og
         漫步（màn bù）
         蔓延（màn yán）
         忙碌（máng lù）
+        朦胧（méng lóng）
         敏锐（mǐn ruì）
         缪刺（jiū cì）
         牡蛎（mǔ lì）
         浓缩（nóng suō）
         盼望（pàn wàng）
         旁边（páng biān）
+        霹雳（pī lì）
+        拼凑（pīn còu）
         拼凑（pīn còu）
         崎岖（qí qū）
+        麒麟（qí lín）
         乞丐（qǐ gài）
         谴责（qiǎn zé）
         芩草（qín cǎo·ㄑㄧㄣˊ）
         祛邪（qū xié）
+        痊愈（quán yù）
         枘凿六合（ruì záo liù hé）
         扫帚（sào zhǒu）
         筛子（shāi zi）
@@ -3260,10 +3285,12 @@ Lv       Ts     Og
         授予（shòu yǚ）
         思忖（sī cǔn）
         肆虐（sì nüè）
+        贪婪（tān lán）
         讨厌（tǎo yàn）
         忒坏（tuī/tēi huài）同：太。忒坏、忒多。
         特征（tè zhēng）
         疼痛（téng tòng）
+        停滞（tíng zhì）
         仝（tóng）同"同"，相同、一样。
         头衔（tóu xián）
         头衔（tóu xián）
@@ -3274,6 +3301,7 @@ Lv       Ts     Og
         卧室（wò shì）
         陷害（xiàn hài）
         羡慕（xiàn mù）
+        嚣张跋扈（xiāo zhāng bá hù）
         校准（jiào zhǔn）
         协议（xié yì）
         泄漏（xiè lòu）
@@ -3291,17 +3319,22 @@ Lv       Ts     Og
         溢出（yì chū）
         熠煜（yì yǜ·ㄧˋㄩˋ）强烈光亮。
         应该（yīng gāi）
+        应急（yìng jí）
         臃肿（yōng zhǒng·ㄩㄥ ㄓㄨㄙˇ）
         勇敢（yǒng gǎn）
+        幼崽（yòu zǎi）
+        鸳鸯（yuān yang）
         云岿山（yún kuī shān）
         暂停（zàn tíng）
         斋戒（zhāi jiè）
         遮盖（zhē gài）
         赭石（zhě shí）
+        争夺（zhēng duó）
         制作（zhì zuò）
         治疗（zhì liáo）
         炙手可热（zhì shǒu kě rè）
         茱萸（zhū yǘ）
+        装饰（zhuāng shì）
         追踪（zhuī zōng）
         赘言（zhuì yán）
         <br>
@@ -3337,11 +3370,12 @@ Lv       Ts     Og
         <button id="scjlwzButton" class="button-wz">删除记录</button>
         <button id="ggButton" class="button-fx">❗️</button>
         <button id="ggwzButton" class="button-wz">广告</button>
-        <button id="htdbwzButton" class="button-dbwz">版本：260210</button>
+        <button id="htdbwzButton" class="button-dbwz">版本：260220</button>
     </div>
 
     <div id="wjjPopup">
         <button id="cktbButton">🗔 文件夹弹窗</button>
+        <button id="qpButton">🔴</button>
         <button id="closeButton">🔴</button>
         <div id="cdArea">
             <button id="cdButton"></button>
@@ -3356,7 +3390,7 @@ Lv       Ts     Og
             <button id="hjhzblrButton" class="button-fx">📼</button>
             <button id="hjhzblrwzButton" class="button-wz">画江湖之不良人 7-0</button>
             <button id="ysButton" class="button-fx">📼</button>
-            <button id="yswzButton" class="button-wz">永生 5-11</button>
+            <button id="yswzButton" class="button-wz">永生 5-12</button>
             <button id="gdygButton" class="button-fx">📼</button>
             <button id="gdygwzButton" class="button-wz">孤独摇滚 1-0</button>
             <button id="bdonjlButton" class="button-fx">📼</button>
@@ -3376,7 +3410,7 @@ Lv       Ts     Og
             <button id="lxhzjButton" class="button-fx">📼</button>
             <button id="lxhzjwzButton" class="button-wz">罗小黑战记 1-0</button>
             <button id="qysnButton" class="button-fx">📼</button>
-            <button id="qysnwzButton" class="button-wz">轻音少女 1-9</button>
+            <button id="qysnwzButton" class="button-wz">轻音少女 1-13</button>
             <button id="noneButton" class="button-fx">+</button>
             <button id="nonewzButton" class="button-wz">+</button>
         </div>
@@ -3393,104 +3427,183 @@ Lv       Ts     Og
 
     <script>
 
-        // 增料记录·全局变量
-        const selectOption = document.getElementById('selectOption');
-        const jlInput = document.getElementById('jlInput');
-        const jlButton = document.getElementById('jlButton');
-        const scjlButton = document.getElementById('scjlButton');
-        const recordContainer = document.getElementById('recordContainer');
-        // indexedDB 相关操作
-        let db;
-        const DB_NAME = 'RecordDB';
-        const STORE_NAME = 'recordStore';
-        const DB_VERSION = 1;
-        // 打开数据库
-        function openDB() {
-            return new Promise((resolve, reject) => {
-                const request = indexedDB.open(DB_NAME, DB_VERSION);
-                request.onupgradeneeded = (e) => {
-                    db = e.target.result;
-                    if (!db.objectStoreNames.contains(STORE_NAME)) {
-                        db.createObjectStore(STORE_NAME, { keyPath: 'id', autoIncrement: true });
-                    }
-                };
-                request.onsuccess = (e) => {
-                    db = e.target.result;
-                    resolve(db);
-                };
-                request.onerror = (e) => {
-                    reject('数据库打开失败: ' + e.target.error);
-                };
-            });
-        }
-        // 新增记录
-        function addRecord(record) {
-            return new Promise((resolve, reject) => {
-                const transaction = db.transaction(STORE_NAME, 'readwrite');
-                const store = transaction.objectStore(STORE_NAME);
-                const request = store.add(record);
-                request.onsuccess = () => resolve();
-                request.onerror = (e) => reject('新增记录失败: ' + e.target.error);
-            });
-        }
-        // 获取所有记录
-        function getAllRecords() {
-            return new Promise((resolve, reject) => {
-                const transaction = db.transaction(STORE_NAME, 'readonly');
-                const store = transaction.objectStore(STORE_NAME);
-                const request = store.getAll();
-                request.onsuccess = (e) => resolve(e.target.result);
-                request.onerror = (e) => reject('获取记录失败: ' + e.target.error);
-            });
-        }
-        // 清除所有记录
-        function clearAllRecords() {
-            return new Promise((resolve, reject) => {
-                const transaction = db.transaction(STORE_NAME, 'readwrite');
-                const store = transaction.objectStore(STORE_NAME);
-                const request = store.clear();
-                request.onsuccess = () => resolve();
-                request.onerror = (e) => reject('清除记录失败: ' + e.target.error);
-            });
-        }
-        // 默认输出内容
-        function generateRecord() {
-            const opt = selectOption.value || '-';
-            const val = jlInput.value.trim() || '';
-            // 获取当前时间和日期
-            const now = new Date();
-            const time = now.toLocaleTimeString('zh-CN', { hour12: false });
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const day = String(now.getDate()).padStart(2, '0');
-            const date = `${month}-${day}`;
-            // 拼接固定格式
-            return `&emsp;&emsp; ${time || '**'} · ${date || '**'} <br> ${opt} ${val} <br> &emsp;`;
-        }
-        // 渲染记录到页面
-        async function renderRecords() {
-            const records = await getAllRecords();
-            recordContainer.innerHTML = records.map(item => item.content).join('\n');
-        }
-        // 提交按钮点击事件
-        jlButton.addEventListener('click', async () => {
-            const recordContent = generateRecord();
-            await addRecord({ content: recordContent });
-            renderRecords();
-            // 清空当前输入
-           jlInput.value = '';
+// 命令行 · 命令表
+const CMD_MAP = {
+    '1 -1': { type: 'url', val: 'https://baidu.com/' },
+    'b': { type: 'url', val: 'https://www.bilibili.com/' },
+    '抖音': { type: 'url', val: 'https://www.douyin.com/?recommend=1/' },
+    'reboot': { type: 'reboot' },
+    'remove': { type: 'clearDB' },
+    '命令': { type: 'text', val: `
+你好
+你也好
+          ` },
+    'yp': { type: 'button', val: 'yesypButton' },
+    's': { type: 'search' } // 新增：搜索命令配置
+};
+
+// 2. DOM元素（仅声明一次）
+const $ = (id) => document.getElementById(id);
+const terminalHeader = $('terminal-header');
+const outputArea = $('output-area');
+const cmdInput = $('commandInput');
+const terminal = $('terminal');
+
+// 新增：搜索模式状态标记（全局变量，记录是否处于搜索输入状态）
+let isInSearchMode = false;
+
+// 3. IndexedDB 封装（避免db重复声明）
+const DB = {
+    name: 'CmdDB',
+    store: 'unknownCmds',
+    instance: null, // 用对象属性存db实例，替代全局变量
+    init() {
+        return new Promise((resolve) => {
+            const req = indexedDB.open(this.name, 1);
+            req.onupgradeneeded = (e) => {
+                const db = e.target.result;
+                if (!db.objectStoreNames.contains(this.store)) {
+                    db.createObjectStore(this.store, { keyPath: 'id', autoIncrement: true });
+                }
+            };
+            req.onsuccess = (e) => {
+                this.instance = e.target.result;
+                resolve();
+            };
+            req.onerror = () => resolve(); // 失败也resolve，避免页面崩溃
         });
-        // 删除记录按钮点击事件，加 confirm() 。
-        scjlButton.addEventListener('click', async () => {
-            if (confirm('确定要删除所有记录吗？')) {
-                await clearAllRecords();
-                renderRecords();
-            }
+    },
+    async get() {
+        if (!this.instance) await this.init();
+        return new Promise((resolve) => {
+            const tx = this.instance.transaction(this.store, 'readonly');
+            const store = tx.objectStore(this.store);
+            const req = store.getAll();
+            req.onsuccess = (e) => resolve(e.target.result.map(item => item.cmd));
+            req.onerror = () => resolve([]);
         });
-        // 页面加载时初始化
-        window.onload = async () => {
-            await openDB();
-            renderRecords();
-        };
+    },
+    async add(cmd) {
+        if (!this.instance) await this.init();
+        return new Promise((resolve) => {
+            const tx = this.instance.transaction(this.store, 'readwrite');
+            const store = tx.objectStore(this.store);
+            const req = store.add({ cmd, time: new Date().toISOString() });
+            req.onsuccess = () => resolve(true);
+            req.onerror = () => resolve(false);
+        });
+    },
+    async clear() {
+        if (!this.instance) await this.init();
+        return new Promise((resolve) => {
+            const tx = this.instance.transaction(this.store, 'readwrite');
+            const store = tx.objectStore(this.store);
+            const req = store.clear();
+            req.onsuccess = () => resolve(true);
+            req.onerror = () => resolve(false);
+        });
+    }
+};
+
+// 4. 工具函数（仅声明一次）
+const log = (content, isError = false) => {
+    const el = document.createElement('div');
+    el.className = isError ? 'error-output' : 'command-output';
+    el.textContent = content;
+    outputArea.appendChild(el);
+    terminal.scrollTop = terminal.scrollHeight;
+};
+
+// 5. 加载历史记录（页面初始化时）
+async function loadHistory() {
+    await DB.init();
+    const cmds = await DB.get();
+    if (cmds.length) terminalHeader.textContent += cmds.join('\n');
+}
+
+// 6. 绑定按钮事件（仅配置内的按钮）
+function bindButtons() {
+    Object.values(CMD_MAP).forEach(item => {
+        if (item.type === 'button') {
+            const btn = $(item.val);
+        }
+    });
+}
+
+// 7. 执行命令（核心逻辑）
+async function execCmd(input) {
+    const cmd = input.trim();
+    if (!cmd) return;
+    cmdInput.value = '';
+
+    // 新增：处理搜索模式逻辑
+    if (isInSearchMode) {
+        // 搜索模式下：拼接必应链接并打开
+        const searchUrl = `https://cn.bing.com/search?q=${encodeURIComponent(cmd)}`;
+        log(`~$:${cmd}\n${searchUrl}`); // 显示搜索内容和最终链接
+        window.open(searchUrl, '_blank'); // 打开新标签页
+        isInSearchMode = false; // 退出搜索模式
+        return; // 结束当前执行，避免走后续逻辑
+    }
+
+    // 处理已知命令（原有逻辑 + 新增search类型）
+    if (CMD_MAP[cmd]) {
+        const item = CMD_MAP[cmd];
+        switch (item.type) {
+            case 'url':
+                log(`~$:${cmd}\n${item.val}`);
+                window.open(item.val, '_blank');
+                break;
+            case 'reboot':
+                log(`~$:${cmd}\nreboot`);
+                window.location.reload();
+                break;
+            case 'clearDB':
+                log(`~$:${cmd}\nremove`);
+                await DB.clear();
+                break;
+            case 'text':
+                log(`~$:${cmd}\n${item.val}`);
+                break;
+            case 'button':
+                const btn = $(item.val);
+                if (btn) {
+                    log(`~$:${cmd}\n${item.val}`);
+                    btn.click();
+                } else {
+                    log(`~$:${cmd}\n错误：按钮${item.val}不存在！`, true);
+                }
+                break;
+            case 'search': // 新增：处理s命令，进入搜索模式
+                log(`~$:${cmd}\n请输入赋值内容：`);
+                isInSearchMode = true; // 标记为搜索模式
+                break;
+        }
+    } 
+    // 处理未知命令（原有逻辑）
+    else {
+        log(`~$:${cmd}\n未找到命令，已添加到 𝙸ndexedDB。`, true);
+        await DB.add(cmd);
+    }
+}
+
+// 8. 初始化（仅执行一次）
+async function init() {
+    await loadHistory();
+    bindButtons();
+    // 回车触发命令
+    cmdInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') execCmd(cmdInput.value);
+    });
+}
+
+// 启动页面（捕获所有错误，避免崩溃）
+window.addEventListener('DOMContentLoaded', () => {
+    init().catch(err => {
+        console.error('初始化失败:', err);
+        log('页面初始化失败，但核心功能仍可用！', true);
+    });
+});
 
     // 文本匹配；数据结构：[题目, 答案]；（好像不能放DOM里，所以放这了）。
     const textList = [
@@ -3511,6 +3624,7 @@ Lv       Ts     Og
         ["chéng nuò", "承诺"],
         ["chóu bèi", "筹备"],
         ["chǔ fāng jīan", "处方笺"],
+        ["cuī cù", "催促"],
         ["cún chǔ", "存储"],
         ["cuō he", "撮合"],
         ["cuò shī", "措施"],
@@ -3519,6 +3633,7 @@ Lv       Ts     Og
         ["dì yù", "地狱"],
         ["děng chèng", "戥称"],
         ["dǐ yā", "抵押"],
+        ["diū qì", "丢弃"],
         ["dòu shū", "豆菽"],
         ["duān zǐ", "端子"],
         ["dūn cù", "敦促"],
@@ -3528,12 +3643,16 @@ Lv       Ts     Og
         ["fán nǎo", "烦恼"],
         ["fǎn pú guī zhēn", "返璞归真"],
         ["fáng ài", "妨碍"],
+        ["fēn mì", "分泌"],
         ["fěn suì", "粉碎"],
         ["fú lù", "符箓"],
         ["xiá chá", "呷茶"],
         ["gǎn lǎn", "橄榄"],
+        ["gàn yǘ", "赣榆"],
+        ["gē da", "疙瘩"],
         ["gē qiǎn", "搁浅"],
         ["gēn shēn dì gù", "根深蒂固"],
+        ["gèn gǔ", "亘古"],
         ["gǔ suān lǐ", "钴酸锂"],
         ["guàn lì", "惯例"],
         ["guàn xǐ", "盥洗"],
@@ -3545,6 +3664,7 @@ Lv       Ts     Og
         ["hén jì", "痕迹"],
         ["hú lu", "葫芦"],
         ["huā huì", "花卉"],
+        ["huá jī", "滑稽"],
         ["huǎn màn", "缓慢"],
         ["huī fù", "恢复"],
         ["huì xī", "秽息"],
@@ -3553,6 +3673,7 @@ Lv       Ts     Og
         ["jī xiè", "机械"],
         ["jí bìng", "疾病"],
         ["jí chí", "疾驰"],
+        ["jí dù", "嫉妒"],
         ["jì sù", "寄宿"],
         ["jiàn xiē", "间歇"],
         ["jiàn xíng", "践行"],
@@ -3560,16 +3681,18 @@ Lv       Ts     Og
         ["jié qǔ", "截取"],
         ["jīng wèi fēn míng", "泾渭分明"],
         ["jīng jí", "荆棘"],
-        ["jīng chà·ㄐㄧㄥㄔㄚˋ", "惊诧"],
+        ["jīng chà", "惊诧"],
         ["jìng mì", "静谧"],
         ["jié gěng", "桔梗"],
         ["jǔ jué", "咀嚼"],
         ["juàn dài", "倦怠"],
+        ["kēng kēng zhī yú", "硁硁之愚"],
         ["kǒng bù", "恐怖"],
         ["là zhú", "蜡烛"],
         ["léi zhuì", "累赘"],
         ["lí nàn", "罹难"],
         ["lǐ mào", "礼貌"],
+        ["lìn sè", "吝啬"],
         ["líng qǐ", "玲绮"],
         ["lù xù", "陆续"],
         ["luó xuán", "螺旋"],
@@ -3578,18 +3701,22 @@ Lv       Ts     Og
         ["màn bù", "漫步"],
         ["màn yán", "蔓延"],
         ["máng lù", "忙碌"],
+        ["méng lóng", "朦胧"],
         ["mǐn ruì", "敏锐"],
         ["jiū cì", "缪刺"],
         ["mǔ lì", "牡蛎"],
         ["nóng suō", "浓缩"],
         ["pàn wàng", "盼望"],
         ["páng biān", "旁边"],
+        ["pī lì", "霹雳"],
         ["pīn còu", "拼凑"],
         ["qí qū", "崎岖"],
+        ["qí lín", "麒麟"],
         ["qǐ gài", "乞丐"],
         ["qiǎn zé", "谴责"],
-        ["qín cǎo·ㄑㄧㄣˊ", "芩草"],
+        ["qín cǎo", "芩草"],
         ["qū xié", "祛邪"],
+        ["quán yù", "痊愈"],
         ["ruì záo liù hé", "枘凿六合"],
         ["sào zhǒu", "扫帚"],
         ["shāi zi", "筛子"],
@@ -3597,10 +3724,12 @@ Lv       Ts     Og
         ["shòu yǚ", "授予"],
         ["sī cǔn", "思忖"],
         ["sì nüè", "肆虐"],
+        ["tān lán", "贪婪"],
         ["tǎo yàn", "讨厌"],
         ["tuī/tēi huài", "忒坏"],
         ["tè zhēng", "特征"],
         ["téng tòng", "疼痛"],
+        ["tíng zhì", "停滞"],
         ["tóng", "仝"],
         ["tuō zhuài", "拖拽"],
         ["wǎn pǐ", "脘痞"],
@@ -3608,11 +3737,12 @@ Lv       Ts     Og
         ["wū zì", "污渍"],
         ["xiàn hài", "陷害"],
         ["xiàn mù", "羡慕"],
+        ["xiāo zhāng bá hù", "嚣张跋扈"],
         ["jiào zhǔn", "校准"],
         ["xié yì", "协议"],
         ["xiè lòu", "泄漏"],
         ["xìn jiān", "信笺"],
-        ["xiōng bì·ㄒㄩㄥㄅㄧˋ", "胸痹"],
+        ["xiōng bì", "胸痹"],
         ["xuán zhuǎn", "旋转"],
         ["xué biǎo", "学婊"],
         ["xún zhǎo", "寻找"],
@@ -3623,19 +3753,24 @@ Lv       Ts     Og
         ["yǐ quē", "乙炔"],
         ["yì rì", "翌日"],
         ["yì chū", "溢出"],
-        ["yì yǜ·ㄧˋㄩˋ", "熠煜"],
+        ["yì yǜ", "熠煜"],
         ["yīng gāi", "应该"],
-        ["yōng zhǒng·ㄩㄥ ㄓㄨㄙˇ", "臃肿"],
+        ["yìng jí", "应急"],
+        ["yōng zhǒng", "臃肿"],
         ["yǒng gǎn", "勇敢"],
+        ["yòu zǎi", "幼崽"],
+        ["yuān yang", "鸳鸯"],
         ["yún kuī shān", "云岿山"],
         ["zàn tíng", "暂停"],
         ["zhāi jiè", "斋戒"],
         ["zhē gài", "遮盖"],
         ["zhě shí", "赭石"],
+        ["zhēng duó", "争夺"],
         ["zhì zuò", "制作"],
         ["zhì liáo", "治疗"],
         ["zhì shǒu kě rè", "炙手可热"],
         ["zhū yǘ", "茱萸"],
+        ["zhuāng shì", "装饰"],
         ["zhù cún", "贮存"],
         ["zhuī zōng", "追踪"],
         ["zhuì yán", "赘言"],
@@ -3652,7 +3787,7 @@ function createQuestionSequence() {
 let questionSequence = createQuestionSequence();
 let currentIndex = 0;
 const targetText = document.getElementById("wbpptmButton");
-const jpmdlxInput = document.getElementById("wbppInput");
+const wbppInput = document.getElementById("wbppInput");
 const daButton = document.getElementById("daButton");
 
 // Fisher-Yates 洗牌算法，保证每题每次只随机出现一次
@@ -3668,8 +3803,8 @@ function shuffleArray(arr) {
 // 更新题目显示。
 function updateQuestion() {
     targetText.textContent = questionSequence[currentIndex][0];
-    jpmdlxInput.value = "";
-    jpmdlxInput.classList.remove("error");  // 清空错误标记。
+    wbppInput.value = "";
+    wbppInput.classList.remove("error");  // 清空错误标记。
     daButton.disabled = false;
     daButton.textContent = "💡";  // 默认显示内容。
 }
@@ -3680,11 +3815,11 @@ daButton.addEventListener("click", () => {
 });
 
 // 回车校验并下一题。
-jpmdlxInput.addEventListener("keydown", (e) => {
+wbppInput.addEventListener("keydown", (e) => {
     const isSpace = e.key === " ";
     if (e.key === "Enter") {
         e.preventDefault();
-        const inputValue = jpmdlxInput.value.trim();
+        const inputValue = wbppInput.value.trim();
         const currentAnswer = questionSequence[currentIndex][1];
         if (inputValue === currentAnswer) {
             // 判断是否是尾题。
@@ -3697,16 +3832,16 @@ jpmdlxInput.addEventListener("keydown", (e) => {
             }
             updateQuestion();
         } else {
-            jpmdlxInput.classList.add("error");
+            wbppInput.classList.add("error");
             daButton.textContent = "这对嘛( ´ ▽ ` )ﾉ";  // 答题错误提示
         }
-        // jpmdlxInput.value = "";  答错清空输入框。
+        // wbppInput.value = "";  答错清空输入框。
     }
 });
 
 // 空格校验，并下一题。
-jpmdlxInput.addEventListener("input", () => {
-    const inputValue = jpmdlxInput.value;
+wbppInput.addEventListener("input", () => {
+    const inputValue = wbppInput.value;
     if (inputValue.includes(" ")) {
         const trimmedVal = inputValue.trim();
         const currentAnswer = questionSequence[currentIndex][1];
@@ -3721,18 +3856,18 @@ jpmdlxInput.addEventListener("input", () => {
             }
             updateQuestion();
         } else {
-            jpmdlxInput.classList.add("error");
+            wbppInput.classList.add("error");
             daButton.textContent = "这不对吧(●´∀｀●)";  // 答题错误提示
         }
-        // jpmdlxInput.value = "";  答错清空输入框。
+        // wbppInput.value = "";  答错清空输入框。
     } else {
-        jpmdlxInput.classList.remove("error");  // 清空错误标记。
+        wbppInput.classList.remove("error");  // 清空错误标记。
     }
 });
 
 // 初始化显示首题
 updateQuestion();
-jpmdlxInput.focus();
+wbppInput.focus();
 
 
 
@@ -3751,6 +3886,48 @@ jpmdlxInput.focus();
         closeButton.addEventListener('click', () => {
             wjjPopup.classList.remove('open');
         });
+
+const btn = document.getElementById('qpButton');
+
+btn.addEventListener('click', toggleFullScreen);
+
+function toggleFullScreen() {
+  const fullElem = document.fullscreenElement
+    || document.webkitFullscreenElement
+    || document.msFullscreenElement;
+
+  if (!fullElem) {
+    // 进入全屏，使用 body + 允许任意方向
+    if (document.body.requestFullscreen) {
+      document.body.requestFullscreen({ orientation: 'any' });
+    } else if (document.body.webkitRequestFullscreen) {
+      document.body.webkitRequestFullscreen();
+    } else if (document.body.msRequestFullscreen) {
+      document.body.msRequestFullscreen();
+    }
+  } else {
+    // 退出全屏
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  }
+}
+
+// 同步按钮文字
+function updateButtonText() {
+  const isFull = document.fullscreenElement
+    || document.webkitFullscreenElement
+    || document.msFullscreenElement;
+  btn.textContent = isFull ? '退出全屏' : '进入全屏';
+}
+
+document.addEventListener('fullscreenchange', updateButtonText);
+document.addEventListener('webkitfullscreenchange', updateButtonText);
+document.addEventListener('MSFullscreenChange', updateButtonText);
 
         const wjj2Button = document.getElementById('wjj2Button');
         const wjj2Popup = document.getElementById('wjj2Popup');
@@ -4248,7 +4425,7 @@ document.addEventListener('keydown', function (event) {
             'zsdfllButton': 'https://lkvod.me/vodplay/2139-5-1.html',
             'zyhsButton': 'https://lkvod.me/vodplay/29586-1-1.html',
             'hjhzblrButton': 'https://lkvod.me/vodplay/142931-2-1.html',
-            'ysButton': 'https://www.yfvod.com/vod-play/153797-2-11.html',
+            'ysButton': 'https://www.yfvod.com/vod-play/153797-5-12.html',
             'gdygButton': 'https://lkvod.me/vodplay/8299-1-1.html',
             'bdonjlButton': 'https://www.hdmoli.pro/play/1721-0-0.html',
             'ckwlqButton': 'https://lkvod.me/vodplay/850-1-1.html',
@@ -4258,7 +4435,7 @@ document.addEventListener('keydown', function (event) {
             'mnzlButton': 'https://www.yxxq8.cc/play/29599-1-1.html',
             'jdgjjButton': 'https://www.yfvod.com/vod-play/137488-1-1.html',
             'lxhzjButton': 'https://knvod.me/play/160913-1-1/',
-            'qysnButton': 'https://knvod.me/play/52491-1-9/',
+            'qysnButton': 'https://sszzyy.com/index.php/vod/play/id/13447/sid/1/nid/13.html',
 
             // super弹窗_固定按钮链接
             'vncButton': 'http://192.168.3.2:36082/vnc.html',
@@ -4564,7 +4741,8 @@ document.addEventListener('keydown', function (event) {
                 // 检查按下的键是否是 '/' 且当前没有聚焦在输入框上
                 if (event.key === '/' && document.activeElement !== searchInput) {
                 event.preventDefault(); // 防止 '/' 被输入到其他输入框中
-                searchInput.focus(); } }); });  // 聚焦到搜索输入框
+                commandInput.focus(); } });
+        });  // 聚焦到命令行输入框
         // 执行按钮点击事件
         const searchButton = document.getElementById('search-button');
         const searchInput = document.getElementById('search-input');
@@ -11299,8 +11477,7 @@ Fef4(钛型、钛钙型)；Fef4J(碱型)
 （vnc）、z（B站）、c（豆包）、t（主
 题切换），i（设置背背景）等这些功能
 应用触发条件，改为：* + 空格触发，扩
-展更多状态键值。此外"Esc"依然是弹窗
-关闭键。
+展更多状态键值。此外，双击空格键可以关闭所有弹窗。
 
     使用方法：例如，文件夹2。在键盘
 中，依次输入"w s 空格"即可。而super弹
