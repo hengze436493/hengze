@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>储物袋总览</title>
+    <style>
+        /* 通配符"*"，配置所有html元素，和所有伪元素 */
+        * {
+            /* 宽度=设定值，padding/border不向外扩展，防止再次踩坑(^～^)。 */
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EEF7FF;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: #000000;  /* 16进制颜色码 */
+            user-select: text;  /* 设置可选中文本属性 */
+            -webkit-user-select: text;  /* 可选中文本属性 */
+        }
+        #backgroundImage {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: -2;
+            /* border: 1px solid #222222; */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            /* background-image: url("https://uapis.cn/api/v1/random/image?category=acg&type=pc");  pc电脑 / mb手机 */
+        }
+        #mbButton {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: -1;
+            border: none;
+            /* border: 1px solid #222222; */
+            backdrop-filter: blur(5px);  /* 磨砂玻璃效果 */
+            background-color: transparent;
+        }
+        #ReadMe {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            height: 100px;
+            border-radius: 20px;
+            font-size: 15px;
+            overflow-y: auto;
+            text-align: left;  /* 使文字居左 */
+            background: transparent;
+            border: 1px solid #000000;
+        }
+        #bgbt {
+            position: absolute;
+            top: 120px;
+            left: 10px;
+            right: 10px;
+            height: 40px;
+            border: 1px solid #000000;
+            border-radius: 20px 20px 0px 0px;  /* 给 左上 右上 右下 左下 添加圆角 */
+        }
+        #fl {
+            position: absolute;
+            top: 120px;
+            left: 10px;
+            width: 50px;
+            height: 40px;
+            font-size: 15px;
+            border: none;
+            background: transparent;
+        }
+        #sl {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            margin-left: -25px;
+            width: 50px;
+            height: 40px;
+            font-size: 15px;
+            border: none;
+            background: transparent;
+        }
+        #gxsj {
+            position: absolute;
+            top: 120px;
+            right: 10px;
+            width: 80px;
+            height: 40px;
+            font-size: 15px;
+            border: none;
+            background: transparent;
+        }
+        #bg {
+            position: absolute;
+            top: 160px;
+            left: 10px;
+            right: 10px;
+            bottom: 40px;
+            overflow-y: auto;
+            border: 1px solid #000000;
+            border-radius: 0px 0px 20px 20px;  /* 给 左上 右上 右下 左下 添加圆角 */
+            display: flex;
+            gap: 0px; /* 元素间距离 */
+            flex-direction: column; /* 主轴改成竖直方向，子元素从上往下依次排列 */
+        }
+        .row {
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            min-height:40px;
+            border-top: 1px solid #000000;
+        }
+        .LeftButton {
+            left: 0px;
+            width: 130px;
+            height: 40px;
+            font-size: 15px;
+            text-align: left;
+            border: none;
+            background: transparent;
+        }
+        .CenterButton {
+            left: 50%;
+            margin-left: 0px;
+            width: 80px;
+            height: 40px;
+            font-size: 15px;
+            border: none;
+            background: transparent;
+        }
+        .RightButton {
+            right: 0px;
+            width: 130px;
+            height: 40px;
+            font-size: 15px;
+            text-align: right;
+            border: none;
+            background: transparent;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 背景图片 -->
+    <div id="backgroundImage"></div>
+    <button id="mbButton"></button>
+    <button id="ReadMe"><br>
+        广告：<br><br>
+        &emsp;&emsp;#ReadMe {<br>
+        &emsp;&emsp;&emsp;&emsp;当 (更新时间 ≤ 4)，字体变灰;<br>
+        &emsp;&emsp;&emsp;&emsp;当天 = 0天前;<br>
+        &emsp;&emsp;&emsp;&emsp;昨天 = 1天前;<br>
+        &emsp;&emsp;};<br><br>
+        &emsp;&emsp;这个 webview 项目是为了防止碎片化信息流冲刷，导致记忆丢失。现在有些简陋，将就下吧，我不想再熬夜写代码了（￣～￣;）<br><br>
+        &emsp;&emsp;tips：如果你看到了这条提示，那就代表着审核通过了（小龙我就*%&@#）。每个浏览器被魔改的 程度 / 方向 都会导致表现的样式可能和祂人不一样，我的评价是：魔术技巧～<br>
+        <br>
+    </button>
+    <button id="bgbt"></button>
+    <button id="fl">分类</button>
+    <button id="sl">数量</button>
+    <button id="gxsj">更新时间</button>
+    <div id="bg">
+        <div class="row">
+            <button class="LeftButton"><span style="color: blue;">#鲜切区 {</span></button>
+        </div>
+        <div class="row">
+            <button class="LeftButton">&emsp;&emsp;牛肉</button>
+            <button class="CenterButton enterButton">5.5斤<br>又18盘</button>
+            <button class="RightButton">11.02</button>
+        </div>
+        <div class="row">
+            <button class="LeftButton">&emsp;&emsp;猪肉</button>
+            <button class="CenterButton enterButton">2.4斤</button>
+            <button class="RightButton">11.02</button>
+        </div>
+
+
+        <div class="row">
+            <button class="LeftButton"></button>
+        </div>
+
+
+        <div class="row">
+            <button class="LeftButton">&emsp;&emsp;牛肉·卷</button>
+            <button class="CenterButton enterButton">2根</button>
+            <button class="RightButton">11.03</button>
+        </div>
+        <div class="row">
+            <button class="LeftButton">&emsp;&emsp;羊肉·卷</button>
+            <button class="CenterButton enterButton">9根</button>
+            <button class="RightButton">11.03</button>
+        </div>
+        <div class="row">
+            <button class="LeftButton">&emsp;&emsp;猪肉·卷</button>
+            <button class="CenterButton enterButton">7根</button>
+            <button class="RightButton">11.03</button>
+        </div>
+        <div class="row">
+            <button class="LeftButton">&emsp;&emsp;乌鸡·卷</button>
+            <button class="CenterButton enterButton">7根</button>
+            <button class="RightButton">11.03</button>
+        </div>
+
+
+
+        <div class="row">
+            <button class="LeftButton"></button>
+        </div>
+
+       <div class="row">
+            <button class="LeftButton">&emsp;&emsp;韭菜</button>
+            <button class="CenterButton enterButton">1次</button>
+            <button class="RightButton">11.02</button>
+        </div>
+
+        <div class="row">
+            <button class="LeftButton">&emsp;&emsp;洋葱</button>
+            <button class="CenterButton enterButton">8头</button>
+            <button class="RightButton">11.02</button>
+        </div>
+
+        <div class="row">
+            <button class="LeftButton">&emsp;&emsp;十三香·原</button>
+            <button class="CenterButton enterButton">З盒</button>
+            <button class="RightButton">11.02</button>
+        </div>
+
+        <div class="row">
+            <button class="LeftButton">}</button>
+            <button class="CenterButton enterButton"></button>
+            <button class="RightButton"></button>
+        </div>
+
+        <div class="row">
+            <button class="LeftButton"></button>
+            <button class="CenterButton enterButton"></button>
+            <button class="RightButton"></button>
+        </div>
+
+        <div class="row">
+            <button class="LeftButton"></button>
+            <button class="CenterButton enterButton"></button>
+            <button class="RightButton"></button>
+        </div>
+
+        <div class="row">
+            <button class="LeftButton"></button>
+            <button class="CenterButton enterButton"></button>
+            <button class="RightButton"></button>
+        </div>
+
+        <div class="row">
+            <button class="LeftButton"></button>
+            <button class="CenterButton enterButton"></button>
+            <button class="RightButton"></button>
+        </div>
+
+        <button id="htdbwzButton" class="button-dbwz">版本：261018</button>
+
+    </div>
+
+    <script>
+
+        // 【页面加载初始化（页面加载时，自动执行）】
+        window.addEventListener('load', () => {
+
+        });
+
+
+
+window.addEventListener('load', () => {
+    // 获取版本按钮元素
+    const verBtn = document.getElementById('htdbwzButton');
+    if (!verBtn) return; // 找不到按钮直接退出，防止报错
+    // 正则：匹配「版本：」后面的数字。
+    const text = verBtn.innerText.trim();
+    const matchResult = text.match(/版本：(\d+)/);
+    if (!matchResult) return; // 格式不对就不执行版本检测。
+    const PAGE_VERSION = matchResult[1];
+
+    const localVer = localStorage.getItem('Html_hengze_version');
+    if(localVer !== PAGE_VERSION){
+        localStorage.setItem('Html_hengze_version', PAGE_VERSION);
+        // 版本不一样，强制刷新一次。
+        location.reload(true);
+    }
+});
+
+
+
+        // 工具：把日期转成 Date对象，固定2026年
+        function parseMd(str){
+            const arr = str.split('.');
+            const m = parseInt(arr[0])-1;
+            const d = parseInt(arr[1]);
+            return new Date(2026, m, d);
+        }
+
+        // 计算两个日期相差整天数
+        function diffDay(a,b){
+            const msPerDay = 24*60*60*1000;
+            const t1 = new Date(a.getFullYear(),a.getMonth(),a.getDate()).getTime();
+            const t2 = new Date(b.getFullYear(),b.getMonth(),b.getDate()).getTime();
+            return Math.round((t1 - t2)/msPerDay);
+        }
+
+        // 处理天前逻辑
+        function handleDayText(){
+            const rows = document.querySelectorAll("#bg > .row");
+            const today = new Date();
+            for(let r of rows){
+                const rightBtn = r.querySelector(".RightButton");
+                if(!rightBtn) continue;
+                let txt = rightBtn.innerText.trim();
+                if(!txt) continue;
+                //取出原始日期字符串，例如"10.31"
+                let dateStr = txt.split('\n')[0].trim();
+                if(!/^\d+\.\d+$/.test(dateStr)) continue;
+
+                const itemDate = parseMd(dateStr);
+                const delta = diffDay(today, itemDate);
+                const showDelta = Math.max(0, delta);
+                rightBtn.innerText = `${dateStr} · ${showDelta}天前`;
+                // >=4天改为灰色
+                if(showDelta >=4){
+                    rightBtn.style.color = "#888888";
+                }else{
+                    rightBtn.style.color = "";
+                }
+            }
+        }
+
+        //处理 enterButton，忽略"又"后面文字，提取第一个数字，<=4变红
+        function handleEnterButton(){
+            const els = document.querySelectorAll(".enterButton");
+            for(let el of els){
+                let fullText = el.innerText;
+                //截断：遇到“又”直接舍弃后面全部内容
+                const youIndex = fullText.indexOf("又");
+                let workText = youIndex !== -1 ? fullText.slice(0,youIndex) : fullText;
+                //提取第一个数字（支持小数）
+                const match = workText.match(/[\d\.]+/);
+                if(!match){
+                    el.style.color = "";
+                    continue;
+                }
+                const num = parseFloat(match[0]);
+                if(num <=4){
+                    el.style.color = "red";
+                }else{
+                    el.style.color = "";
+                }
+            }
+        }
+
+        window.onload = function(){
+            handleDayText();
+            handleEnterButton();
+        }
+
+    </script>
+</body>
+</html>
