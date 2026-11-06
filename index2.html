@@ -283,7 +283,7 @@
 
 
 
-        <button id="htdbwzButton" class="row">版本：261028</button>
+        <button id="htdbwzButton" class="row">版本：261029</button>
         <button id="xzymButton" class="row">下载源码</button>
 
 
@@ -414,7 +414,7 @@ function extractToButton() {
     const leftText = leftEl.innerText.trim();
     // 【特殊处理：左文本是"}"】
     if (leftText === '}') {
-      result += `${leftText}\n`;
+      result += `${leftText}`;
       return;
     }
     // 【特殊处理：左文本是"空"】
