@@ -229,25 +229,25 @@
         <div class="row">
             <button class="LeftButton">&emsp;&emsp;牛肉·卷</button>
             <button class="CenterButton">4根</button>
-            <button class="RightButton">11.08</button>
+            <button class="RightButton">11.10</button>
         </div>
 
         <div class="row">
             <button class="LeftButton">&emsp;&emsp;羊肉·卷</button>
             <button class="CenterButton">5根</button>
-            <button class="RightButton">11.08</button>
+            <button class="RightButton">11.10</button>
         </div>
 
         <div class="row">
             <button class="LeftButton">&emsp;&emsp;猪肉·卷</button>
             <button class="CenterButton">4根</button>
-            <button class="RightButton">11.08</button>
+            <button class="RightButton">11.10</button>
         </div>
 
         <div class="row">
             <button class="LeftButton">&emsp;&emsp;乌鸡·卷</button>
             <button class="CenterButton">7根</button>
-            <button class="RightButton">11.05</button>
+            <button class="RightButton">11.10</button>
         </div>
 
 
@@ -259,14 +259,14 @@
 
         <div class="row">
             <button class="LeftButton">&emsp;&emsp;洋葱</button>
-            <button class="CenterButton">6头</button>
-            <button class="RightButton">11.08</button>
+            <button class="CenterButton">5头</button>
+            <button class="RightButton">11.10</button>
         </div>
 
         <div class="row">
             <button class="LeftButton">&emsp;&emsp;食盐</button>
             <button class="CenterButton">2包</button>
-            <button class="RightButton">11.06</button>
+            <button class="RightButton">11.10</button>
         </div>
 
         <div class="row">
@@ -289,7 +289,7 @@
 
 
 
-        <button id="htdbwzButton" class="row">版本：261034</button>
+        <button id="htdbwzButton" class="row">版本：261035</button>
         <button id="xzymButton" class="row">下载源码</button>
 
 
@@ -385,7 +385,7 @@ window.addEventListener('load', () => {
                     continue;
                 }
                 const num = parseFloat(match[0]);
-                if(num <=4){
+                if(num <=3){
                     el.style.color = "red";
                 }else{
                     el.style.color = "";
@@ -407,6 +407,10 @@ function extractToButton() {
   const customThreshold = {
     '牛肉': 30,
     '猪肉': 30,
+    '牛肉卷': 3,
+    '羊肉卷': 3,
+    '猪肉卷': 3,
+    '乌鸡卷': 3,
     '洋葱': 3,
     '食盐': 1,
     '十三香': 1
